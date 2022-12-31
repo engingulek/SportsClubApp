@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */; };
-		7D6EE37929609C9900C24D84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE37829609C9900C24D84 /* ContentView.swift */; };
 		7D6EE37B29609C9B00C24D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37A29609C9B00C24D84 /* Assets.xcassets */; };
 		7D6EE37E29609C9B00C24D84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37D29609C9B00C24D84 /* Preview Assets.xcassets */; };
 		7D6EE38829609C9B00C24D84 /* SportsClubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE38729609C9B00C24D84 /* SportsClubAppTests.swift */; };
 		7D6EE39229609C9B00C24D84 /* SportsClubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE39129609C9B00C24D84 /* SportsClubAppUITests.swift */; };
 		7D6EE39429609C9B00C24D84 /* SportsClubAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE39329609C9B00C24D84 /* SportsClubAppUITestsLaunchTests.swift */; };
+		7D6EE3A32960A6D500C24D84 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE3A22960A6D500C24D84 /* StartPageView.swift */; };
+		7D6EE3A82960B0AF00C24D84 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE3A72960B0AF00C24D84 /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		7D6EE37329609C9900C24D84 /* SportsClubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsClubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsClubAppApp.swift; sourceTree = "<group>"; };
-		7D6EE37829609C9900C24D84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D6EE37A29609C9B00C24D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D6EE37D29609C9B00C24D84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7D6EE38329609C9B00C24D84 /* SportsClubAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsClubAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,8 @@
 		7D6EE38D29609C9B00C24D84 /* SportsClubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsClubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6EE39129609C9B00C24D84 /* SportsClubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsClubAppUITests.swift; sourceTree = "<group>"; };
 		7D6EE39329609C9B00C24D84 /* SportsClubAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsClubAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D6EE3A22960A6D500C24D84 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
+		7D6EE3A72960B0AF00C24D84 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +96,9 @@
 		7D6EE37529609C9900C24D84 /* SportsClubApp */ = {
 			isa = PBXGroup;
 			children = (
+				7D6EE3A42960AA7200C24D84 /* Utils */,
+				7D6EE3A02960A6AC00C24D84 /* startPage-model */,
 				7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */,
-				7D6EE37829609C9900C24D84 /* ContentView.swift */,
 				7D6EE37A29609C9B00C24D84 /* Assets.xcassets */,
 				7D6EE37C29609C9B00C24D84 /* Preview Content */,
 			);
@@ -125,6 +128,22 @@
 				7D6EE39329609C9B00C24D84 /* SportsClubAppUITestsLaunchTests.swift */,
 			);
 			path = SportsClubAppUITests;
+			sourceTree = "<group>";
+		};
+		7D6EE3A02960A6AC00C24D84 /* startPage-model */ = {
+			isa = PBXGroup;
+			children = (
+				7D6EE3A22960A6D500C24D84 /* StartPageView.swift */,
+			);
+			path = "startPage-model";
+			sourceTree = "<group>";
+		};
+		7D6EE3A42960AA7200C24D84 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7D6EE3A72960B0AF00C24D84 /* ButtonStyle.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D6EE37929609C9900C24D84 /* ContentView.swift in Sources */,
+				7D6EE3A82960B0AF00C24D84 /* ButtonStyle.swift in Sources */,
+				7D6EE3A32960A6D500C24D84 /* StartPageView.swift in Sources */,
 				7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
