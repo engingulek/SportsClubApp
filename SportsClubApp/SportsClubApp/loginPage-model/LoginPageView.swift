@@ -40,6 +40,12 @@ struct LoginPageView: View {
                 Text("Register")
                     .fontWeight(.bold)
                     .foregroundColor(.red)
+                    .onTapGesture {
+                        self.createPage = true
+                    }
+                    .sheet(isPresented: $createPage) {
+                        CreatePageView()
+                    }
             }
     
         }.padding(.horizontal)
