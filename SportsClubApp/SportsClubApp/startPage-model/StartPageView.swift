@@ -44,7 +44,7 @@ struct StartPageView: View {
                         self.showHomePage = true
                     })
                     .fullScreenCover(isPresented: $showHomePage, content: {
-                        Text("Home Page")
+                        HomePageView()
                     })
                     .buttonStyle(StartPageButtonStyle(foregroundColor: .black, backgroundColor: .white))
                     
@@ -72,6 +72,8 @@ struct StartPageView: View {
 
 struct StartPageView_Previews: PreviewProvider {
     static var previews: some View {
-        StartPageView()
+        NavigationView{
+            StartPageView()
+        }
     }
 }
