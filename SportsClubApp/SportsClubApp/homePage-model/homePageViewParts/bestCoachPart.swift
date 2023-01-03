@@ -27,10 +27,14 @@ struct bestCoachPart: View {
                     .font(.system(size: 14))
                     
             }
-                
-            Text("Amy Kate")
-                .font(.system(size: 17,weight: .semibold))
-        }
+            VStack {
+                Text("Amy Kate")
+                    .font(.system(size: 17,weight: .semibold))
+                Text("Yoga")
+                    .font(.system(size: 16,weight: .light))
+            }
+           
+        }.foregroundColor(.black)
     }
 }
 

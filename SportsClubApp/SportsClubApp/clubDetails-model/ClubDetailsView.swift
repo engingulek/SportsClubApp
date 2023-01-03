@@ -57,6 +57,14 @@ struct ClubDetailsView: View {
                         .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
                         .padding()
                     
+                    VStack(spacing:15) {
+                        Text("Reviews")
+                            .font(.system(size: 20,weight: .semibold))
+                        ForEach(0..<4) { _ in
+                            CommentDesign()
+                        }
+                        
+                    }
                     
                     
                 }

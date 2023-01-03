@@ -70,7 +70,12 @@ struct HomePageView: View {
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing:20) {
                                 ForEach(0..<5) { _ in
-                                    bestCoachPart()
+                                    NavigationLink {
+                                        CoachDetailView()
+                                    }label: {
+                                        bestCoachPart()
+                                    }
+                                    
                                 }
                             }.padding(.horizontal)
                         }
