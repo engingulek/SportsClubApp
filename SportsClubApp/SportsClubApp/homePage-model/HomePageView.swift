@@ -37,7 +37,7 @@ struct HomePageView: View {
                             NavigationLink {
                                 NearBySportsClubsView()
                             } label: {
-                                Text("See All")
+                                Text("Look At Map")
                                     .font(.system(size: 13,weight: .semibold))
                                     .foregroundColor(.black)
                             }
@@ -90,8 +90,6 @@ struct HomePageView: View {
 //
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
-     
             HomePageView()
-        
     }
 }

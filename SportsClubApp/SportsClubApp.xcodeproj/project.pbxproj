@@ -30,6 +30,10 @@
 		7DD7A4FF29644E6100854466 /* GymImageAndNameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A4FE29644E6100854466 /* GymImageAndNameInfo.swift */; };
 		7DD7A50229645EEE00854466 /* CoachDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A50129645EEE00854466 /* CoachDetailView.swift */; };
 		7DD7A50529649B6B00854466 /* CommentDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A50429649B6B00854466 /* CommentDesign.swift */; };
+		7DD7A5092964AB6400854466 /* NearByGymClubsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A5082964AB6400854466 /* NearByGymClubsListView.swift */; };
+		7DD7A50D2964B05F00854466 /* NearByGymClubListDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A50C2964B05F00854466 /* NearByGymClubListDesign.swift */; };
+		7DD7A50F2964B63400854466 /* CategoryDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A50E2964B63400854466 /* CategoryDesign.swift */; };
+		7DD7A5112964B77700854466 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A5102964B77700854466 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		7DD7A4FE29644E6100854466 /* GymImageAndNameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymImageAndNameInfo.swift; sourceTree = "<group>"; };
 		7DD7A50129645EEE00854466 /* CoachDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDetailView.swift; sourceTree = "<group>"; };
 		7DD7A50429649B6B00854466 /* CommentDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDesign.swift; sourceTree = "<group>"; };
+		7DD7A5082964AB6400854466 /* NearByGymClubsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByGymClubsListView.swift; sourceTree = "<group>"; };
+		7DD7A50C2964B05F00854466 /* NearByGymClubListDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByGymClubListDesign.swift; sourceTree = "<group>"; };
+		7DD7A50E2964B63400854466 /* CategoryDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDesign.swift; sourceTree = "<group>"; };
+		7DD7A5102964B77700854466 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +132,9 @@
 		7D4C9CBE2963437C005C23A6 /* nearBySportsClubs-model */ = {
 			isa = PBXGroup;
 			children = (
+				7DD7A5072964AB4800854466 /* view */,
+				7DD7A5062964AB3C00854466 /* model */,
 				7D4C9CC1296352A8005C23A6 /* nearBySportsViewPart */,
-				7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */,
-				7D4C9CC8296367F8005C23A6 /* GymLocaiton.swift */,
 			);
 			path = "nearBySportsClubs-model";
 			sourceTree = "<group>";
@@ -136,6 +144,8 @@
 			children = (
 				7D4C9CC2296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift */,
 				7D4C9CCA29636EEF005C23A6 /* NearGYMClupMapImage.swift */,
+				7DD7A50C2964B05F00854466 /* NearByGymClubListDesign.swift */,
+				7DD7A50E2964B63400854466 /* CategoryDesign.swift */,
 			);
 			path = nearBySportsViewPart;
 			sourceTree = "<group>";
@@ -269,6 +279,24 @@
 				7DD7A50129645EEE00854466 /* CoachDetailView.swift */,
 			);
 			path = "coachDetail-model";
+			sourceTree = "<group>";
+		};
+		7DD7A5062964AB3C00854466 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C9CC8296367F8005C23A6 /* GymLocaiton.swift */,
+				7DD7A5102964B77700854466 /* Category.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		7DD7A5072964AB4800854466 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */,
+				7DD7A5082964AB6400854466 /* NearByGymClubsListView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +435,7 @@
 				7D6EE3B02960E0CF00C24D84 /* CreatePageView.swift in Sources */,
 				7D4C9CC9296367F8005C23A6 /* GymLocaiton.swift in Sources */,
 				7DD7A50529649B6B00854466 /* CommentDesign.swift in Sources */,
+				7DD7A50D2964B05F00854466 /* NearByGymClubListDesign.swift in Sources */,
 				7DD7A4FF29644E6100854466 /* GymImageAndNameInfo.swift in Sources */,
 				7D1DC46A2961CAE7000CCF1F /* bestCoachPart.swift in Sources */,
 				7D6EE3A32960A6D500C24D84 /* StartPageView.swift in Sources */,
@@ -414,11 +443,14 @@
 				7D6EE3AD2960CE0800C24D84 /* LoginPageStyle.swift in Sources */,
 				7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */,
 				7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */,
+				7DD7A50F2964B63400854466 /* CategoryDesign.swift in Sources */,
 				7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */,
 				7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */,
 				7D6EE3AB2960C79C00C24D84 /* LoginPageView.swift in Sources */,
+				7DD7A5092964AB6400854466 /* NearByGymClubsListView.swift in Sources */,
 				7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */,
 				7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */,
+				7DD7A5112964B77700854466 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
