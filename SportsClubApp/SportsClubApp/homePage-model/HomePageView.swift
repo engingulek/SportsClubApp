@@ -48,7 +48,11 @@ struct HomePageView: View {
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing:20) {
                                 ForEach(0..<5) { _ in
-                                    nearBySportsClupPart()
+                                    NavigationLink {
+                                        ClubDetailsView()
+                                    } label: {
+                                        nearBySportsClupPart()
+                                    }                                    
                                 }
                             }.padding(.horizontal)
                         }
@@ -70,10 +74,10 @@ struct HomePageView: View {
                                 }
                             }.padding(.horizontal)
                         }
-                    }.navigationTitle("Home Page")
-                    .navigationBarTitleDisplayMode(.inline)
+                    }
                 
-            }
+            }.navigationTitle("Home Page")
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
