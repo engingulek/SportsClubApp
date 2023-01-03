@@ -10,60 +10,70 @@ import SwiftUI
 struct HomePageView: View {
     @State private var searchText = ""
     var body: some View {
-        ScrollView {
-            
-            VStack(spacing: 10) {
-                HStack {
-                    Text("Location")
-                    Spacer()
-                }
+        NavigationView {
+            ScrollView {
                 
-                HStack {
-                    Image(systemName: "mappin")
-                    Text("New York,USA")
-                    Spacer()
-                }.font(.system(size: 20,weight: .semibold))
-                
-                Text("In this application, you can find the places where you can do sports close to you and the coaches you can take lessons from.").padding()
-                
-            }.padding(.horizontal)
-            
-                VStack {
+                VStack(spacing: 10) {
                     HStack {
-                        Text("Near by Sports Clubs")
-                            .font(.system(size: 17,weight: .semibold))
+                        Text("Location")
                         Spacer()
-                        Text("See All")
-                            .font(.system(size: 13,weight: .semibold))
-                    }.padding(.horizontal)
-                        
-                    ScrollView(.horizontal,showsIndicators: false) {
-                        HStack(spacing:20) {
-                            ForEach(0..<5) { _ in
-                                nearBySportsClupPart()
-                            }
-                        }.padding(.horizontal)
                     }
-                }.padding(.vertical)
-                
-                VStack {
-                    HStack {
-                        Text("Best Coachs")
-                            .font(.system(size: 17,weight: .semibold))
-                        Spacer()
-                        Text("See All")
-                            .font(.system(size: 13,weight: .semibold))
-                    }.padding(.horizontal)
                     
-                    ScrollView(.horizontal,showsIndicators: false) {
-                        HStack(spacing:20) {
-                            ForEach(0..<5) { _ in
-                                bestCoachPart()
+                    HStack {
+                        Image(systemName: "mappin")
+                        Text("New York,USA")
+                        Spacer()
+                    }.font(.system(size: 20,weight: .semibold))
+                    
+                    Text("In this application, you can find the places where you can do sports close to you and the coaches you can take lessons from.").padding()
+                    
+                }.padding(.horizontal)
+                
+                    VStack {
+                        HStack {
+                            Text("Near by Sports Clubs")
+                                .font(.system(size: 17,weight: .semibold))
+                            Spacer()
+                            NavigationLink {
+                                NearBySportsClubsView()
+                            } label: {
+                                Text("See All")
+                                    .font(.system(size: 13,weight: .semibold))
+                                    .foregroundColor(.black)
                             }
+                            
+                                
                         }.padding(.horizontal)
-                    }
-                }
-            
+                            
+                        ScrollView(.horizontal,showsIndicators: false) {
+                            HStack(spacing:20) {
+                                ForEach(0..<5) { _ in
+                                    nearBySportsClupPart()
+                                }
+                            }.padding(.horizontal)
+                        }
+                    }.padding(.vertical)
+                    
+                    VStack {
+                        HStack {
+                            Text("Best Coachs")
+                                .font(.system(size: 17,weight: .semibold))
+                            Spacer()
+                            Text("See All")
+                                .font(.system(size: 13,weight: .semibold))
+                        }.padding(.horizontal)
+                        
+                        ScrollView(.horizontal,showsIndicators: false) {
+                            HStack(spacing:20) {
+                                ForEach(0..<5) { _ in
+                                    bestCoachPart()
+                                }
+                            }.padding(.horizontal)
+                        }
+                    }.navigationTitle("Home Page")
+                    .navigationBarTitleDisplayMode(.inline)
+                
+            }
         }
     }
 }
@@ -71,6 +81,8 @@ struct HomePageView: View {
 //
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
-    HomePageView()
+     
+            HomePageView()
+        
     }
 }

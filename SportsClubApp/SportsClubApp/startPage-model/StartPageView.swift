@@ -53,7 +53,7 @@ struct StartPageView: View {
                     NavigationLink {
                         LoginPageView()
                     } label: {
-                        Text("Loginn")
+                        Text("Login")
                             
                     }
                     .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))

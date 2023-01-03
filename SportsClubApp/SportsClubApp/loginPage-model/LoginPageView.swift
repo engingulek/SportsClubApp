@@ -54,8 +54,8 @@ struct LoginPageView: View {
 
 struct LoginPageView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        
             LoginPageView()
-        }
+        
     }
 }

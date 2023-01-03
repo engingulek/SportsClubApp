@@ -10,6 +10,11 @@
 		7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4622961BC7F000CCF1F /* HomePageView.swift */; };
 		7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4672961C5C6000CCF1F /* nearBySportsClupPart.swift */; };
 		7D1DC46A2961CAE7000CCF1F /* bestCoachPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */; };
+		7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */; };
+		7D4C9CC3296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CC2296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift */; };
+		7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CC529635DB8005C23A6 /* UIScreen.swift */; };
+		7D4C9CC9296367F8005C23A6 /* GymLocaiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CC8296367F8005C23A6 /* GymLocaiton.swift */; };
+		7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CCA29636EEF005C23A6 /* NearGYMClupMapImage.swift */; };
 		7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */; };
 		7D6EE37B29609C9B00C24D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37A29609C9B00C24D84 /* Assets.xcassets */; };
 		7D6EE37E29609C9B00C24D84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37D29609C9B00C24D84 /* Preview Assets.xcassets */; };
@@ -44,6 +49,11 @@
 		7D1DC4622961BC7F000CCF1F /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		7D1DC4672961C5C6000CCF1F /* nearBySportsClupPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nearBySportsClupPart.swift; sourceTree = "<group>"; };
 		7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestCoachPart.swift; sourceTree = "<group>"; };
+		7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearBySportsClubsView.swift; sourceTree = "<group>"; };
+		7D4C9CC2296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearBySportsClubPartOnToMap.swift; sourceTree = "<group>"; };
+		7D4C9CC529635DB8005C23A6 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		7D4C9CC8296367F8005C23A6 /* GymLocaiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLocaiton.swift; sourceTree = "<group>"; };
+		7D4C9CCA29636EEF005C23A6 /* NearGYMClupMapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearGYMClupMapImage.swift; sourceTree = "<group>"; };
 		7D6EE37329609C9900C24D84 /* SportsClubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsClubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsClubAppApp.swift; sourceTree = "<group>"; };
 		7D6EE37A29609C9B00C24D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +113,33 @@
 			path = homePageViewParts;
 			sourceTree = "<group>";
 		};
+		7D4C9CBE2963437C005C23A6 /* nearBySportsClubs-model */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C9CC1296352A8005C23A6 /* nearBySportsViewPart */,
+				7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */,
+				7D4C9CC8296367F8005C23A6 /* GymLocaiton.swift */,
+			);
+			path = "nearBySportsClubs-model";
+			sourceTree = "<group>";
+		};
+		7D4C9CC1296352A8005C23A6 /* nearBySportsViewPart */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C9CC2296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift */,
+				7D4C9CCA29636EEF005C23A6 /* NearGYMClupMapImage.swift */,
+			);
+			path = nearBySportsViewPart;
+			sourceTree = "<group>";
+		};
+		7D4C9CC429635DAB005C23A6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7D4C9CC529635DB8005C23A6 /* UIScreen.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7D6EE36A29609C9900C24D84 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +163,8 @@
 		7D6EE37529609C9900C24D84 /* SportsClubApp */ = {
 			isa = PBXGroup;
 			children = (
+				7D4C9CC429635DAB005C23A6 /* Extension */,
+				7D4C9CBE2963437C005C23A6 /* nearBySportsClubs-model */,
 				7D6EE3A42960AA7200C24D84 /* Utils */,
 				7D1DC4612961BC66000CCF1F /* homePage-model */,
 				7D6EE3AE2960E0B800C24D84 /* creatPage-model */,
@@ -326,15 +365,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4C9CC3296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift in Sources */,
 				7D6EE3A82960B0AF00C24D84 /* StartPageStyle.swift in Sources */,
 				7D6EE3B02960E0CF00C24D84 /* CreatePageView.swift in Sources */,
+				7D4C9CC9296367F8005C23A6 /* GymLocaiton.swift in Sources */,
 				7D1DC46A2961CAE7000CCF1F /* bestCoachPart.swift in Sources */,
 				7D6EE3A32960A6D500C24D84 /* StartPageView.swift in Sources */,
 				7D6EE3AD2960CE0800C24D84 /* LoginPageStyle.swift in Sources */,
 				7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */,
+				7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */,
 				7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */,
 				7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */,
 				7D6EE3AB2960C79C00C24D84 /* LoginPageView.swift in Sources */,
+				7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */,
+				7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

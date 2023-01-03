@@ -17,7 +17,8 @@ struct nearBySportsClupPart: View {
                     .scaledToFill()
                     .frame(width: 270,height: 200)
                     .cornerRadius(20)
-                
+                LinearGradient(gradient: Gradient(colors: [Color.clear,Color.black]), startPoint: .center, endPoint: .bottom)
+                    .cornerRadius(20)
                 VStack(alignment: .leading) {
                     Text("LifeTime GYM")
                         .font(.system(size: 18,weight: .semibold))
@@ -29,11 +30,5 @@ struct nearBySportsClupPart: View {
                     .padding(.vertical)
             }
         
-    }
-}
-
-struct nearBySportsClupPart_Previews: PreviewProvider {
-    static var previews: some View {
-        nearBySportsClupPart()
     }
 }
