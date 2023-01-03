@@ -54,7 +54,7 @@ struct NearByGymClubsListView: View {
                     }
                 }.padding(.horizontal)
                     .padding(.top)
-                    .id(1)
+                 
             
             }
             

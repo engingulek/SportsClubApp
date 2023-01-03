@@ -63,8 +63,12 @@ struct HomePageView: View {
                             Text("Best Coachs")
                                 .font(.system(size: 17,weight: .semibold))
                             Spacer()
-                            Text("See All")
-                                .font(.system(size: 13,weight: .semibold))
+                            NavigationLink {
+                                CoachAllView()
+                            } label: {
+                                Text("See All")
+                                    .font(.system(size: 13,weight: .semibold))
+                            }.foregroundColor(.black)
                         }.padding(.horizontal)
                         
                         ScrollView(.horizontal,showsIndicators: false) {
