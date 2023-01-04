@@ -11,7 +11,7 @@ import SwiftUI
 struct SportsClubAppApp: App {
     var body: some Scene {
         WindowGroup {
-            StartPageView()
+            HomePageView()
         }
     }
 }

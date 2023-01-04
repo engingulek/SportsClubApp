@@ -14,6 +14,16 @@ struct HomePageView: View {
             ScrollView {
                 
                 VStack(spacing: 10) {
+              
+                        VStack(spacing:5) {
+                            Text("Welcome")
+                                .font(.system(size: 25,weight: .bold))
+                            
+                            Text("Jhon Jean")
+                                .font(.system(size: 20))
+                        }
+                        
+                    
                     HStack {
                         Text("Location")
                         Spacer()
@@ -87,6 +97,40 @@ struct HomePageView: View {
                 
             }.navigationTitle("Home Page")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItemGroup(placement:
+                            .navigation) {
+                                NavigationLink {
+                                    ProfilView()
+                                } label: {
+                                    Image(systemName: "person.crop.circle.fill")
+                                         .font(.system(size: 25))
+                                         .foregroundColor(.black)
+                                }
+                    }
+                    
+                    ToolbarItemGroup(placement:
+                            .primaryAction) {
+                                NavigationLink {
+                                    Text("Message(Home) Page")
+                                } label: {
+                                    ZStack(alignment: .topTrailing) {
+                                        Image(systemName: "location")
+                                             .font(.system(size: 25))
+                                             .foregroundColor(.black)
+                                        Text("1")
+                                            
+                                            .frame(width: 20,height: 20)
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 15))
+                                            .background(.black)
+                                            .clipShape(Circle())
+
+                                    }
+                                   
+                                }
+                    }
+                }
         }
     }
 }

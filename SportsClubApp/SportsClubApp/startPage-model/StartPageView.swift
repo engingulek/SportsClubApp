@@ -39,19 +39,12 @@ struct StartPageView: View {
                         .frame(width: 350)
                         .padding(.horizontal)
                     
-                    
-                    Button("Get Started", action: {
-                        self.showHomePage = true
-                    })
-                    .fullScreenCover(isPresented: $showHomePage, content: {
-                        HomePageView()
-                    })
-                    .buttonStyle(StartPageButtonStyle(foregroundColor: .black, backgroundColor: .white))
-                    
+            
+                
                     
                     
                     NavigationLink {
-                        LoginPageView()
+                      LoginPageView()
                     } label: {
                         Text("Login")
                             
@@ -61,8 +54,8 @@ struct StartPageView: View {
                    
                 }
                 
-            }.navigationTitle("Sports Club")
-        }
+            }
+        }.accentColor(.black)
     }
 }
 

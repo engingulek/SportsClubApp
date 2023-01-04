@@ -11,19 +11,21 @@ struct LoginPageView: View {
     @State private var emailTextField : String = ""
     @State private var passwordTextField : String = ""
     @State private var createPage = false
+    @State private var selected = 0
+
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack(spacing : 25) {
-            Image("loginPageImage")
+           
+                
+            
+            Image("sports person")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 250,height: 250)
+                .frame(width: UIScreen.screenWidth/2,height: UIScreen.screenHeight/3.5)
                 .cornerRadius(20)
-            
-            Text("Login Now")
-                .font(.system(size: 30,weight: .bold))
-            
+
             TextField("Email", text: $emailTextField)
                 .asTextField(textContentType: .emailAddress)
             
@@ -49,13 +51,14 @@ struct LoginPageView: View {
             }
     
         }.padding(.horizontal)
+            
     }
 }
 
-struct LoginPageView_Previews: PreviewProvider {
+struct PersonLoginPageView_Previews: PreviewProvider {
     static var previews: some View {
         
-            LoginPageView()
+    LoginPageView()
         
     }
 }
