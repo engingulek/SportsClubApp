@@ -15,8 +15,9 @@ struct CoachListDesign: View {
                 Image("coach")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: UIScreen.screenWidth/3,height: UIScreen.screenHeight/6)
+                    .frame(width: UIScreen.screenWidth/3.5,height: UIScreen.screenHeight/7.5)
                     .cornerRadius(15)
+                    .padding(.top)
                 VStack(spacing:5) {
                     Text("Amy Amanda")
                         .font(.system(size: 18,weight: .bold))
@@ -38,7 +39,7 @@ struct CoachListDesign: View {
                 .frame(minHeight: 1)
                 .background(.black)
                 .padding(.horizontal)
-                .padding(.vertical)
+                .padding(.vertical,2)
         }
        
       

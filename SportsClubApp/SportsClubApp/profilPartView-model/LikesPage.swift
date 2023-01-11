@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+
+
 struct LikesPage: View {
     
     @State var gymClubs : [GymClub] = [
@@ -22,21 +25,27 @@ struct LikesPage: View {
              .init(id: 1, categoryName: "Fitness")
          ], rating: 3.5)
      ]
-
+    
     var body: some View {
      
         List {
             Section {
                 ForEach(gymClubs) { gymClub in
-                    Text(gymClub.name)
+                    NearByGymClubListDesign()
+                        
+                        .frame(width: UIScreen.screenWidth,height: UIScreen.screenHeight/8)
+                        .padding()
+                    
                 }.onDelete(perform: deleteGymClubLike)
+                
             } header: {
                 Text("Gym Clubs")
             }
             
             Section {
                 ForEach(coachs) { coach in
-                    Text(coach.name)
+                    CoachListDesign()
+                        .frame(width: UIScreen.screenWidth,height: UIScreen.screenHeight/8)
                 }.onDelete(perform: deleteCoachLike)
             } header: {
                 Text("Coach")

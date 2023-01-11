@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CreateCoachView: View {
+   
     var body: some View {
-        Text("Create Coach")
+       Text("Create Coach")
     }
 }
 

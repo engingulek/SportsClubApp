@@ -7,31 +7,30 @@
 
 import SwiftUI
 
-struct ProfilePageList :Hashable,Identifiable {
+struct ProfilePageList :Identifiable {
+    static func == (lhs: ProfilePageList, rhs: ProfilePageList) -> Bool {
+        return lhs.id == rhs.id && lhs.title == rhs.title && lhs.subtitle == rhs.subtitle
+      
+    }
     let id :Int
     let title:String
     let subtitle:String
-
+    let view: AnyView
 }
 
 struct ProfilView: View {
     var profilePageList : [ProfilePageList] = [
-        .init(id:0,title: "Like", subtitle: "See Like"),
-        .init(id:1,title: "Edit Profile", subtitle: "Change profile image and name surname"),
-        .init(id: 2, title: "Change Password", subtitle: "Change account password"),
-        .init(id: 3, title: "Create Gym Clubs", subtitle: "Create a Gym Club advert"),
-        .init(id: 4, title: "Create Coach", subtitle: "Create a Coach advert"),
+        .init(id:0,title: "Like", subtitle: "See Like", view: AnyView(LikesPage())),
+        .init(id:1,title: "Edit Profile", subtitle: "Change profile image and name surname",view: AnyView(EditPageView())),
+        .init(id: 2, title: "Change Password", subtitle: "Change account password",
+             view:AnyView(ChangePassword())),
+        .init(id: 3, title: "My Gym Clubs Advert", subtitle: "Create or view a Gym Club advert",view: AnyView(CreateGymClubsView())),
+        .init(id: 4, title: "My Coach Advert", subtitle: "Create or view a Coach advert",
+             view: AnyView(CreateCoachView()))
         
     ]
     
-    var viewList : [AnyView] = [
-        AnyView(LikesPage()),
-        AnyView( EditPageView()),
-        AnyView(ChangePassword()),
-        AnyView(CreateGymClubsView()),
-        AnyView(CreateCoachView()),
-       
-        ]
+  
     var body: some View {
         List {
                 HStack {
@@ -49,7 +48,7 @@ struct ProfilView: View {
             
             ForEach(profilePageList) { page in
                 NavigationLink {
-                        viewList[page.id]
+                    page.view
                 } label: {
                     VStack(alignment:.leading){
                         Text(page.title)
