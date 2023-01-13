@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct GYMSportInfo : Identifiable , Hashable{
-    let id = UUID().uuidString
-    let imageName : String
-    let name : String
-}
 
 struct ClubDetailsView: View {
     private var gymSportInfo = [

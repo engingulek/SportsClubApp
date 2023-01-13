@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D1041BB29717A0B00D730B6 /* GymSportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1041BA29717A0A00D730B6 /* GymSportInfo.swift */; };
 		7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4622961BC7F000CCF1F /* HomePageView.swift */; };
 		7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4672961C5C6000CCF1F /* nearBySportsClupPart.swift */; };
 		7D1DC46A2961CAE7000CCF1F /* bestCoachPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */; };
 		7D494BD7296F1CA300D2282C /* ChooseMapPinDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D494BD6296F1CA300D2282C /* ChooseMapPinDesign.swift */; };
-		7D494BDA296F613D00D2282C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D494BD9296F613C00D2282C /* Extension.swift */; };
+		7D494BDA296F613D00D2282C /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D494BD9296F613C00D2282C /* ExtensionView.swift */; };
 		7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */; };
 		7D4C9CC3296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CC2296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift */; };
 		7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CC529635DB8005C23A6 /* UIScreen.swift */; };
@@ -67,11 +68,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D1041BA29717A0A00D730B6 /* GymSportInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymSportInfo.swift; sourceTree = "<group>"; };
 		7D1DC4622961BC7F000CCF1F /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		7D1DC4672961C5C6000CCF1F /* nearBySportsClupPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nearBySportsClupPart.swift; sourceTree = "<group>"; };
 		7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestCoachPart.swift; sourceTree = "<group>"; };
 		7D494BD6296F1CA300D2282C /* ChooseMapPinDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMapPinDesign.swift; sourceTree = "<group>"; };
-		7D494BD9296F613C00D2282C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7D494BD9296F613C00D2282C /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearBySportsClubsView.swift; sourceTree = "<group>"; };
 		7D4C9CC2296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearBySportsClubPartOnToMap.swift; sourceTree = "<group>"; };
 		7D4C9CC529635DB8005C23A6 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1041B9297179FB00D730B6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7D1041BA29717A0A00D730B6 /* GymSportInfo.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		7D1DC4612961BC66000CCF1F /* homePage-model */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +177,7 @@
 		7D494BD8296F612B00D2282C /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				7D494BD9296F613C00D2282C /* Extension.swift */,
+				7D494BD9296F613C00D2282C /* ExtensionView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -406,6 +416,7 @@
 		7DD7A4FA2964481F00854466 /* clubDetails-model */ = {
 			isa = PBXGroup;
 			children = (
+				7D1041B9297179FB00D730B6 /* model */,
 				7DD7A4FD29644E2500854466 /* clubDetailPart */,
 				7DD7A4FB2964483D00854466 /* ClubDetailsView.swift */,
 			);
@@ -646,6 +657,7 @@
 			files = (
 				7DD7A50229645EEE00854466 /* CoachDetailView.swift in Sources */,
 				7D4C9CC3296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift in Sources */,
+				7D1041BB29717A0B00D730B6 /* GymSportInfo.swift in Sources */,
 				7D6EE3A82960B0AF00C24D84 /* StartPageStyle.swift in Sources */,
 				7DC2B323296604D600D56FAD /* LikesPage.swift in Sources */,
 				7D6EE3B02960E0CF00C24D84 /* CreatePageView.swift in Sources */,
@@ -670,7 +682,7 @@
 				7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */,
 				7D6EE3AB2960C79C00C24D84 /* LoginPageView.swift in Sources */,
 				7DD7A51C2964BF5300854466 /* CoachListDesign.swift in Sources */,
-				7D494BDA296F613D00D2282C /* Extension.swift in Sources */,
+				7D494BDA296F613D00D2282C /* ExtensionView.swift in Sources */,
 				7D51513C2966EB8200B9EFD7 /* Coach.swift in Sources */,
 				7DD7A5092964AB6400854466 /* NearByGymClubsListView.swift in Sources */,
 				7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */,

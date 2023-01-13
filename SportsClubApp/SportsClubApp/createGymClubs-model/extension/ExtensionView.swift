@@ -8,6 +8,7 @@
 
 import SwiftUI
 import MapKit
+// MARK: -CreateGymClubsView view part extension
 extension  CreateGymClubsView  {
     var createMapView : some View {
         GeometryReader { proxy in
@@ -68,6 +69,50 @@ extension  CreateGymClubsView  {
         return ChoseGymMapLocation(markerType: "selectLocation", latitude: lat - ySpan, longitude: lon + xSpan)
           
       }
+}
+
+// MARK: -DatePicker
+extension  CreateGymClubsView {
+    var datePickerOpen : some View {
+            DatePicker("Open Time",selection: $openTime,displayedComponents: .hourAndMinute)
+    }
+    
+    var datePickerClose : some View {
+        DatePicker("Close Time",selection: $closeTime,displayedComponents: .hourAndMinute)
+    }
+}
+
+
+
+/*extension CreateGymClubsView {
+    var typeGymClubListView : some View {
+        VStack {
+            List(typeGymClubList, selection: $selectedTypeGymClubList) { contact in
+                Text(contact.name)
+            }
+            Text("\(selectedTypeGymClubList.count) selections")
+        }
+    }
+}*/
+
+extension CreateGymClubsView {
+    // test
+    var testView : some View {
+        NavigationView {
+                  VStack {
+                      Text("\(multiTypeGymClubSelection.count) selections")
+                      List(typeGymClubList, selection: $multiTypeGymClubSelection) { type in
+                          Text(type.name)
+                             
+                      }
+                      .environment(\.editMode, $editMode)
+                  }
+                  .navigationTitle("Select gym club types")
+                  .navigationBarTitleDisplayMode(.inline)
+                 
+              }
+    }
+    
 }
 
 extension CLLocation {
