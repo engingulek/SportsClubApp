@@ -8,8 +8,9 @@
 
 import SwiftUI
 import MapKit
-// MARK: -CreateGymClubsView view part extension
+
 extension  CreateGymClubsView  {
+    // MARK: -CreateGymClubsView view part extension
     var createMapView : some View {
         GeometryReader { proxy in
             Map(coordinateRegion: $mapRegion, annotationItems: locations )
@@ -52,6 +53,33 @@ extension  CreateGymClubsView  {
         }
      }
     
+    // MARK: -DatePicker
+    var datePickerOpen : some View {
+            DatePicker("Open Time",selection: $openTime,displayedComponents: .hourAndMinute)
+    }
+    
+    var datePickerClose : some View {
+        DatePicker("Close Time",selection: $closeTime,displayedComponents: .hourAndMinute)
+    }
+    
+    //MARK: -Type Gym Club List
+    var typeGymClubListView : some View {
+        NavigationView {
+                  VStack {
+                      Text("\(multiTypeGymClubSelection.count) selections")
+                      List(typeGymClubList, selection: $multiTypeGymClubSelection) { type in
+                          Text(type.name)
+                      }
+                      .environment(\.editMode, $editMode)
+                  }
+                  .navigationTitle("Select gym club types")
+                  .navigationBarTitleDisplayMode(.inline)
+                 
+              }
+    }
+    
+    // MARK: - Pay Period
+   
     private    func pressTapLocation(at point: CGPoint, for mapSize: CGSize) -> ChoseGymMapLocation {
           let lat = mapRegion.center.latitude
           let lon = mapRegion.center.longitude
@@ -71,49 +99,9 @@ extension  CreateGymClubsView  {
       }
 }
 
-// MARK: -DatePicker
-extension  CreateGymClubsView {
-    var datePickerOpen : some View {
-            DatePicker("Open Time",selection: $openTime,displayedComponents: .hourAndMinute)
-    }
-    
-    var datePickerClose : some View {
-        DatePicker("Close Time",selection: $closeTime,displayedComponents: .hourAndMinute)
-    }
-}
 
 
 
-/*extension CreateGymClubsView {
-    var typeGymClubListView : some View {
-        VStack {
-            List(typeGymClubList, selection: $selectedTypeGymClubList) { contact in
-                Text(contact.name)
-            }
-            Text("\(selectedTypeGymClubList.count) selections")
-        }
-    }
-}*/
-
-extension CreateGymClubsView {
-    // test
-    var testView : some View {
-        NavigationView {
-                  VStack {
-                      Text("\(multiTypeGymClubSelection.count) selections")
-                      List(typeGymClubList, selection: $multiTypeGymClubSelection) { type in
-                          Text(type.name)
-                             
-                      }
-                      .environment(\.editMode, $editMode)
-                  }
-                  .navigationTitle("Select gym club types")
-                  .navigationBarTitleDisplayMode(.inline)
-                 
-              }
-    }
-    
-}
 
 extension CLLocation {
     func fetchCityAndCountry(completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {

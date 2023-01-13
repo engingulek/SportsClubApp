@@ -7,12 +7,12 @@
 
 import SwiftUI
 import MapKit
+import Combine
+enum Pay: String, CaseIterable, Identifiable {
+    case year, month  ,day
 
-struct Contact: Identifiable {
-    let id = UUID()
-    let name: String
+    var id: Self { self }
 }
-
 struct CreateGymClubsView: View {
     @State private var gymName:String = ""
     @State private var city:String = ""
@@ -33,6 +33,16 @@ struct CreateGymClubsView: View {
         .init(imageName: "basket", name: "Spor Shop"),
      
     ]
+    @State var gymClubDescription : String = ""
+    @State var textFieldGymClubNameLimit = 20
+     @State var textFieldGymDescriptionLimit = 275
+     @State var textFieldGymClubNameLimitDecrase = 0
+     @State var textFieldDescriptionDecrase = 0
+     @State var gymNameStatusCount = 0
+     @State var gymDescriptionStatusCount = 0
+    @State var pay : String = ""
+    @State var selectedPayPerion : Pay = .year
+    var payPeriod = ["Day,Month,Year"]
     
     
     init() {
@@ -50,9 +60,6 @@ struct CreateGymClubsView: View {
     var body: some View {
         
         ScrollView {
-          
-            
-            
             VStack {
                 
                 Image("selectImage")
@@ -62,12 +69,27 @@ struct CreateGymClubsView: View {
                      .frame(width: UIScreen.screenWidth / 2)
                      .padding()
                  
-                 SecureField("Gym Name", text: $gymName)
-                     .asTextField(textContentType: .name)
-                
+                VStack {
+                    TextField("Gym Name", text: $gymName)
+                        .asTextField(textContentType: .name)
+                        .onChange(of: gymName) { newValue in
+                            limitGymNameTextField(textFieldGymClubNameLimit, newValue)
+                        }
+                    HStack {
+                        textFieldGymClubNameLimitDecrase < textFieldGymClubNameLimit ? nil : Text("Character Limit")
+                            .foregroundColor(.red)
+                        Spacer()
+                        Text("\(textFieldGymClubNameLimitDecrase)/\(textFieldGymClubNameLimit)")
+                             .foregroundColor(
+                                 textFieldGymClubNameLimitDecrase < textFieldGymClubNameLimit ? .black : .red
+                             )
+                    }.padding(.horizontal)
+                  
+                }
+            
                 Text("Select Gym Location")
                     .font(.system(size: 20))
-                
+
                 ZStack(alignment:.topLeading) {
                     createMapView.frame(width: UIScreen.screenWidth,height: UIScreen.screenHeight / 2.5)
                     
@@ -99,19 +121,60 @@ struct CreateGymClubsView: View {
                   
                 }.padding([.horizontal,.vertical])
                 
-                /*typeGymClubListView
-                    .frame(width:UIScreen.screenWidth,height: UIScreen.screenHeight/3)
-                    .background(Color.white)*/
-                
-                testView
+                typeGymClubListView
                     .frame(width:UIScreen.screenWidth,height: UIScreen.screenHeight/3)
                 
-                Button("Test") {
-                    print(multiTypeGymClubSelection)
-                }
+                VStack {
+                    Text("Give information about the gym club")
+                        .padding(.top)
+                        .font(.system(size: 20,weight: .bold))
+                    TextField("Gym Description", text: $gymClubDescription ,axis: .vertical)
+                        .padding()
+                        .lineLimit(6, reservesSpace: true)
+                        .textFieldStyle(.plain)
+                        .border(.black)
+                        .padding()
+                        .onChange(of: gymClubDescription) { newValue in
+                            limitGymDescriptionTextField(textFieldGymDescriptionLimit, newValue)
+                        }
                     
-                            
+                    HStack {
+                        textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? nil : Text("Character Limit")
+                            .foregroundColor(.red)
+                        Spacer()
+                        Text("\(textFieldDescriptionDecrase)/\(textFieldGymDescriptionLimit)")
+                            .foregroundColor(
+                                textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? .black
+                                : .red
+                            )
+                    }.padding(.horizontal)
+                  
+                }
+                VStack {
+                    Text("Enter the price and period type")
+                    .padding(.top)
+                    .font(.system(size: 20,weight: .bold))
+                    HStack{
+                        TextField("Pay", text: $pay)
+                            .padding([.vertical,.horizontal],10)
+                            .keyboardType(.numberPad)
+                            .border(Color.black.opacity(0.2))
                         
+                            Picker("Pay Period", selection: $selectedPayPerion) {
+                                Text("Year").tag(Pay.year)
+                                Text("Month").tag(Pay.month)
+                                Text("Day").tag(Pay.day)
+                            }
+                    }
+                }.padding(.horizontal)
+                
+            
+                Button("Save") {
+                    
+                }
+                .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
+                .padding(.vertical)
+              
                 
             }.padding(.vertical)
         }.navigationTitle("Create Gym Club")
@@ -125,6 +188,45 @@ struct CreateGymClubsView: View {
             guard let city = city, let country = country, error == nil else { return }
             self.city = city
             self.country = country
+        }
+    }
+    
+    func limitGymNameTextField(_ limit : Int, _ value : String) {
+       /* textFieldGymClubNameLimitDecrase = textFieldGymClubNameLimitDecrase + 1
+        print(textFieldGymClubNameLimitDecrase)*/
+        print("On Change \(value)")
+        
+        if gymNameStatusCount < value.count{
+            gymNameStatusCount = value.count
+            textFieldGymClubNameLimitDecrase += 1
+        }else if value.count == 20 {
+            gymNameStatusCount = value.count
+        }
+        else{
+            gymNameStatusCount = value.count
+            textFieldGymClubNameLimitDecrase -= 1
+        }
+        if value.count > limit {
+            gymName = String(value.prefix(limit))
+            textFieldGymClubNameLimitDecrase = 20
+        }
+    }
+    
+    func limitGymDescriptionTextField(_ limit : Int, _ value : String) {
+        
+        if gymDescriptionStatusCount < value.count{
+            gymDescriptionStatusCount = value.count
+            textFieldDescriptionDecrase += 1
+        }else if value.count == 20 {
+            gymDescriptionStatusCount = value.count
+        }
+        else{
+            gymDescriptionStatusCount = value.count
+            textFieldDescriptionDecrase -= 1
+        }
+        if value.count > limit {
+            gymName = String(value.prefix(limit))
+            textFieldDescriptionDecrase = 20
         }
     }
 }
