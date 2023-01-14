@@ -135,14 +135,15 @@ struct CreateGymClubsView: View {
                         .border(.black)
                         .padding()
                         .onChange(of: gymClubDescription) { newValue in
-                            limitGymDescriptionTextField(textFieldGymDescriptionLimit, newValue)
+                           limitGymDescriptionTextField(limit: textFieldGymDescriptionLimit, value: newValue)
+                           
                         }
                     
                     HStack {
                         textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? nil : Text("Character Limit")
                             .foregroundColor(.red)
                         Spacer()
-                        Text("\(textFieldDescriptionDecrase)/\(textFieldGymDescriptionLimit)")
+                        Text("\(textFieldDescriptionDecrase)/275")
                             .foregroundColor(
                                 textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? .black
                                 : .red
@@ -212,23 +213,23 @@ struct CreateGymClubsView: View {
         }
     }
     
-    func limitGymDescriptionTextField(_ limit : Int, _ value : String) {
-        
-        if gymDescriptionStatusCount < value.count{
+    func limitGymDescriptionTextField(limit: Int, value :String){
+        if gymDescriptionStatusCount < value.count {
             gymDescriptionStatusCount = value.count
             textFieldDescriptionDecrase += 1
-        }else if value.count == 20 {
+        }else if value.count == 275 {
             gymDescriptionStatusCount = value.count
-        }
-        else{
+        }else {
             gymDescriptionStatusCount = value.count
             textFieldDescriptionDecrase -= 1
         }
         if value.count > limit {
-            gymName = String(value.prefix(limit))
-            textFieldDescriptionDecrase = 20
+            gymClubDescription = String(value.prefix(limit))
+            textFieldDescriptionDecrase = 275
         }
     }
+    
+  
 }
 struct CreateGymClubsView_Previews: PreviewProvider {
     static var previews: some View {
