@@ -24,9 +24,12 @@ struct ProfilView: View {
         .init(id:1,title: "Edit Profile", subtitle: "Change profile image and name surname",view: AnyView(EditPageView())),
         .init(id: 2, title: "Change Password", subtitle: "Change account password",
              view:AnyView(ChangePassword())),
-        .init(id: 3, title: "My Gym Clubs Advert", subtitle: "Create or view a Gym Club advert",view: AnyView(CreateGymClubsView())),
-        .init(id: 4, title: "My Coach Advert", subtitle: "Create or view a Coach advert",
-             view: AnyView(CreateCoachView()))
+        .init(id: 3, title: "Create Gym Club advert", subtitle: "Create an ad for your gym",view: AnyView(CreateGymClubsView())),
+        .init(id: 4, title: "Create Coach advert", subtitle: "Create an ad for your education",
+             view: AnyView(CreateCoachView())),
+        .init(id: 5, title: "View Gym Club Ad", subtitle: "Update view gym club posting", view: AnyView(UpdateViewGymClub())),
+        .init(id: 6, title: "View Coach Ad", subtitle: "Update view coach posting", view: AnyView(UpdateViewCoachAd()))
+    
         
     ]
     
@@ -64,75 +67,8 @@ struct ProfilView: View {
                 .foregroundColor(.blue)
             Text("Sing Out")
                 .foregroundColor(.red)
-
-            
-            
-            
-            /*NavigationLink {
-                Text("Likes Page")
-            } label: {
-                VStack(alignment:.leading){
-                    Text("Likes")
-                        .foregroundColor(.black)
-                    Text("See Likes")
-                        .font(.system(size: 15))
-                        .foregroundColor(.black.opacity(0.6))
-                }
-            }
-            
-            NavigationLink {
-                Text("Likes Page")
-            } label: {
-                Text("Edit Profile")
-                    
-            }*/
-           
-            
-          
-            
         }.scrollContentBackground(.hidden)
             .navigationTitle("Profil")
-           
-        /*VStack{
-            
-            HStack {
-                
-            }
-             
-            List {
-                Text("dsa")
-            }.scrollContentBackground(.hidden)
-            /*VStack {
-                
-                
-              
-                
-                NavigationLink {
-                    Text("Likes Page")
-                } label: {
-                    Text("Change Password")
-                }
-                Spacer()
-                
-               
-                NavigationLink {
-                    Text("Likes Page")
-                } label: {
-                    Text("Delete Profile")
-                }
-                NavigationLink {
-                    Text("Likes Page")
-                } label: {
-                    Text("Sing Out")
-                }
-               
-            } .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-                .padding()*/
-            
-            Spacer()
-        }.navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)*/
-          
     }
 }
 

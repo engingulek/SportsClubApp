@@ -71,6 +71,7 @@ extension  CreateGymClubsView  {
                           Text(type.name)
                       }
                       .environment(\.editMode, $editMode)
+                      
                   }
                   .navigationTitle("Select gym club types")
                   .navigationBarTitleDisplayMode(.inline)

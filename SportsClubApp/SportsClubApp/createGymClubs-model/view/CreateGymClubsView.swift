@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 import Combine
 enum Pay: String, CaseIterable, Identifiable {
-    case year, month  ,day
+    case year = "Year", month = "Month"  ,day = "Day"
 
     var id: Self { self }
 }
@@ -41,7 +41,7 @@ struct CreateGymClubsView: View {
      @State var gymNameStatusCount = 0
      @State var gymDescriptionStatusCount = 0
     @State var pay : String = ""
-    @State var selectedPayPerion : Pay = .year
+    @State var selectedPayPerion : String = "Year"
     var payPeriod = ["Day,Month,Year"]
     
     
@@ -162,9 +162,9 @@ struct CreateGymClubsView: View {
                             .border(Color.black.opacity(0.2))
                         
                             Picker("Pay Period", selection: $selectedPayPerion) {
-                                Text("Year").tag(Pay.year)
-                                Text("Month").tag(Pay.month)
-                                Text("Day").tag(Pay.day)
+                                Text("Year").tag(Pay.year.rawValue)
+                                Text("Month").tag(Pay.month.rawValue)
+                                Text("Day").tag(Pay.day.rawValue)
                             }
                     }
                 }.padding(.horizontal)
