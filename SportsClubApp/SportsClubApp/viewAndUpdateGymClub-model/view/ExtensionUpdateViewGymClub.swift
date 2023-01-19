@@ -83,8 +83,23 @@ extension UpdateViewGymClub {
     }
     
     var changeGymNameTextField  : some View {
-        TextField("Gym Name", text: $changeGymName)
-            .asTextField(textContentType: .name)
+        VStack {
+            TextField("Gym Name", text: $changeGymName)
+                .asTextField(textContentType: .name)
+                .onChange(of: changeGymName) { newValue in
+                    limitGymNameTextField(textFieldGymClubNameLimit, newValue)
+                }
+            HStack {
+                textFieldGymClubNameLimitDecrase < textFieldGymClubNameLimit ? nil : Text("Character Limit")
+                    .foregroundColor(.red)
+                Spacer()
+                Text("\(textFieldGymClubNameLimitDecrase)/\(textFieldGymClubNameLimit)")
+                     .foregroundColor(
+                         textFieldGymClubNameLimitDecrase < textFieldGymClubNameLimit ? .black : .red
+                     )
+            }.padding(.horizontal)
+        }
+        
     }
     
     var changeOpenCloseTimeDatePicker : some View {
@@ -180,6 +195,59 @@ extension UpdateViewGymClub {
                 .border(.black)
                 .padding()
                 .disabled(updateState ? false : true)
+             .onChange(of: gymClubDescription) { newValue in
+                limitGymDescriptionTextField(limit: textFieldGymDescriptionLimit, value: newValue)
+                
+            }
+            updateState ?    HStack {
+                textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? nil : Text("Character Limit")
+                    .foregroundColor(.red)
+                Spacer()
+                Text("\(textFieldDescriptionDecrase)/275")
+                    .foregroundColor(
+                        textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? .black
+                        : .red
+                    )
+            }.padding(.horizontal) : nil
+        }
+    }
+}
+// MARK: -Functions
+extension UpdateViewGymClub {
+    func limitGymNameTextField(_ limit : Int, _ value : String) {
+       /* textFieldGymClubNameLimitDecrase = textFieldGymClubNameLimitDecrase + 1
+        print(textFieldGymClubNameLimitDecrase)*/
+        print("On Change \(value)")
+        
+        if gymNameStatusCount < value.count{
+            gymNameStatusCount = value.count
+            textFieldGymClubNameLimitDecrase += 1
+        }else if value.count == 20 {
+            gymNameStatusCount = value.count
+        }
+        else{
+            gymNameStatusCount = value.count
+            textFieldGymClubNameLimitDecrase -= 1
+        }
+        if value.count > limit {
+            changeGymName = String(value.prefix(limit))
+            textFieldGymClubNameLimitDecrase = 20
+        }
+    }
+    
+    func limitGymDescriptionTextField(limit: Int, value :String){
+        if gymDescriptionStatusCount < value.count {
+            gymDescriptionStatusCount = value.count
+            textFieldDescriptionDecrase += 1
+        }else if value.count == 275 {
+            gymDescriptionStatusCount = value.count
+        }else {
+            gymDescriptionStatusCount = value.count
+            textFieldDescriptionDecrase -= 1
+        }
+        if value.count > limit {
+            gymClubDescription = String(value.prefix(limit))
+            textFieldDescriptionDecrase = 275
         }
     }
 }

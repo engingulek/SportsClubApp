@@ -7,7 +7,7 @@
 
 import SwiftUI
 enum CoachPayPeriod : String,CaseIterable,Identifiable {
-    case hoursly,weekly,monthly
+    case hoursly = "Hoursly", weekly = "Weekly" ,monthly = "Monthly"
     var id:Self {self}
 }
 

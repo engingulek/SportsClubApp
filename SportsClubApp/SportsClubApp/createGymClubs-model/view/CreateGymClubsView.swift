@@ -90,7 +90,12 @@ struct CreateGymClubsView: View {
                 Text("Select Gym Location")
                     .font(.system(size: 20))
 
-                ZStack(alignment:.topLeading) {
+                
+                
+                // City and  country json daya to be added here
+                
+                
+               /* ZStack(alignment:.topLeading) {
                     createMapView.frame(width: UIScreen.screenWidth,height: UIScreen.screenHeight / 2.5)
                     
                     if cityAndCountryVisible {
@@ -111,7 +116,7 @@ struct CreateGymClubsView: View {
                         }.padding([.vertical,.horizontal])
                             .foregroundColor(.black)
                     }
-                }
+                }*/
               
                 VStack {
                     Text("Select open and close time")

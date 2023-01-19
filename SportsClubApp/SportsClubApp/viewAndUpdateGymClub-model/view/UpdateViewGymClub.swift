@@ -25,6 +25,13 @@ struct UpdateViewGymClub: View {
     @State var pay : String = "$135"
     @State var selectedPayPerion : String = "Year"
     
+    @State var textFieldGymClubNameLimit = 20
+     @State var textFieldGymDescriptionLimit = 275
+     @State var textFieldGymClubNameLimitDecrase = 0
+     @State var textFieldDescriptionDecrase = 275
+     @State var gymNameStatusCount = 0
+     @State var gymDescriptionStatusCount = 275
+    
     init() {
         self._mapRegion = State(initialValue: MKCoordinateRegion(center: .init(latitude: 40.722849, longitude: -73.893456), span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)))
     }

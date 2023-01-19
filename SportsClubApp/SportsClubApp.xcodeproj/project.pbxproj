@@ -42,6 +42,7 @@
 		7DC2B329296608F600D56FAD /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2B328296608F600D56FAD /* ChangePassword.swift */; };
 		7DC2B32C29660B6A00D56FAD /* CreateGymClubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2B32B29660B6A00D56FAD /* CreateGymClubsView.swift */; };
 		7DC2B32F29660B8F00D56FAD /* CreateCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2B32E29660B8F00D56FAD /* CreateCoachView.swift */; };
+		7DCE17D12979724E00E72294 /* ExtensionUpdateCoach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCE17D02979724E00E72294 /* ExtensionUpdateCoach.swift */; };
 		7DD7A4FC2964483D00854466 /* ClubDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A4FB2964483D00854466 /* ClubDetailsView.swift */; };
 		7DD7A4FF29644E6100854466 /* GymImageAndNameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A4FE29644E6100854466 /* GymImageAndNameInfo.swift */; };
 		7DD7A50229645EEE00854466 /* CoachDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7A50129645EEE00854466 /* CoachDetailView.swift */; };
@@ -110,6 +111,7 @@
 		7DC2B328296608F600D56FAD /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		7DC2B32B29660B6A00D56FAD /* CreateGymClubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGymClubsView.swift; sourceTree = "<group>"; };
 		7DC2B32E29660B8F00D56FAD /* CreateCoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCoachView.swift; sourceTree = "<group>"; };
+		7DCE17D02979724E00E72294 /* ExtensionUpdateCoach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUpdateCoach.swift; sourceTree = "<group>"; };
 		7DD7A4FB2964483D00854466 /* ClubDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailsView.swift; sourceTree = "<group>"; };
 		7DD7A4FE29644E6100854466 /* GymImageAndNameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymImageAndNameInfo.swift; sourceTree = "<group>"; };
 		7DD7A50129645EEE00854466 /* CoachDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachDetailView.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		7D30B4C629741F5D00AF244D /* view */ = {
 			isa = PBXGroup;
 			children = (
+				7DCE17D22979725500E72294 /* extension */,
 				7D30B4C72974206E00AF244D /* UpdateViewCoachAd.swift */,
 			);
 			path = view;
@@ -481,6 +484,14 @@
 			path = "createCoach-model";
 			sourceTree = "<group>";
 		};
+		7DCE17D22979725500E72294 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				7DCE17D02979724E00E72294 /* ExtensionUpdateCoach.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		7DD7A4FA2964481F00854466 /* clubDetails-model */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DCE17D12979724E00E72294 /* ExtensionUpdateCoach.swift in Sources */,
 				7DD7A50229645EEE00854466 /* CoachDetailView.swift in Sources */,
 				7D4C9CC3296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift in Sources */,
 				7D1041BB29717A0B00D730B6 /* GymSportInfo.swift in Sources */,
