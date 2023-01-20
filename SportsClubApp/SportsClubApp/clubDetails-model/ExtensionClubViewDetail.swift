@@ -97,7 +97,7 @@ extension ClubDetailsView {
         
         VStack {
             
-            TextField("Gym Description", text: $commentTextField,axis: .vertical)
+            TextField("Comment", text: $commentTextField,axis: .vertical)
                 .font(.system(size: 15))
                 .padding()
                 .lineLimit(6, reservesSpace: true)
@@ -105,7 +105,7 @@ extension ClubDetailsView {
                 .border(.black)
                 .padding()
              .onChange(of: commentTextField) { newValue in
-                limitGymDescriptionTextField(limit: textFieldCommentLimit, value: newValue)
+                limitCommentTextField(limit: textFieldCommentLimit, value: newValue)
                 
             }
             HStack {
@@ -119,7 +119,7 @@ extension ClubDetailsView {
 
 // MARK: -Function
 extension ClubDetailsView {
-    func limitGymDescriptionTextField(limit: Int, value :String){
+    func limitCommentTextField(limit: Int, value :String){
         if commentStatusCount < value.count {
             commentStatusCount = value.count
             textFieldCommentDecrase += 1

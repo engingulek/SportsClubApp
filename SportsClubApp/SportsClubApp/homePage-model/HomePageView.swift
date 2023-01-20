@@ -112,7 +112,7 @@ struct HomePageView: View {
                     ToolbarItemGroup(placement:
                             .primaryAction) {
                                 NavigationLink {
-                                    Text("Message(Home) Page")
+                                    MessageHomePageView()
                                 } label: {
                                     ZStack(alignment: .topTrailing) {
                                         Image(systemName: "location")

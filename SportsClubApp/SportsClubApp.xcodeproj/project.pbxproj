@@ -18,6 +18,9 @@
 		7D30B4CA2974787400AF244D /* ExtensionUpdateViewGymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */; };
 		7D4364BA2972E0A4002298B1 /* ExtensionCreateCoachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4364B92972E0A4002298B1 /* ExtensionCreateCoachView.swift */; };
 		7D483BB7297AD6320003ECF8 /* ExtensionClubViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D483BB6297AD6320003ECF8 /* ExtensionClubViewDetail.swift */; };
+		7D483BB9297B1AD10003ECF8 /* ExtensionCoachDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D483BB8297B1AD00003ECF8 /* ExtensionCoachDetail.swift */; };
+		7D483BBE297B240A0003ECF8 /* MessageHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D483BBD297B240A0003ECF8 /* MessageHomePageView.swift */; };
+		7D483BC0297B247D0003ECF8 /* ExtensionMessageHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D483BBF297B247D0003ECF8 /* ExtensionMessageHomePage.swift */; };
 		7D494BD7296F1CA300D2282C /* ChooseMapPinDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D494BD6296F1CA300D2282C /* ChooseMapPinDesign.swift */; };
 		7D494BDA296F613D00D2282C /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D494BD9296F613C00D2282C /* ExtensionView.swift */; };
 		7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */; };
@@ -83,6 +86,9 @@
 		7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUpdateViewGymClub.swift; sourceTree = "<group>"; };
 		7D4364B92972E0A4002298B1 /* ExtensionCreateCoachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCreateCoachView.swift; sourceTree = "<group>"; };
 		7D483BB6297AD6320003ECF8 /* ExtensionClubViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionClubViewDetail.swift; sourceTree = "<group>"; };
+		7D483BB8297B1AD00003ECF8 /* ExtensionCoachDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCoachDetail.swift; sourceTree = "<group>"; };
+		7D483BBD297B240A0003ECF8 /* MessageHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHomePageView.swift; sourceTree = "<group>"; };
+		7D483BBF297B247D0003ECF8 /* ExtensionMessageHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMessageHomePage.swift; sourceTree = "<group>"; };
 		7D494BD6296F1CA300D2282C /* ChooseMapPinDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMapPinDesign.swift; sourceTree = "<group>"; };
 		7D494BD9296F613C00D2282C /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 		7D4C9CBF296343B3005C23A6 /* NearBySportsClubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearBySportsClubsView.swift; sourceTree = "<group>"; };
@@ -231,6 +237,31 @@
 			path = extension;
 			sourceTree = "<group>";
 		};
+		7D483BBA297B23E10003ECF8 /* messageHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				7D483BBB297B23F30003ECF8 /* view */,
+			);
+			path = messageHomePage;
+			sourceTree = "<group>";
+		};
+		7D483BBB297B23F30003ECF8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7D483BBC297B23FA0003ECF8 /* extension */,
+				7D483BBD297B240A0003ECF8 /* MessageHomePageView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		7D483BBC297B23FA0003ECF8 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				7D483BBF297B247D0003ECF8 /* ExtensionMessageHomePage.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		7D494BD1296F193500D2282C /* view */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +346,7 @@
 			children = (
 				7D4C9CC429635DAB005C23A6 /* Extension */,
 				7D6EE3A42960AA7200C24D84 /* Utils */,
+				7D483BBA297B23E10003ECF8 /* messageHomePage */,
 				7D30B4C529741F1A00AF244D /* viewAndUpdateCoach-model */,
 				7D30B4C129741D3B00AF244D /* viewAndUpdateGymClub-model */,
 				7DC2B32D29660B7000D56FAD /* createCoach-model */,
@@ -511,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				7DD7A50129645EEE00854466 /* CoachDetailView.swift */,
+				7D483BB8297B1AD00003ECF8 /* ExtensionCoachDetail.swift */,
 			);
 			path = "coachDetail-model";
 			sourceTree = "<group>";
@@ -732,6 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DCE17D12979724E00E72294 /* ExtensionUpdateCoach.swift in Sources */,
+				7D483BC0297B247D0003ECF8 /* ExtensionMessageHomePage.swift in Sources */,
 				7DD7A50229645EEE00854466 /* CoachDetailView.swift in Sources */,
 				7D4C9CC3296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift in Sources */,
 				7D1041BB29717A0B00D730B6 /* GymSportInfo.swift in Sources */,
@@ -743,6 +777,7 @@
 				7D483BB7297AD6320003ECF8 /* ExtensionClubViewDetail.swift in Sources */,
 				7DD7A50D2964B05F00854466 /* NearByGymClubListDesign.swift in Sources */,
 				7D4364BA2972E0A4002298B1 /* ExtensionCreateCoachView.swift in Sources */,
+				7D483BB9297B1AD10003ECF8 /* ExtensionCoachDetail.swift in Sources */,
 				7DD7A4FF29644E6100854466 /* GymImageAndNameInfo.swift in Sources */,
 				7D1DC46A2961CAE7000CCF1F /* bestCoachPart.swift in Sources */,
 				7D6EE3A32960A6D500C24D84 /* StartPageView.swift in Sources */,
@@ -766,6 +801,7 @@
 				7DD7A5092964AB6400854466 /* NearByGymClubsListView.swift in Sources */,
 				7D1AA8572972EF17006C334E /* CoachTechType.swift in Sources */,
 				7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */,
+				7D483BBE297B240A0003ECF8 /* MessageHomePageView.swift in Sources */,
 				7D5151392966EABE00B9EFD7 /* GymClub.swift in Sources */,
 				7DC2B32C29660B6A00D56FAD /* CreateGymClubsView.swift in Sources */,
 				7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */,

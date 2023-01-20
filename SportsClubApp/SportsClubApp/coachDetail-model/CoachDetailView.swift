@@ -8,84 +8,37 @@
 import SwiftUI
 
 struct CoachDetailView: View {
+    @State  var commentViewState  = false
+    @State var commentTextField = ""
+    
+     @State var textFieldCommentLimit = 275
+     
+     @State var textFieldCommentDecrase = 0
+     
+     @State var commentStatusCount = 0
     var body: some View {
-        ScrollView {
-            VStack(spacing:5) {
-                ZStack(alignment : .bottomTrailing) {
-                    
-                    Image("coach")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: UIScreen.screenHeight / 4)
-                        .clipShape(Circle())
-                    
-                    Image(systemName: "heart")
-                        .foregroundColor(.red)
-                        .clipShape(Circle())
-                        .onTapGesture {
-                            print("Remove Like Lisr")
-                        }
-                }
-                
-                Text("Amy Amanda")
-                Text("Yoga")
-                HStack {
-                    Image(systemName: "mappin")
-                    Text("NYC,USA")
-                }.font(.system(size: 18,weight: .semibold))
-                
-                Divider()
-                    .frame(minHeight: 1)
-                    .background(.black)
-                    .padding(.horizontal)
-                    .padding(.vertical)
-                HStack {
-                    HStack {
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.orange)
-                        Text("3.5/5")
-                    }.frame(width: 80,height: 30)
-                        .font(.system(size: 14))
-                   
-                    HStack {
-                        Image(systemName: "dollarsign.circle.fill")
-                            .foregroundColor(.orange)
-                        Text("$50 per hours")
-                    }.frame(height: 30)
-                        .font(.system(size: 14))
-                }
-                Divider()
-                    .frame(minHeight: 1)
-                    .background(.black)
-                    .padding(.horizontal)
-                    .padding(.vertical)
-             
-                
-                      Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five .")
-                          .font(.system(size: 15,weight: .light))
-                          .padding(.horizontal)
-          
-                      NavigationLink {
-                          Text("Message Page")
-                      } label: {
-                          VStack{
-                              Text("Click for send message")
-                          }
-                      }
-                      .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-                      .padding()
-                
-                VStack(spacing:15) {
-                    Text("Reviews")
-                        .font(.system(size: 20,weight: .semibold))
-                    ForEach(0..<4) { _ in
-                        CommentDesign()
-                    }
-                    
-                }
-            }
-        }.navigationTitle("Coach Detail")
-            .navigationBarTitleDisplayMode(.inline)
+        
+        ZStack {
+            ScrollView {
+               viewDetail
+            }.navigationTitle("Coach Detail")
+                .navigationBarTitleDisplayMode(.inline)
+            
+            commentViewState ?
+            LinearGradient(gradient:
+                            Gradient(colors:
+                                        [Color.black.opacity(0.2),
+                                         Color.black.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
+            .edgesIgnoringSafeArea(.all): nil
+           commentViewState ?
+            commentViewDesign
+            : nil
+        }
+        
+     
+     
+        
+   
     }
 }
 
