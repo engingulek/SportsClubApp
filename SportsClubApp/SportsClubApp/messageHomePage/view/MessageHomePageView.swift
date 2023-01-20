@@ -13,7 +13,7 @@ struct MessageHomePageView: View {
             VStack {
                 ForEach(0..<5) { _ in
                     NavigationLink {
-                        Text("Message Detail")
+                        ChatView()
                     } label: {
                         incomingMessageHP
                             .foregroundColor(.black)
