@@ -19,16 +19,18 @@ struct ProfilePageList :Identifiable {
 }
 
 struct ProfilView: View {
+    @State private var presentAlert = false
+    @State private var changeNameSurnameState = false
+    @State private var changeNameSurname  = ""
     var profilePageList : [ProfilePageList] = [
-        .init(id:0,title: "Like", subtitle: "See Like", view: AnyView(LikesPage())),
-        .init(id:1,title: "Edit Profile", subtitle: "Change profile image and name surname",view: AnyView(EditPageView())),
-        .init(id: 2, title: "Change Password", subtitle: "Change account password",
-             view:AnyView(ChangePassword())),
-        .init(id: 3, title: "Create Gym Club advert", subtitle: "Create an ad for your gym",view: AnyView(CreateGymClubsView())),
-        .init(id: 4, title: "Create Coach advert", subtitle: "Create an ad for your education",
+        .init(id:1,title: "Like", subtitle: "See Like", view: AnyView(LikesPage())),
+        
+        
+        .init(id: 2, title: "Create Gym Club advert", subtitle: "Create an ad for your gym",view: AnyView(CreateGymClubsView())),
+        .init(id: 3, title: "Create Coach advert", subtitle: "Create an ad for your education",
              view: AnyView(CreateCoachView())),
-        .init(id: 5, title: "View Gym Club Ad", subtitle: "Update view gym club posting", view: AnyView(UpdateViewGymClub())),
-        .init(id: 6, title: "View Coach Ad", subtitle: "Update view coach posting", view: AnyView(UpdateViewCoachAd()))
+        .init(id: 4, title: "View Gym Club Ad", subtitle: "Update view gym club posting", view: AnyView(UpdateViewGymClub())),
+        .init(id: 5, title: "View Coach Ad", subtitle: "Update view coach posting", view: AnyView(UpdateViewCoachAd()))
     
         
     ]
@@ -47,6 +49,14 @@ struct ProfilView: View {
                 Text("Amanda Kate")
                         .font(.system(size: 18,weight: .semibold))
                         .padding(.horizontal)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "pencil")
+                        .onTapGesture {
+                            presentAlert = true
+                        }
+                        .font(.system(size: 20))
                 }
             
             ForEach(profilePageList) { page in
@@ -69,6 +79,13 @@ struct ProfilView: View {
                 .foregroundColor(.red)
         }.scrollContentBackground(.hidden)
             .navigationTitle("Profil")
+            .alert("Change", isPresented: $presentAlert, actions: {
+                    TextField("Amanda Kate", text: $changeNameSurname)
+                  Button("Change Image", action: {})
+                Button("Save", role: .destructive,action: {})
+                }, message: {
+                    Text("Message")
+                  })
     }
 }
 
