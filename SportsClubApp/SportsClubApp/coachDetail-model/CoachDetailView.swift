@@ -11,11 +11,22 @@ struct CoachDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing:5) {
-                Image("coach")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: UIScreen.screenHeight / 4)
-                    .clipShape(Circle())
+                ZStack(alignment : .bottomTrailing) {
+                    
+                    Image("coach")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: UIScreen.screenHeight / 4)
+                        .clipShape(Circle())
+                    
+                    Image(systemName: "heart")
+                        .foregroundColor(.red)
+                        .clipShape(Circle())
+                        .onTapGesture {
+                            print("Remove Like Lisr")
+                        }
+                }
+                
                 Text("Amy Amanda")
                 Text("Yoga")
                 HStack {

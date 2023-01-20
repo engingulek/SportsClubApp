@@ -26,7 +26,9 @@ struct ClubDetailsView: View {
                     HStack(spacing:30) {
                         ForEach(gymSportInfo) { info in
                             VStack(spacing:5) {
+                    
                                 Image(systemName: info.imageName)
+                                
                                     .font(.system(size: 25))
                                 Text(info.name)
                                     .font(.system(size: 15))

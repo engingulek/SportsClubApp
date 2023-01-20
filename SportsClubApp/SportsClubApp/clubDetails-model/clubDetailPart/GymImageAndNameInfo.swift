@@ -22,11 +22,25 @@ struct GymImageAndNameInfo: View {
                         .foregroundColor(.orange)
                     Text("3.5/5")
                         .font(.system(size: 14))
-                }.frame(width: 80,height: 30)
+           
+                    Divider().frame(minWidth: 1)
+                        .fontWeight(.bold)
+                        .background(.black)
+                        .padding(.vertical,4)
+                    Image(systemName: "heart")
+                        .foregroundColor(.red)
+                        .background(Color.white.opacity(0.9))
+                        .clipShape(Circle())
+                        .onTapGesture {
+                            print("Remove Like Lisr")
+                        }
+                      
+                }.frame(width: 100,height: 30)
                 .background()
                     .cornerRadius(10)
                     .font(.system(size: 14))
-                    .padding(.horizontal)
+            
+                
             }
             
             HStack {

@@ -19,16 +19,7 @@ struct NearByGymClubListDesign: View {
                     .cornerRadius(25)
                     .padding(.leading)
                     .padding(.top)
-                Image(systemName: "heart")
-                    .frame(width: 35,height: 35)
-                    .foregroundColor(.red)
-                    .background(Color.white.opacity(0.9))
-                    .clipShape(Circle())
-                    .padding(.top)
-                    .padding(.bottom)
-                    .padding(.vertical)
-                    .padding(.horizontal)
-                    .padding(.leading)
+             
                     
             }.padding(.horizontal)
            
