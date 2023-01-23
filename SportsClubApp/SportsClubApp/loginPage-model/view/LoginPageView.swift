@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct LoginPageView: View {
+    @ObservedObject var loginPageViewModel = LoginPageViewModel()
     @State private var emailTextField : String = ""
     @State private var passwordTextField : String = ""
     @State private var createPage = false
-    @State private var selected = 0
-
-    @Environment(\.dismiss) var dismiss
-    
+    @State private var showingAlertEmpty = false
+    @State private var toHomePage = false
+    @State private var showAlertControl = false
     var body: some View {
         VStack(spacing : 25) {
            
@@ -28,15 +28,36 @@ struct LoginPageView: View {
 
             TextField("Email", text: $emailTextField)
                 .asTextField(textContentType: .emailAddress)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
             
             SecureField("Password", text: $passwordTextField)
                 .asTextField(textContentType: .password)
             
             Button("Sing In", action: {
-                
+                if emailTextField.isEmpty || passwordTextField.isEmpty {
+                    print(emailTextField)
+                    self.showingAlertEmpty = true
+                }else{
+                    Task {
+                        await loginPageViewModel.loginAuthUser(email:emailTextField, password:passwordTextField)
+                        if self.loginPageViewModel.resultViewModel != "Success" {
+                            self.showAlertControl = true
+                        }else{
+                            self.toHomePage = true
+                        }
+                    }
+                }
+            })
+            .fullScreenCover(isPresented: $toHomePage , content: {
+                HomePageView()
             })
             .buttonStyle(LoginPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-            
+            .alert(isPresented: $showAlertControl) {
+                Alert(title: Text("Warning"), message: Text(self.loginPageViewModel.resultViewModel), dismissButton: .default(Text("Okey")))}
+            .alert(isPresented: $showingAlertEmpty) {
+                Alert(title: Text("Warning"), message: Text("Fill in the blanks"), dismissButton: .default(Text("Okey")))}
+
             HStack{
                 Text("Don't have an account")
                 Text("Register")

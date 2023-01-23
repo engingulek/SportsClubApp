@@ -12,10 +12,11 @@ struct CreatePageView: View {
     @State private var emailTextField : String = ""
     @State private var nameSurnameTextField : String = ""
     @State private var passwordTextField : String = ""
-    @State private var selected = 0
     @State private var errorMessage = ""
     @State private var toHomePage = false
     @State private var showingAlert = false
+    @State private var showingAlertTwo = false
+    
     var body: some View {
         VStack(spacing : 25) {
        
@@ -25,8 +26,13 @@ struct CreatePageView: View {
            
             TextField("Name Surname", text: $nameSurnameTextField)
                 .asTextField(textContentType: .name)
+                .textInputAutocapitalization(.words)
+                
             TextField("Email", text: $emailTextField)
                 .asTextField(textContentType: .emailAddress)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
+                
            
             SecureField("Password", text: $passwordTextField)
                 .asTextField(textContentType: .password)
@@ -35,17 +41,25 @@ struct CreatePageView: View {
             }.padding(.horizontal)
        
             Button("Register",  action: {
-             
-                Task {
-                    await createPageViewModel.createUserAuth(nameSurname: nameSurnameTextField, email: emailTextField, password: passwordTextField)
-                   
-                    if self.createPageViewModel.resultAuthMessage != "Success" {
-                        self.showingAlert = true
-                    }else{
-                        self.toHomePage = true
+                if nameSurnameTextField == "" || emailTextField == "" || passwordTextField == "" {
+                    self.errorMessage = "Filling in the blanks"
+                    self.showingAlertTwo = true
+                } else if !passwordTextField.isValidPassword()
+                {
+                    self.errorMessage = "Use special characters in password"
+                    self.showingAlertTwo = true
+                }else {
+                    Task {
+                        await createPageViewModel.createUserAuth(nameSurname: nameSurnameTextField, email: emailTextField, password: passwordTextField)
+                       
+                        if self.createPageViewModel.resultAuthMessage != "Success" {
+                            self.showingAlert = true
+                        }else{
+                            self.toHomePage = true
+                        }
+                        print("Va \(self.createPageViewModel.resultAuthMessage)")
+                        
                     }
-                    print("Va \(self.createPageViewModel.resultAuthMessage)")
-                    
                 }
             }).fullScreenCover(isPresented: $toHomePage , content: {
                 HomePageView()
@@ -53,6 +67,10 @@ struct CreatePageView: View {
             .buttonStyle(LoginPageButtonStyle(foregroundColor: .white, backgroundColor: .red))
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Error Message"), message: Text(self.createPageViewModel.resultAuthMessage), dismissButton: .default(Text("Okey")))
+                   }
+            
+            alert(isPresented: $showingAlertTwo) {
+                Alert(title: Text("Warning"), message: Text("Fill in the blanks"), dismissButton: .default(Text("Okey")))
                    }
         }.padding(.horizontal)
     }

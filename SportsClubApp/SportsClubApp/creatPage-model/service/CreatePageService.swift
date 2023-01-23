@@ -12,17 +12,40 @@ struct CreatePageService {
     
     // MARK: - Create auth service from firebae auth
     
-    func createAuth(nameSurname:String,email:String,password:String,completion:@escaping(Result<String,Error>)->()) async {
+    func createAuth(nameSurname:String,email:String,password:String,completion:@escaping(Result<Dictionary<String, Any>,Error>)->()) async {
+       
+        var sendResult : [String:Any] = [
+            "uid":"",
+            "nameSurname" : "",
+            "email" : "",
+        ]
+        
         do {
-            let createUserAuth = try await Auth.auth().createUser(withEmail: email, password: password)
+            _ = try await Auth.auth().createUser(withEmail: email, password: password)
+            let auth = Auth.auth().currentUser
+            let changeRequest = auth?.createProfileChangeRequest()
+            changeRequest?.displayName = nameSurname
+            sendResult["uid"] = auth?.uid
+            sendResult["nameSurname"] = auth?.displayName
+            sendResult["email"] = auth?.email
+            completion(.success(sendResult))
+        } catch {
+            completion(.failure(error))
+        }
+        
+        
+        
+        
+        /* do {
+            _ = try await Auth.auth().createUser(withEmail: email, password: password)
             let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
             changeRequest?.displayName = nameSurname
             completion(.success("Success"))
             print("S Success")
         }catch{
-            completion(.failure(error))
+            completion(.fa)
             print("S \(error.localizedDescription)")
-        }
+        }*/
         
         
         
@@ -43,7 +66,6 @@ struct CreatePageService {
                 })
                 
             }
-        
         }*/
     }
 }

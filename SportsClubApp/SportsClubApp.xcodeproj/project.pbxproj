@@ -13,6 +13,8 @@
 		7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4622961BC7F000CCF1F /* HomePageView.swift */; };
 		7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4672961C5C6000CCF1F /* nearBySportsClupPart.swift */; };
 		7D1DC46A2961CAE7000CCF1F /* bestCoachPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */; };
+		7D1E71F3297F019C0073F6D2 /* LoginPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E71F2297F019C0073F6D2 /* LoginPageService.swift */; };
+		7D1E71F6297F09B60073F6D2 /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E71F5297F09B60073F6D2 /* LoginPageViewModel.swift */; };
 		7D30B4C329741DE300AF244D /* UpdateViewGymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C229741DE300AF244D /* UpdateViewGymClub.swift */; };
 		7D30B4C82974206E00AF244D /* UpdateViewCoachAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C72974206E00AF244D /* UpdateViewCoachAd.swift */; };
 		7D30B4CA2974787400AF244D /* ExtensionUpdateViewGymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */; };
@@ -49,6 +51,7 @@
 		7D765656297E9EEA0018BEB7 /* CreatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D765655297E9EEA0018BEB7 /* CreatePageViewModel.swift */; };
 		7D765659297E9F320018BEB7 /* CreatePageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D765658297E9F320018BEB7 /* CreatePageService.swift */; };
 		7D76565C297EA1800018BEB7 /* CreateAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76565B297EA1800018BEB7 /* CreateAuth.swift */; };
+		7D76565E297EEB4A0018BEB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76565D297EEB490018BEB7 /* String.swift */; };
 		7D9192EE296EDBEB003BD29F /* ChoseGymMapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9192ED296EDBEB003BD29F /* ChoseGymMapLocation.swift */; };
 		7DA786442965864A00F1F1E8 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA786432965864A00F1F1E8 /* ProfilView.swift */; };
 		7DC2B323296604D600D56FAD /* LikesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2B322296604D600D56FAD /* LikesPage.swift */; };
@@ -91,6 +94,8 @@
 		7D1DC4622961BC7F000CCF1F /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		7D1DC4672961C5C6000CCF1F /* nearBySportsClupPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nearBySportsClupPart.swift; sourceTree = "<group>"; };
 		7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestCoachPart.swift; sourceTree = "<group>"; };
+		7D1E71F2297F019C0073F6D2 /* LoginPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageService.swift; sourceTree = "<group>"; };
+		7D1E71F5297F09B60073F6D2 /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
 		7D30B4C229741DE300AF244D /* UpdateViewGymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewGymClub.swift; sourceTree = "<group>"; };
 		7D30B4C72974206E00AF244D /* UpdateViewCoachAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewCoachAd.swift; sourceTree = "<group>"; };
 		7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUpdateViewGymClub.swift; sourceTree = "<group>"; };
@@ -126,6 +131,7 @@
 		7D765655297E9EEA0018BEB7 /* CreatePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePageViewModel.swift; sourceTree = "<group>"; };
 		7D765658297E9F320018BEB7 /* CreatePageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePageService.swift; sourceTree = "<group>"; };
 		7D76565B297EA1800018BEB7 /* CreateAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAuth.swift; sourceTree = "<group>"; };
+		7D76565D297EEB490018BEB7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7D9192ED296EDBEB003BD29F /* ChoseGymMapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseGymMapLocation.swift; sourceTree = "<group>"; };
 		7DA786432965864A00F1F1E8 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		7DC2B322296604D600D56FAD /* LikesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesPage.swift; sourceTree = "<group>"; };
@@ -212,6 +218,22 @@
 				7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */,
 			);
 			path = homePageViewParts;
+			sourceTree = "<group>";
+		};
+		7D1E71F1297F01360073F6D2 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				7D1E71F2297F019C0073F6D2 /* LoginPageService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		7D1E71F4297F09A20073F6D2 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7D1E71F5297F09B60073F6D2 /* LoginPageViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		7D30B4C129741D3B00AF244D /* viewAndUpdateGymClub-model */ = {
@@ -347,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4C9CC529635DB8005C23A6 /* UIScreen.swift */,
+				7D76565D297EEB490018BEB7 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -461,6 +484,8 @@
 		7D6EE3A92960C74D00C24D84 /* loginPage-model */ = {
 			isa = PBXGroup;
 			children = (
+				7D1E71F4297F09A20073F6D2 /* viewModel */,
+				7D1E71F1297F01360073F6D2 /* service */,
 				7DDC9E152965B36B000C6F7D /* view */,
 			);
 			path = "loginPage-model";
@@ -863,7 +888,9 @@
 				7D765659297E9F320018BEB7 /* CreatePageService.swift in Sources */,
 				7DA786442965864A00F1F1E8 /* ProfilView.swift in Sources */,
 				7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */,
+				7D1E71F6297F09B60073F6D2 /* LoginPageViewModel.swift in Sources */,
 				7D30B4CA2974787400AF244D /* ExtensionUpdateViewGymClub.swift in Sources */,
+				7D1E71F3297F019C0073F6D2 /* LoginPageService.swift in Sources */,
 				7D1041BD2971BB4C00D730B6 /* Style.swift in Sources */,
 				7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */,
 				7D483BC7297B477B0003ECF8 /* ExtensionChatView.swift in Sources */,
@@ -873,6 +900,7 @@
 				7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */,
 				7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */,
 				7D6EE3AB2960C79C00C24D84 /* LoginPageView.swift in Sources */,
+				7D76565E297EEB4A0018BEB7 /* String.swift in Sources */,
 				7D76565C297EA1800018BEB7 /* CreateAuth.swift in Sources */,
 				7DD7A51C2964BF5300854466 /* CoachListDesign.swift in Sources */,
 				7D30B4C329741DE300AF244D /* UpdateViewGymClub.swift in Sources */,
