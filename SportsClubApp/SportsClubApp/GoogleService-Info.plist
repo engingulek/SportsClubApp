@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>375718455569-ng3edcrfllhklr5qnq75nke4tbuo5peh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.375718455569-ng3edcrfllhklr5qnq75nke4tbuo5peh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNegS0ZQ2n2tk3ibQTdaeognLS4pEFd5c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>375718455569</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.engingulek.SportsClubApp</string>
+	<key>PROJECT_ID</key>
+	<string>sportsclubapp-42aa9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sportsclubapp-42aa9.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:375718455569:ios:67e2ca0152be309bcb44b0</string>
+</dict>
+</plist>
