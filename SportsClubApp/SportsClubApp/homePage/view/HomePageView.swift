@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomePageView: View {
+    @ObservedObject var homePageViewModel = HomePageViewModel()
     @State private var searchText = ""
     var body: some View {
         NavigationView {
@@ -131,6 +132,8 @@ struct HomePageView: View {
                                 }
                     }
                 }
+        }.task {
+            await homePageViewModel.getNearByGymClub()
         }
     }
 }

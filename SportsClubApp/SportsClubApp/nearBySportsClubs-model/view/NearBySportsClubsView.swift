@@ -55,15 +55,7 @@ struct NearBySportsClubsView: View {
                             .foregroundColor(.black)
                             .cornerRadius(20)
                             .font(.system(size: 18,weight: .semibold))
-                        HStack {
-                          Image(systemName: "magnifyingglass")
-                            TextField("Search GYM Clubs", text: $searchText)
-                                .onChange(of: searchText) { newValue in}
-                        } .padding()
-                            .background(.white)
-                            .cornerRadius(15)
-                            .frame(width: 300)
-                            .padding()
+                       
                       
 
                         

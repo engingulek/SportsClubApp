@@ -15,6 +15,14 @@
 		7D1DC46A2961CAE7000CCF1F /* bestCoachPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */; };
 		7D1E71F3297F019C0073F6D2 /* LoginPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E71F2297F019C0073F6D2 /* LoginPageService.swift */; };
 		7D1E71F6297F09B60073F6D2 /* LoginPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1E71F5297F09B60073F6D2 /* LoginPageViewModel.swift */; };
+		7D22C87A29804A0A00A4F44C /* DataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C87929804A0A00A4F44C /* DataResult.swift */; };
+		7D22C87D29804AAF00A4F44C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7D22C87C29804AAF00A4F44C /* Alamofire */; };
+		7D22C88029804C5F00A4F44C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C87F29804C5F00A4F44C /* Network.swift */; };
+		7D22C88B298057C100A4F44C /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C88A298057C100A4F44C /* BaseApi.swift */; };
+		7D22C88D29805A2B00A4F44C /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C88C29805A2B00A4F44C /* RequestType.swift */; };
+		7D22C88F29806C1F00A4F44C /* HomePageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C88E29806C1F00A4F44C /* HomePageService.swift */; };
+		7D22C8912980736000A4F44C /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C8902980736000A4F44C /* HomePageViewModel.swift */; };
+		7D22C89329807C5F00A4F44C /* GymClubOri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C89229807C5F00A4F44C /* GymClubOri.swift */; };
 		7D30B4C329741DE300AF244D /* UpdateViewGymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C229741DE300AF244D /* UpdateViewGymClub.swift */; };
 		7D30B4C82974206E00AF244D /* UpdateViewCoachAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C72974206E00AF244D /* UpdateViewCoachAd.swift */; };
 		7D30B4CA2974787400AF244D /* ExtensionUpdateViewGymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */; };
@@ -96,6 +104,13 @@
 		7D1DC4692961CAE7000CCF1F /* bestCoachPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestCoachPart.swift; sourceTree = "<group>"; };
 		7D1E71F2297F019C0073F6D2 /* LoginPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageService.swift; sourceTree = "<group>"; };
 		7D1E71F5297F09B60073F6D2 /* LoginPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewModel.swift; sourceTree = "<group>"; };
+		7D22C87929804A0A00A4F44C /* DataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResult.swift; sourceTree = "<group>"; };
+		7D22C87F29804C5F00A4F44C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7D22C88A298057C100A4F44C /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		7D22C88C29805A2B00A4F44C /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		7D22C88E29806C1F00A4F44C /* HomePageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageService.swift; sourceTree = "<group>"; };
+		7D22C8902980736000A4F44C /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		7D22C89229807C5F00A4F44C /* GymClubOri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubOri.swift; sourceTree = "<group>"; };
 		7D30B4C229741DE300AF244D /* UpdateViewGymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewGymClub.swift; sourceTree = "<group>"; };
 		7D30B4C72974206E00AF244D /* UpdateViewCoachAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewCoachAd.swift; sourceTree = "<group>"; };
 		7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUpdateViewGymClub.swift; sourceTree = "<group>"; };
@@ -155,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D22C87D29804AAF00A4F44C /* Alamofire in Frameworks */,
 				7D765648297E9AF50018BEB7 /* FirebaseDatabase in Frameworks */,
 				7D76564C297E9AF50018BEB7 /* FirebaseStorage in Frameworks */,
 				7D765646297E9AF50018BEB7 /* FirebaseAuth in Frameworks */,
@@ -202,13 +218,15 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		7D1DC4612961BC66000CCF1F /* homePage-model */ = {
+		7D1DC4612961BC66000CCF1F /* homePage */ = {
 			isa = PBXGroup;
 			children = (
-				7D1DC4642961BF9E000CCF1F /* homePageViewParts */,
-				7D1DC4622961BC7F000CCF1F /* HomePageView.swift */,
+				7D22C876298044B600A4F44C /* service */,
+				7D22C875298044AC00A4F44C /* viewModel */,
+				7D22C8742980449C00A4F44C /* model */,
+				7D22C8732980448700A4F44C /* view */,
 			);
-			path = "homePage-model";
+			path = homePage;
 			sourceTree = "<group>";
 		};
 		7D1DC4642961BF9E000CCF1F /* homePageViewParts */ = {
@@ -234,6 +252,74 @@
 				7D1E71F5297F09B60073F6D2 /* LoginPageViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		7D22C8732980448700A4F44C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				7D1DC4622961BC7F000CCF1F /* HomePageView.swift */,
+				7D1DC4642961BF9E000CCF1F /* homePageViewParts */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		7D22C8742980449C00A4F44C /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		7D22C875298044AC00A4F44C /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7D22C8902980736000A4F44C /* HomePageViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		7D22C876298044B600A4F44C /* service */ = {
+			isa = PBXGroup;
+			children = (
+				7D22C88E29806C1F00A4F44C /* HomePageService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		7D22C877298045E400A4F44C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7D22C881298054A900A4F44C /* Base */,
+				7D22C87E29804AB500A4F44C /* APICaller */,
+				7D22C8782980490E00A4F44C /* Entity */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7D22C8782980490E00A4F44C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7D22C87929804A0A00A4F44C /* DataResult.swift */,
+				7D22C89229807C5F00A4F44C /* GymClubOri.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7D22C87E29804AB500A4F44C /* APICaller */ = {
+			isa = PBXGroup;
+			children = (
+				7D22C87F29804C5F00A4F44C /* Network.swift */,
+			);
+			path = APICaller;
+			sourceTree = "<group>";
+		};
+		7D22C881298054A900A4F44C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7D22C88C29805A2B00A4F44C /* RequestType.swift */,
+				7D22C88A298057C100A4F44C /* BaseApi.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		7D30B4C129741D3B00AF244D /* viewAndUpdateGymClub-model */ = {
@@ -412,6 +498,7 @@
 		7D6EE37529609C9900C24D84 /* SportsClubApp */ = {
 			isa = PBXGroup;
 			children = (
+				7D22C877298045E400A4F44C /* Manager */,
 				7D4C9CC429635DAB005C23A6 /* Extension */,
 				7D6EE3A42960AA7200C24D84 /* Utils */,
 				7D483BC1297B472E0003ECF8 /* chapPage */,
@@ -429,7 +516,7 @@
 				7DD7A50029645EDB00854466 /* coachDetail-model */,
 				7DD7A4FA2964481F00854466 /* clubDetails-model */,
 				7D4C9CBE2963437C005C23A6 /* nearBySportsClubs-model */,
-				7D1DC4612961BC66000CCF1F /* homePage-model */,
+				7D1DC4612961BC66000CCF1F /* homePage */,
 				7D6EE3A02960A6AC00C24D84 /* startPage-model */,
 				7D6EE37A29609C9B00C24D84 /* Assets.xcassets */,
 				7D765642297E99F40018BEB7 /* GoogleService-Info.plist */,
@@ -746,6 +833,7 @@
 				7D765647297E9AF50018BEB7 /* FirebaseDatabase */,
 				7D765649297E9AF50018BEB7 /* FirebaseFirestore */,
 				7D76564B297E9AF50018BEB7 /* FirebaseStorage */,
+				7D22C87C29804AAF00A4F44C /* Alamofire */,
 			);
 			productName = SportsClubApp;
 			productReference = 7D6EE37329609C9900C24D84 /* SportsClubApp.app */;
@@ -821,6 +909,7 @@
 			mainGroup = 7D6EE36A29609C9900C24D84;
 			packageReferences = (
 				7D765644297E9AF50018BEB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7D22C87B29804AAF00A4F44C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7D6EE37429609C9900C24D84 /* Products */;
 			projectDirPath = "";
@@ -873,10 +962,14 @@
 				7D1041BB29717A0B00D730B6 /* GymSportInfo.swift in Sources */,
 				7DC2B323296604D600D56FAD /* LikesPage.swift in Sources */,
 				7D6EE3B02960E0CF00C24D84 /* CreatePageView.swift in Sources */,
+				7D22C89329807C5F00A4F44C /* GymClubOri.swift in Sources */,
+				7D22C87A29804A0A00A4F44C /* DataResult.swift in Sources */,
 				7D4C9CC9296367F8005C23A6 /* GymLocaiton.swift in Sources */,
 				7D9192EE296EDBEB003BD29F /* ChoseGymMapLocation.swift in Sources */,
+				7D22C8912980736000A4F44C /* HomePageViewModel.swift in Sources */,
 				7DD7A50529649B6B00854466 /* Design.swift in Sources */,
 				7D483BB7297AD6320003ECF8 /* ExtensionClubViewDetail.swift in Sources */,
+				7D22C88D29805A2B00A4F44C /* RequestType.swift in Sources */,
 				7DD7A50D2964B05F00854466 /* NearByGymClubListDesign.swift in Sources */,
 				7D4364BA2972E0A4002298B1 /* ExtensionCreateCoachView.swift in Sources */,
 				7D483BB9297B1AD10003ECF8 /* ExtensionCoachDetail.swift in Sources */,
@@ -894,11 +987,13 @@
 				7D1041BD2971BB4C00D730B6 /* Style.swift in Sources */,
 				7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */,
 				7D483BC7297B477B0003ECF8 /* ExtensionChatView.swift in Sources */,
+				7D22C88F29806C1F00A4F44C /* HomePageService.swift in Sources */,
 				7DD7A50F2964B63400854466 /* CategoryDesign.swift in Sources */,
 				7DD7A51E2964C16900854466 /* CoachAllView.swift in Sources */,
 				7D30B4C82974206E00AF244D /* UpdateViewCoachAd.swift in Sources */,
 				7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */,
 				7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */,
+				7D22C88029804C5F00A4F44C /* Network.swift in Sources */,
 				7D6EE3AB2960C79C00C24D84 /* LoginPageView.swift in Sources */,
 				7D76565E297EEB4A0018BEB7 /* String.swift in Sources */,
 				7D76565C297EA1800018BEB7 /* CreateAuth.swift in Sources */,
@@ -913,6 +1008,7 @@
 				7D5151392966EABE00B9EFD7 /* GymClub.swift in Sources */,
 				7DC2B32C29660B6A00D56FAD /* CreateGymClubsView.swift in Sources */,
 				7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */,
+				7D22C88B298057C100A4F44C /* BaseApi.swift in Sources */,
 				7DD7A5112964B77700854466 /* Category.swift in Sources */,
 				7DC2B32F29660B8F00D56FAD /* CreateCoachView.swift in Sources */,
 				7D765656297E9EEA0018BEB7 /* CreatePageViewModel.swift in Sources */,
@@ -1242,6 +1338,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7D22C87B29804AAF00A4F44C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7D765644297E9AF50018BEB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1253,6 +1357,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7D22C87C29804AAF00A4F44C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D22C87B29804AAF00A4F44C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		7D765645297E9AF50018BEB7 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7D765644297E9AF50018BEB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
