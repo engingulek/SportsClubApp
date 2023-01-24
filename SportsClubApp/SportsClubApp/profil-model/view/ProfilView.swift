@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Firebase
 struct ProfilePageList :Identifiable {
     static func == (lhs: ProfilePageList, rhs: ProfilePageList) -> Bool {
         return lhs.id == rhs.id && lhs.title == rhs.title && lhs.subtitle == rhs.subtitle
@@ -77,6 +77,14 @@ struct ProfilView: View {
                 .foregroundColor(.blue)
             Text("Sing Out")
                 .foregroundColor(.red)
+                .onTapGesture {
+                    let firebaseAuth = Auth.auth()
+                do {
+                  try firebaseAuth.signOut()
+                } catch let signOutError as NSError {
+                  print("Error signing out: %@", signOutError)
+                }
+                }
         }.scrollContentBackground(.hidden)
             .navigationTitle("Profil")
             .alert("Change", isPresented: $presentAlert, actions: {

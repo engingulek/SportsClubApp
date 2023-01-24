@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Firebase
 struct StartPageView: View {
     @State var showHomePage = false
     @State var showLoginPage = false
@@ -16,6 +16,8 @@ struct StartPageView: View {
             .foregroundColor: UIColor.white
         ]
     }
+    
+    
     var body: some View {
         NavigationView {
             ZStack {

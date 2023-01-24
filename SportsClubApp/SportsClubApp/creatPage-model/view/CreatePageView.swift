@@ -44,11 +44,10 @@ struct CreatePageView: View {
                 if nameSurnameTextField == "" || emailTextField == "" || passwordTextField == "" {
                     self.errorMessage = "Filling in the blanks"
                     self.showingAlertTwo = true
-                } else if !passwordTextField.isValidPassword()
-                {
+                } /*else if !passwordTextField.isValidPassword(){
                     self.errorMessage = "Use special characters in password"
                     self.showingAlertTwo = true
-                }else {
+                }*/else {
                     Task {
                         await createPageViewModel.createUserAuth(nameSurname: nameSurnameTextField, email: emailTextField, password: passwordTextField)
                        
@@ -69,8 +68,8 @@ struct CreatePageView: View {
                 Alert(title: Text("Error Message"), message: Text(self.createPageViewModel.resultAuthMessage), dismissButton: .default(Text("Okey")))
                    }
             
-            alert(isPresented: $showingAlertTwo) {
-                Alert(title: Text("Warning"), message: Text("Fill in the blanks"), dismissButton: .default(Text("Okey")))
+            .alert(isPresented: $showingAlertTwo) {
+                Alert(title: Text("Warning"), message: Text(errorMessage), dismissButton: .default(Text("Okey")))
                    }
         }.padding(.horizontal)
     }
@@ -78,6 +77,9 @@ struct CreatePageView: View {
 
 struct CreatePageView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePageView()
+
+            CreatePageView()
+        
+        
     }
 }

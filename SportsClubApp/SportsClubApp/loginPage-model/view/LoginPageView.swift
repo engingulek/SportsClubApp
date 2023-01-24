@@ -17,9 +17,6 @@ struct LoginPageView: View {
     @State private var showAlertControl = false
     var body: some View {
         VStack(spacing : 25) {
-           
-                
-            
             Image("sports person")
                 .resizable()
                 .scaledToFill()
@@ -53,10 +50,10 @@ struct LoginPageView: View {
                 HomePageView()
             })
             .buttonStyle(LoginPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-            .alert(isPresented: $showAlertControl) {
+            /*.alert(isPresented: $showAlertControl) {
                 Alert(title: Text("Warning"), message: Text(self.loginPageViewModel.resultViewModel), dismissButton: .default(Text("Okey")))}
             .alert(isPresented: $showingAlertEmpty) {
-                Alert(title: Text("Warning"), message: Text("Fill in the blanks"), dismissButton: .default(Text("Okey")))}
+                Alert(title: Text("Warning"), message: Text("Fill in the blanks"), dismissButton: .default(Text("Okey")))}*/
 
             HStack{
                 Text("Don't have an account")
@@ -65,6 +62,7 @@ struct LoginPageView: View {
                     .foregroundColor(.red)
                     .onTapGesture {
                         self.createPage = true
+                        print("Test")
                     }
                     .sheet(isPresented: $createPage) {
                         CreatePageView()
@@ -78,8 +76,8 @@ struct LoginPageView: View {
 
 struct PersonLoginPageView_Previews: PreviewProvider {
     static var previews: some View {
-        
-    LoginPageView()
-        
+        ZStack {
+            LoginPageView()
+        }
     }
 }
