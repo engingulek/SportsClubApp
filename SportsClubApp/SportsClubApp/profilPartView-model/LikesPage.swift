@@ -13,10 +13,7 @@ import SwiftUI
 struct LikesPage: View {
     
     @State var gymClubs : [GymClub] = [
-         .init(id: "0", imageURL: "gymClubsTwo", name: "LifeTime Gym", country: "USA", city: "NYC", rating: 3.0),
-         .init(id: "1", imageURL: "gymClubsTwo", name: "LifeTime Gym", country: "USA", city: "NYC", rating: 3.0),
-         .init(id: "2", imageURL: "gymClubsTwo", name: "LifeTime Gym", country: "USA", city: "NYC", rating: 3.0),
-         .init(id: "3", imageURL: "gymClubsTwo", name: "LifeTime Gym", country: "USA", city: "NYC", rating: 3.0)
+         
      ]
 
     @State var coachs : [Coach] = [
@@ -30,13 +27,13 @@ struct LikesPage: View {
      
         List {
             Section {
-                ForEach(gymClubs) { gymClub in
+                /*ForEach(gymClubs,id: \.self) { gymClub in
                     NearByGymClubListDesign()
                         
                         .frame(width: UIScreen.screenWidth,height: UIScreen.screenHeight/8)
                         .padding()
                     
-                }.onDelete(perform: deleteGymClubLike)
+                }.onDelete(perform: deleteGymClubLike)*/
                 
             } header: {
                 Text("Gym Clubs")

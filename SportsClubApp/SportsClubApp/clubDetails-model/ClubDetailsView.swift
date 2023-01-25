@@ -17,12 +17,7 @@ struct ClubDetailsView: View {
      @State var textFieldCommentDecrase = 0
      
      @State var commentStatusCount = 0
-    var gymSportInfo = [
-        GYMSportInfo(imageName: "takeoutbag.and.cup.and.straw", name: "Drink"),
-        GYMSportInfo(imageName: "figure.yoga", name: "Yoga"),
-        GYMSportInfo(imageName: "basket", name: "Spor Shop"),
-        
-    ]
+  
     var body: some View {
         
         ZStack {

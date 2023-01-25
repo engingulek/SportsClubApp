@@ -7,22 +7,41 @@
 
 import Foundation
 
-struct GymClub : Identifiable,Hashable , Codable {
-    let id : String
-    let imageURL : String
-    let name : String
-    let country :String
-    let city : String
-    let rating : Double
+
+struct GymClub :Codable {
     
-    init(id: String, imageURL: String, name: String, country: String, city: String, rating: Double) {
-        self.id = id
-        self.imageURL = imageURL
-        self.name = name
-        self.country = country
-        self.city = city
-        self.rating = rating
+    static func == (lhs: GymClub, rhs: GymClub) -> Bool {
+        return true
     }
     
+    let _id: String?
+    let createUserId: String?
+    let  imageUrl  :String?
+    let  name : String?
+    let  rating : Double?
+    let location : Location?
+    let gymSportInfo : [GYMSportInfo]?
+    let destination : String?
+    let startClock : String?
+    let finishClock: String?
+    let payPeriod : ClubPayPeriod?
+    let comment : [Comment]?
+    let registeredUsers : [User]?
     
 }
+
+
+struct ClubPayPeriod:Codable,Hashable {
+    let pay : Double?
+    let period : String?
+    
+}
+
+struct Comment : Codable,Hashable {
+    let nameSurname : String?
+    let date: String?
+    let rating : Double?
+    let comentText : String?
+}
+
+

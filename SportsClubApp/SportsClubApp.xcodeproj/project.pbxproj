@@ -22,7 +22,9 @@
 		7D22C88D29805A2B00A4F44C /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C88C29805A2B00A4F44C /* RequestType.swift */; };
 		7D22C88F29806C1F00A4F44C /* HomePageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C88E29806C1F00A4F44C /* HomePageService.swift */; };
 		7D22C8912980736000A4F44C /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C8902980736000A4F44C /* HomePageViewModel.swift */; };
-		7D22C89329807C5F00A4F44C /* GymClubOri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C89229807C5F00A4F44C /* GymClubOri.swift */; };
+		7D22C89529808A2900A4F44C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C89429808A2900A4F44C /* Location.swift */; };
+		7D22C89929808EB500A4F44C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D22C89829808EB500A4F44C /* User.swift */; };
+		7D22C89C298098B500A4F44C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7D22C89B298098B500A4F44C /* Kingfisher */; };
 		7D30B4C329741DE300AF244D /* UpdateViewGymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C229741DE300AF244D /* UpdateViewGymClub.swift */; };
 		7D30B4C82974206E00AF244D /* UpdateViewCoachAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C72974206E00AF244D /* UpdateViewCoachAd.swift */; };
 		7D30B4CA2974787400AF244D /* ExtensionUpdateViewGymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */; };
@@ -59,7 +61,9 @@
 		7D765656297E9EEA0018BEB7 /* CreatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D765655297E9EEA0018BEB7 /* CreatePageViewModel.swift */; };
 		7D765659297E9F320018BEB7 /* CreatePageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D765658297E9F320018BEB7 /* CreatePageService.swift */; };
 		7D76565C297EA1800018BEB7 /* CreateAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76565B297EA1800018BEB7 /* CreateAuth.swift */; };
-		7D76565E297EEB4A0018BEB7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76565D297EEB490018BEB7 /* String.swift */; };
+		7D76565E297EEB4A0018BEB7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D76565D297EEB490018BEB7 /* String+Extension.swift */; };
+		7D8C5BFC298141A400F7B4FB /* ExtensionHomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C5BFB298141A400F7B4FB /* ExtensionHomePageView.swift */; };
+		7D8C5C00298146A200F7B4FB /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C5BFF298146A200F7B4FB /* LocationManager.swift */; };
 		7D9192EE296EDBEB003BD29F /* ChoseGymMapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9192ED296EDBEB003BD29F /* ChoseGymMapLocation.swift */; };
 		7DA786442965864A00F1F1E8 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA786432965864A00F1F1E8 /* ProfilView.swift */; };
 		7DC2B323296604D600D56FAD /* LikesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2B322296604D600D56FAD /* LikesPage.swift */; };
@@ -110,7 +114,8 @@
 		7D22C88C29805A2B00A4F44C /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		7D22C88E29806C1F00A4F44C /* HomePageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageService.swift; sourceTree = "<group>"; };
 		7D22C8902980736000A4F44C /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
-		7D22C89229807C5F00A4F44C /* GymClubOri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubOri.swift; sourceTree = "<group>"; };
+		7D22C89429808A2900A4F44C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		7D22C89829808EB500A4F44C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7D30B4C229741DE300AF244D /* UpdateViewGymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewGymClub.swift; sourceTree = "<group>"; };
 		7D30B4C72974206E00AF244D /* UpdateViewCoachAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewCoachAd.swift; sourceTree = "<group>"; };
 		7D30B4C92974787400AF244D /* ExtensionUpdateViewGymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUpdateViewGymClub.swift; sourceTree = "<group>"; };
@@ -146,7 +151,9 @@
 		7D765655297E9EEA0018BEB7 /* CreatePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePageViewModel.swift; sourceTree = "<group>"; };
 		7D765658297E9F320018BEB7 /* CreatePageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePageService.swift; sourceTree = "<group>"; };
 		7D76565B297EA1800018BEB7 /* CreateAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAuth.swift; sourceTree = "<group>"; };
-		7D76565D297EEB490018BEB7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		7D76565D297EEB490018BEB7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7D8C5BFB298141A400F7B4FB /* ExtensionHomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHomePageView.swift; sourceTree = "<group>"; };
+		7D8C5BFF298146A200F7B4FB /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		7D9192ED296EDBEB003BD29F /* ChoseGymMapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseGymMapLocation.swift; sourceTree = "<group>"; };
 		7DA786432965864A00F1F1E8 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		7DC2B322296604D600D56FAD /* LikesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesPage.swift; sourceTree = "<group>"; };
@@ -170,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D22C89C298098B500A4F44C /* Kingfisher in Frameworks */,
 				7D22C87D29804AAF00A4F44C /* Alamofire in Frameworks */,
 				7D765648297E9AF50018BEB7 /* FirebaseDatabase in Frameworks */,
 				7D76564C297E9AF50018BEB7 /* FirebaseStorage in Frameworks */,
@@ -259,6 +267,7 @@
 			children = (
 				7D1DC4622961BC7F000CCF1F /* HomePageView.swift */,
 				7D1DC4642961BF9E000CCF1F /* homePageViewParts */,
+				7D8C5BFB298141A400F7B4FB /* ExtensionHomePageView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -300,7 +309,9 @@
 			isa = PBXGroup;
 			children = (
 				7D22C87929804A0A00A4F44C /* DataResult.swift */,
-				7D22C89229807C5F00A4F44C /* GymClubOri.swift */,
+				7D22C89429808A2900A4F44C /* Location.swift */,
+				7D22C89829808EB500A4F44C /* User.swift */,
+				7D8C5BFF298146A200F7B4FB /* LocationManager.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -455,7 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4C9CC529635DB8005C23A6 /* UIScreen.swift */,
-				7D76565D297EEB490018BEB7 /* String.swift */,
+				7D76565D297EEB490018BEB7 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -834,6 +845,7 @@
 				7D765649297E9AF50018BEB7 /* FirebaseFirestore */,
 				7D76564B297E9AF50018BEB7 /* FirebaseStorage */,
 				7D22C87C29804AAF00A4F44C /* Alamofire */,
+				7D22C89B298098B500A4F44C /* Kingfisher */,
 			);
 			productName = SportsClubApp;
 			productReference = 7D6EE37329609C9900C24D84 /* SportsClubApp.app */;
@@ -910,6 +922,7 @@
 			packageReferences = (
 				7D765644297E9AF50018BEB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7D22C87B29804AAF00A4F44C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7D22C89A298098B400A4F44C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7D6EE37429609C9900C24D84 /* Products */;
 			projectDirPath = "";
@@ -960,9 +973,9 @@
 				7D4C9CC3296352DF005C23A6 /* NearBySportsClubPartOnToMap.swift in Sources */,
 				7D483BC3297B47510003ECF8 /* ChatView.swift in Sources */,
 				7D1041BB29717A0B00D730B6 /* GymSportInfo.swift in Sources */,
+				7D22C89529808A2900A4F44C /* Location.swift in Sources */,
 				7DC2B323296604D600D56FAD /* LikesPage.swift in Sources */,
 				7D6EE3B02960E0CF00C24D84 /* CreatePageView.swift in Sources */,
-				7D22C89329807C5F00A4F44C /* GymClubOri.swift in Sources */,
 				7D22C87A29804A0A00A4F44C /* DataResult.swift in Sources */,
 				7D4C9CC9296367F8005C23A6 /* GymLocaiton.swift in Sources */,
 				7D9192EE296EDBEB003BD29F /* ChoseGymMapLocation.swift in Sources */,
@@ -979,6 +992,7 @@
 				7D494BD7296F1CA300D2282C /* ChooseMapPinDesign.swift in Sources */,
 				7DD7A4FC2964483D00854466 /* ClubDetailsView.swift in Sources */,
 				7D765659297E9F320018BEB7 /* CreatePageService.swift in Sources */,
+				7D22C89929808EB500A4F44C /* User.swift in Sources */,
 				7DA786442965864A00F1F1E8 /* ProfilView.swift in Sources */,
 				7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */,
 				7D1E71F6297F09B60073F6D2 /* LoginPageViewModel.swift in Sources */,
@@ -995,16 +1009,18 @@
 				7D1DC4632961BC7F000CCF1F /* HomePageView.swift in Sources */,
 				7D22C88029804C5F00A4F44C /* Network.swift in Sources */,
 				7D6EE3AB2960C79C00C24D84 /* LoginPageView.swift in Sources */,
-				7D76565E297EEB4A0018BEB7 /* String.swift in Sources */,
+				7D76565E297EEB4A0018BEB7 /* String+Extension.swift in Sources */,
 				7D76565C297EA1800018BEB7 /* CreateAuth.swift in Sources */,
 				7DD7A51C2964BF5300854466 /* CoachListDesign.swift in Sources */,
 				7D30B4C329741DE300AF244D /* UpdateViewGymClub.swift in Sources */,
 				7D494BDA296F613D00D2282C /* ExtensionView.swift in Sources */,
 				7D51513C2966EB8200B9EFD7 /* Coach.swift in Sources */,
+				7D8C5C00298146A200F7B4FB /* LocationManager.swift in Sources */,
 				7DD7A5092964AB6400854466 /* NearByGymClubsListView.swift in Sources */,
 				7D1AA8572972EF17006C334E /* CoachTechType.swift in Sources */,
 				7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */,
 				7D483BBE297B240A0003ECF8 /* MessageHomePageView.swift in Sources */,
+				7D8C5BFC298141A400F7B4FB /* ExtensionHomePageView.swift in Sources */,
 				7D5151392966EABE00B9EFD7 /* GymClub.swift in Sources */,
 				7DC2B32C29660B6A00D56FAD /* CreateGymClubsView.swift in Sources */,
 				7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */,
@@ -1173,6 +1189,8 @@
 				DEVELOPMENT_TEAM = 34G99QRS57;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location permission\nPermission is required to use the location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1202,6 +1220,8 @@
 				DEVELOPMENT_TEAM = 34G99QRS57;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Location permission\nPermission is required to use the location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1346,6 +1366,14 @@
 				kind = branch;
 			};
 		};
+		7D22C89A298098B400A4F44C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		7D765644297E9AF50018BEB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1361,6 +1389,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D22C87B29804AAF00A4F44C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		7D22C89B298098B500A4F44C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D22C89A298098B400A4F44C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		7D765645297E9AF50018BEB7 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;

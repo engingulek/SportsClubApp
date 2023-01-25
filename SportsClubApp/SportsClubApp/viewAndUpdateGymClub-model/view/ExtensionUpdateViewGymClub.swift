@@ -118,7 +118,7 @@ extension UpdateViewGymClub {
                 .font(.system(size: 18,weight: .semibold))
             ForEach(addTypeGymClubList) { data in
                 HStack {
-                    Text(data.name)
+                   // Text(data.name)
                        Spacer()
                     Button("Add") {
                         
@@ -166,7 +166,7 @@ extension UpdateViewGymClub {
                 .font(.system(size: 18,weight: .semibold))
             ForEach(getTypeGymClubList) { data in
                 HStack {
-                    Text(data.name)
+                   // Text(data.name)
                        Spacer()
                     updateState ?
                     Button("Remove") {

@@ -10,7 +10,8 @@ import MapKit
 
 
 struct NearBySportsClubsView: View {
-    
+ 
+    @StateObject var locationManager = LocationManager()
     let locations = [
         GymLocaiton(name: "LifeTime GYM", rank: 3.5, latitude: 40.722849, longitude: -73.893456),
  
@@ -20,19 +21,21 @@ struct NearBySportsClubsView: View {
         GymLocaiton(name: "Dream GYM", rank: 4.0, latitude: 40.734037, longitude: -73.896546)
     ]
     
+   
     
-    @State var mapRegion: MKCoordinateRegion
-    init() {
-        self._mapRegion = State(initialValue: MKCoordinateRegion(center: .init(latitude: 40.722849, longitude: -73.893456), span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)))
-    }
-
+    @State private var region : MKCoordinateRegion
+    
+    /*@State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:121.000, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))*/
+    
+  
+    
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!, longitude: locallongitude), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     @State private var searchText = ""
     var body: some View {
       
             ZStack {
-                
-                Map(coordinateRegion: $mapRegion, annotationItems: locations )
+            Map(coordinateRegion: $region, annotationItems: locations )
                 { location in
                     MapAnnotation(coordinate: .init(latitude: location.latitude, longitude: location.longitude)) {
                         NavigationLink {
@@ -93,9 +96,4 @@ struct NearBySportsClubsView: View {
     }
 }
 
-struct NearBySportsClubsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NearBySportsClubsView()
-        
-    }
-}
+

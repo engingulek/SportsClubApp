@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct HomePageView: View {
     @ObservedObject var homePageViewModel = HomePageViewModel()
+ 
     @State private var searchText = ""
+    @StateObject var locationManager = LocationManager()
+   
     var body: some View {
+        
         NavigationView {
             ScrollView {
                 
@@ -58,11 +63,11 @@ struct HomePageView: View {
                             
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing:20) {
-                                ForEach(0..<5) { _ in
+                                ForEach(homePageViewModel.nearByGymClub,id: \.id) { gymClub in
                                     NavigationLink {
                                         ClubDetailsView()
                                     } label: {
-                                        nearBySportsClupPart()
+                                    nearBySportsClupPart(gymClub: gymClub)
                                     }                                    
                                 }
                             }.padding(.horizontal)
@@ -133,7 +138,8 @@ struct HomePageView: View {
                     }
                 }
         }.task {
-            await homePageViewModel.getNearByGymClub()
+            await homePageViewModel.getNearByGymClub(localLocation : locationManager.lastLocation!)
+            
         }
     }
 }

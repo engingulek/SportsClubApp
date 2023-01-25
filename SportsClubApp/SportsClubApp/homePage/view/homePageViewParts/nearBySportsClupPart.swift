@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct nearBySportsClupPart: View {
+    var gymClub : HomePageVM
     var body: some View {
-     
-           
             ZStack (alignment:.bottomLeading){
-                Image("gymClubsOne")
+                KFImage(URL(string: gymClub.imageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 270,height: 200)
@@ -20,15 +19,21 @@ struct nearBySportsClupPart: View {
                 LinearGradient(gradient: Gradient(colors: [Color.clear,Color.black]), startPoint: .center, endPoint: .bottom)
                     .cornerRadius(20)
                 VStack(alignment: .leading) {
-                    Text("LifeTime GYM")
+                    Text(gymClub.name)
                         .font(.system(size: 18,weight: .semibold))
                     
-                    Text("NYC,USA 09:00 - 18:00")
-                        .font(.system(size: 14))
+                    VStack(alignment: .leading) {
+                        Text("\(gymClub.location.state!)-\(gymClub.location.city!)")
+                        Text("\(gymClub.startClock) - \(gymClub.finishClock)  ")
+                    }
+                    .font(.system(size: 14))
                 }.foregroundColor(.white)
                     .padding(.horizontal)
                     .padding(.vertical)
             }
         
     }
+
+  
+  
 }

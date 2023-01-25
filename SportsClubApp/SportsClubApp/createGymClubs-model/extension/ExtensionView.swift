@@ -67,9 +67,9 @@ extension  CreateGymClubsView  {
         NavigationView {
                   VStack {
                       Text("\(multiTypeGymClubSelection.count) selections")
-                      List(typeGymClubList, selection: $multiTypeGymClubSelection) { type in
+                     /*List(typeGymClubList, selection: $multiTypeGymClubSelection) { type in
                           Text(type.name)
-                      }
+                      }*/
                       .environment(\.editMode, $editMode)
                       
                   }

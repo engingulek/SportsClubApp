@@ -94,9 +94,7 @@ struct UpdateViewGymClub: View {
         self.getCloseTime = "9:30 PM"
         changeHoursAndMinuteToDateFormater(openTime: getOpenTime, closeTime: getCloseTime)
         
-        addTypeGymClubList.append(.init(imageName: "basket", name: "Spor Shop"))
-        getTypeGymClubList.append(.init(imageName: "takeoutbag.and.cup.and.straw", name: "Drink"))
-        getTypeGymClubList.append(.init(imageName: "figure.yoga", name: "Yoga"))
+       
     }
     
     

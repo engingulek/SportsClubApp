@@ -6,12 +6,13 @@
 //
 
 import Foundation
-struct GYMSportInfo : Identifiable,Hashable,Equatable{
-    let id = UUID()
-    let imageName : String
-    let name : String
+struct GYMSportInfo : Identifiable,Hashable,Equatable,Codable{
+    let id : String?
+    let imageName : String?
+    let name : String?
     
-    init(imageName: String, name: String) {
+    init(id:String,imageName: String, name: String) {
+        self.id = id
         self.imageName = imageName
         self.name = name
     }

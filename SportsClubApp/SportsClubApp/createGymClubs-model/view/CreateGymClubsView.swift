@@ -28,9 +28,7 @@ struct CreateGymClubsView: View {
     @State var multiTypeGymClubSelection = Set<UUID>()
     @State var editMode: EditMode = .active
      var typeGymClubList:[GYMSportInfo] = [
-        .init(imageName: "takeoutbag.and.cup.and.straw", name: "Drink"),
-        .init(imageName: "figure.yoga", name: "Yoga"),
-        .init(imageName: "basket", name: "Spor Shop"),
+       
      
     ]
     @State var gymClubDescription : String = ""
@@ -92,10 +90,9 @@ struct CreateGymClubsView: View {
 
                 
                 
-                // City and  country json daya to be added here
+              
                 
-                
-               /* ZStack(alignment:.topLeading) {
+               ZStack(alignment:.topLeading) {
                     createMapView.frame(width: UIScreen.screenWidth,height: UIScreen.screenHeight / 2.5)
                     
                     if cityAndCountryVisible {
@@ -116,7 +113,7 @@ struct CreateGymClubsView: View {
                         }.padding([.vertical,.horizontal])
                             .foregroundColor(.black)
                     }
-                }*/
+                }
               
                 VStack {
                     Text("Select open and close time")
