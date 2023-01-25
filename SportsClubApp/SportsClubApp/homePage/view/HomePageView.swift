@@ -65,7 +65,7 @@ struct HomePageView: View {
                             HStack(spacing:20) {
                                 ForEach(homePageViewModel.nearByGymClub,id: \.id) { gymClub in
                                     NavigationLink {
-                                        ClubDetailsView()
+                                        ClubDetailsView(gymClub: gymClub)
                                     } label: {
                                     nearBySportsClupPart(gymClub: gymClub)
                                     }                                    

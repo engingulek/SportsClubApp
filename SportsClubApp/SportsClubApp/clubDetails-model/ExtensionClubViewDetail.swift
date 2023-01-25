@@ -11,35 +11,33 @@ extension ClubDetailsView {
    var viewDetails : some View {
        
        VStack {
-           GymImageAndNameInfo()
+           GymImageAndNameInfo(gymClub: gymClub)
       
            Divider().frame(minHeight: 1)
                .background(.black)
            HStack(spacing:30) {
-              /* ForEach(gymSportInfo) { info in
+               ForEach(gymClub.gymSportInfo) { info in
                    VStack(spacing:5) {
-           
-                       Image(systemName: info.imageName)
-                       
+                       Image(systemName: info.imageName!)
                            .font(.system(size: 25))
-                       Text(info.name)
+                       Text(info.name!)
                            .font(.system(size: 15))
                    }
-               }*/
+               }
            }.padding(.vertical,5)
            Divider().frame(minHeight: 1)
                .background(.black)
            
    
          
-               Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five .")
+           Text(gymClub.destination)
                    .font(.system(size: 15,weight: .light))
    
                NavigationLink {
                    Text("Message Page")
                } label: {
                    VStack{
-                       Text("$130/month")
+                       Text("$\(String(format: "%.0f", gymClub.payPeriod.pay!))/ \(gymClub.payPeriod.period!)")
                        Text("Click for send message")
                    }
                }
@@ -53,7 +51,7 @@ extension ClubDetailsView {
                    commentViewState = true
                }
                .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-               ForEach(0..<4) { _ in
+               ForEach(gymClub.comment) { comment in
                    CommentDesign()
                }
                

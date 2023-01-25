@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 struct nearBySportsClupPart: View {
-    var gymClub : HomePageVM
+    var gymClub : GymClubAllVM
     var body: some View {
             ZStack (alignment:.bottomLeading){
                 KFImage(URL(string: gymClub.imageUrl))

@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct GymImageAndNameInfo: View {
+    var gymClub : GymClubAllVM
     var body: some View {
         VStack(spacing:45) {
             ZStack(alignment : .topTrailing) {
-                Image("gymClubsOne")
+                KFImage(URL(string: gymClub.imageUrl))
                     .resizable()
                     .scaledToFill()
                     .cornerRadius(15)
@@ -20,7 +21,7 @@ struct GymImageAndNameInfo: View {
                 HStack {
                     Image(systemName: "star.fill")
                         .foregroundColor(.orange)
-                    Text("3.5/5")
+                    Text("\(String(format: "%.1f", gymClub.rating))/5")
                         .font(.system(size: 14))
            
                     Divider().frame(minWidth: 1)
@@ -45,10 +46,14 @@ struct GymImageAndNameInfo: View {
             
             HStack {
                 VStack(alignment:.leading) {
-                    Text("LifeTime GYM")
+                    Text(gymClub.name)
                         .font(.system(size: 18,weight: .semibold))
-                    Text("NYC,USA  09:00 - 20:00")
-                        .font(.system(size: 18,weight: .light))
+                    VStack {
+                        Text("\(gymClub.location.state!) - \(gymClub.location.city!)")
+                        Text("\(gymClub.startClock) - \(gymClub.finishClock)")
+                    }.font(.system(size: 18,weight: .light))
+                    
+                        
                 }
                 Spacer()
                 Text("1.5 Metre")
@@ -62,8 +67,4 @@ struct GymImageAndNameInfo: View {
     }
 }
 
-struct GymImageAndNameInfo_Previews: PreviewProvider {
-    static var previews: some View {
-        GymImageAndNameInfo()
-    }
-}
+

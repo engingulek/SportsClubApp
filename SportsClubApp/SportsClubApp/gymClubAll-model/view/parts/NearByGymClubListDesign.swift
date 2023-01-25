@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct NearByGymClubListDesign: View {
+    var gymClub : GymClubAllVM
     var body: some View {
         HStack {
        
             ZStack(alignment:.topLeading) {
-                Image("gymClubsOne")
+                KFImage(URL(string: gymClub.imageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: UIScreen.screenWidth/2,height: UIScreen.screenHeight / 7)
@@ -24,16 +25,19 @@ struct NearByGymClubListDesign: View {
             }.padding(.horizontal)
            
             VStack(spacing:10) {
-                Text("LifeTime GYM")
+                Text(gymClub.name)
                     .font(.system(size: 15,weight: .bold))
                     .multilineTextAlignment(.center)
                     .lineLimit(5)
-                Text("LS,USA")
-                    .font(.system(size: 15,weight: .semibold))
+                VStack(alignment: .leading) {
+                    Text("\(gymClub.location.state!)-\(gymClub.location.city!)")
+                    Text("\(gymClub.startClock) - \(gymClub.finishClock)  ")
+                }
+                .font(.system(size: 14))
                 HStack {
                     Image(systemName: "star.fill")
                         .foregroundColor(.orange)
-                    Text("3.5/5")
+                    Text("\(String(format: "%.1f", gymClub.rating))/5")
                         .font(.system(size: 12))
                 }
             }.padding(.horizontal)
@@ -45,8 +49,4 @@ struct NearByGymClubListDesign: View {
     }
 }
 
-struct NearByGymClubListDesign_Previews: PreviewProvider {
-    static var previews: some View {
-        NearByGymClubListDesign()
-    }
-}
+

@@ -10,6 +10,7 @@ import SwiftUI
 struct NearByGymClubsListView: View {
     @State private var searchText = ""
     @State private var selectedCategoryIndex = 0
+    @ObservedObject var gymClubAllViewModel = GymClubAllViewModel()
     private let categoryNameList = [
         Category(id: 0, categoryName: "All"),
         Category(id: 1, categoryName: "Yoga"),
@@ -59,17 +60,19 @@ struct NearByGymClubsListView: View {
             }
             
             VStack(spacing: 20) {
-                ForEach(0..<5) { _ in
+                ForEach(gymClubAllViewModel.gymClubs) { gymClub in
                     NavigationLink {
-                        ClubDetailsView()
+                        ClubDetailsView(gymClub: gymClub)
                     } label: {
-                        NearByGymClubListDesign()
+                        NearByGymClubListDesign(gymClub: gymClub)
                             .foregroundColor(.black)
                     }
                 }
             }.navigationTitle("All GYM")
                 .navigationBarTitleDisplayMode(.inline)
                 .padding(.top)
+        }.task {
+            await gymClubAllViewModel.getGymClubAll()
         }
     }
 }

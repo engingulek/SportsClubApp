@@ -37,7 +37,9 @@ struct ClubPayPeriod:Codable,Hashable {
     
 }
 
-struct Comment : Codable,Hashable {
+struct Comment : Codable,Hashable,Identifiable {
+    var id:String?
+    
     let nameSurname : String?
     let date: String?
     let rating : Double?

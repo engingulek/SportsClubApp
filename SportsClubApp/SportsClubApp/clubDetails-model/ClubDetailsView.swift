@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct ClubDetailsView: View {
+    var gymClub : GymClubAllVM
     @State  var commentViewState  = false
     @State var commentTextField = ""
     
@@ -27,9 +28,6 @@ struct ClubDetailsView: View {
                 viewDetails
                     .padding(.horizontal)
                     .padding(.top,25)
-                
-                
-                
             }.navigationTitle("Club Details")
                 .navigationBarTitleDisplayMode(.inline)
             commentViewState ?
@@ -46,8 +44,4 @@ struct ClubDetailsView: View {
 
 
 
-struct ClubDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClubDetailsView()
-    }
-}
+

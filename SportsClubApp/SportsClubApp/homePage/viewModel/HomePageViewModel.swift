@@ -10,18 +10,18 @@ import CoreLocation
 import SwiftUI
 
 class HomePageViewModel : ObservableObject {
-    @Published private var gymClubs = [HomePageVM]()
-    @Published var nearByGymClub = [HomePageVM]()
+    @Published private var gymClubs = [GymClubAllVM]()
+    @Published var nearByGymClub = [GymClubAllVM]()
 
     
     // MARK: -Calculator the distance between local  and gym 
     func getNearByGymClub(localLocation:CLLocation) async {
        do {
-    await HomePageService.homePageService.getNearByGymClubService(completion : {(response:Result<[GymClub],Error>) in
+    await GymClubAllService.gymClubAllService.getGymAllService(completion : {(response:Result<[GymClub],Error>) in
                 switch response {
                 case .success(let list):
                     DispatchQueue.main.async {
-                        self.gymClubs = list.map(HomePageVM.init)
+                        self.gymClubs = list.map(GymClubAllVM.init)
                         for gymClub in self.gymClubs {
                             let gymCordinate = CLLocation(latitude: gymClub.location.latitude!, longitude: gymClub.location.longitude!)
                             let locationLenght = localLocation.distance(from: gymCordinate) / 1000
@@ -47,7 +47,7 @@ class HomePageViewModel : ObservableObject {
 
 
 
-struct  HomePageVM : Identifiable {
+/*struct  HomePageVM : Identifiable {
     let gymClub : GymClub
     
     var id : String {
@@ -94,4 +94,4 @@ struct  HomePageVM : Identifiable {
     
     
     
-}
+}*/

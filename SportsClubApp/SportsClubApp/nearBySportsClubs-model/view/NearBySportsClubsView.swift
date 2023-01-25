@@ -12,7 +12,7 @@ import MapKit
 struct NearBySportsClubsView: View {
   
     @StateObject var locationManager = LocationManager()
-    @State var nearByGymClubs : [HomePageVM]
+    @State var nearByGymClubs : [GymClubAllVM]
    
     @State private var searchText = ""
    @State private var mapRegion : MKCoordinateRegion = MKCoordinateRegion()
@@ -26,7 +26,7 @@ struct NearBySportsClubsView: View {
                 { location in
                     MapAnnotation(coordinate: .init(latitude: location.location.latitude!, longitude: location.location.longitude!)) {
                         NavigationLink {
-                            ClubDetailsView()
+                            ClubDetailsView(gymClub: location)
                         } label: {
                             NearGYMClupMapImage(gymClub: location)
                         }
@@ -65,7 +65,7 @@ struct NearBySportsClubsView: View {
                             HStack(spacing:10) {
                                 ForEach(nearByGymClubs) { nearByGymClub in
                                     NavigationLink {
-                                        ClubDetailsView()
+                                        ClubDetailsView(gymClub: nearByGymClub)
                                     } label: {
                                         NearBySportsClubPartOnToMap(nearByGymClub: nearByGymClub)
                                             .foregroundColor(.black)

@@ -44,6 +44,8 @@
 		7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4C9CCA29636EEF005C23A6 /* NearGYMClupMapImage.swift */; };
 		7D5151392966EABE00B9EFD7 /* GymClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5151382966EABE00B9EFD7 /* GymClub.swift */; };
 		7D51513C2966EB8200B9EFD7 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51513B2966EB8200B9EFD7 /* Coach.swift */; };
+		7D5930252981D6500079CF46 /* GymClubAllService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5930242981D6500079CF46 /* GymClubAllService.swift */; };
+		7D5930282981D6ED0079CF46 /* GymClubAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5930272981D6ED0079CF46 /* GymClubAllViewModel.swift */; };
 		7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */; };
 		7D6EE37B29609C9B00C24D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37A29609C9B00C24D84 /* Assets.xcassets */; };
 		7D6EE37E29609C9B00C24D84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37D29609C9B00C24D84 /* Preview Assets.xcassets */; };
@@ -135,6 +137,8 @@
 		7D4C9CCA29636EEF005C23A6 /* NearGYMClupMapImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearGYMClupMapImage.swift; sourceTree = "<group>"; };
 		7D5151382966EABE00B9EFD7 /* GymClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClub.swift; sourceTree = "<group>"; };
 		7D51513B2966EB8200B9EFD7 /* Coach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
+		7D5930242981D6500079CF46 /* GymClubAllService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubAllService.swift; sourceTree = "<group>"; };
+		7D5930272981D6ED0079CF46 /* GymClubAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubAllViewModel.swift; sourceTree = "<group>"; };
 		7D6EE37329609C9900C24D84 /* SportsClubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsClubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsClubAppApp.swift; sourceTree = "<group>"; };
 		7D6EE37A29609C9B00C24D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -486,6 +490,22 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		7D5930232981D6330079CF46 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				7D5930242981D6500079CF46 /* GymClubAllService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		7D5930262981D6BE0079CF46 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7D5930272981D6ED0079CF46 /* GymClubAllViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		7D6EE36A29609C9900C24D84 = {
 			isa = PBXGroup;
 			children = (
@@ -765,6 +785,8 @@
 		7DD7A5132964BED700854466 /* gymClubAll-model */ = {
 			isa = PBXGroup;
 			children = (
+				7D5930262981D6BE0079CF46 /* viewModel */,
+				7D5930232981D6330079CF46 /* service */,
 				7DD7A5162964BF0E00854466 /* model */,
 				7DD7A5142964BF0000854466 /* view */,
 			);
@@ -998,6 +1020,7 @@
 				7D1E71F6297F09B60073F6D2 /* LoginPageViewModel.swift in Sources */,
 				7D30B4CA2974787400AF244D /* ExtensionUpdateViewGymClub.swift in Sources */,
 				7D1E71F3297F019C0073F6D2 /* LoginPageService.swift in Sources */,
+				7D5930252981D6500079CF46 /* GymClubAllService.swift in Sources */,
 				7D1041BD2971BB4C00D730B6 /* Style.swift in Sources */,
 				7D4C9CC0296343B3005C23A6 /* NearBySportsClubsView.swift in Sources */,
 				7D483BC7297B477B0003ECF8 /* ExtensionChatView.swift in Sources */,
@@ -1021,6 +1044,7 @@
 				7D4C9CCB29636EEF005C23A6 /* NearGYMClupMapImage.swift in Sources */,
 				7D483BBE297B240A0003ECF8 /* MessageHomePageView.swift in Sources */,
 				7D8C5BFC298141A400F7B4FB /* ExtensionHomePageView.swift in Sources */,
+				7D5930282981D6ED0079CF46 /* GymClubAllViewModel.swift in Sources */,
 				7D5151392966EABE00B9EFD7 /* GymClub.swift in Sources */,
 				7DC2B32C29660B6A00D56FAD /* CreateGymClubsView.swift in Sources */,
 				7D4C9CC629635DB8005C23A6 /* UIScreen.swift in Sources */,

@@ -11,7 +11,7 @@ import Kingfisher
 
 struct NearGYMClupMapImage: View {
     
-    let gymClub : HomePageVM
+    let gymClub : GymClubAllVM
     
     var body: some View {
         VStack {

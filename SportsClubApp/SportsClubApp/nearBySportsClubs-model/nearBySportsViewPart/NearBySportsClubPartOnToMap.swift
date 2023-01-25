@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 struct NearBySportsClubPartOnToMap: View {
-    @State var nearByGymClub : HomePageVM
+    @State var nearByGymClub : GymClubAllVM
     var body: some View {
         
         HStack {
