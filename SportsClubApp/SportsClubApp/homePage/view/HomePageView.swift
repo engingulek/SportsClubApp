@@ -51,7 +51,7 @@ struct HomePageView: View {
                                 .font(.system(size: 17,weight: .semibold))
                             Spacer()
                             NavigationLink {
-                                NearBySportsClubsView()
+                                NearBySportsClubsView(nearByGymClubs: homePageViewModel.nearByGymClub)
                             } label: {
                                 Text("Look At Map")
                                     .font(.system(size: 13,weight: .semibold))

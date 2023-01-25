@@ -47,7 +47,7 @@ class HomePageViewModel : ObservableObject {
 
 
 
-struct  HomePageVM {
+struct  HomePageVM : Identifiable {
     let gymClub : GymClub
     
     var id : String {

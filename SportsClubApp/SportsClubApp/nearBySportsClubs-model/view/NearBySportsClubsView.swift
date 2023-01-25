@@ -12,30 +12,8 @@ import MapKit
 struct NearBySportsClubsView: View {
   
     @StateObject var locationManager = LocationManager()
-    let locations = [
-        GymLocaiton(name: "LifeTime GYM", rank: 3.5, latitude: 40.722849, longitude: -73.893456),
- 
-        
-        GymLocaiton(name: "Heathly GYM", rank: 3.0, latitude: 40.721809, longitude: -73.905965),
-        
-        GymLocaiton(name: "Dream GYM", rank: 4.0, latitude: 40.734037, longitude: -73.896546)
-    ]
-    
+    @State var nearByGymClubs : [HomePageVM]
    
-    
-   // @State var mapRegion: MKCoordinateRegion
-   /* init() {
-        
-     
-      
-        /*self._mapRegion = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!,
-           longitude: (locationManager.lastLocation?.coordinate.latitude)!) , span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)))*/
-    
-    }*/
-    
-    
-    /*@State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!, longitude: locallongitude), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))*/
-    
     @State private var searchText = ""
    @State private var mapRegion : MKCoordinateRegion = MKCoordinateRegion()
     var body: some View {
@@ -44,13 +22,13 @@ struct NearBySportsClubsView: View {
                 
               
                 
-                Map(coordinateRegion: $mapRegion, annotationItems: locations )
+                Map(coordinateRegion: $mapRegion, annotationItems: nearByGymClubs )
                 { location in
-                    MapAnnotation(coordinate: .init(latitude: location.latitude, longitude: location.longitude)) {
+                    MapAnnotation(coordinate: .init(latitude: location.location.latitude!, longitude: location.location.longitude!)) {
                         NavigationLink {
                             ClubDetailsView()
                         } label: {
-                            NearGYMClupMapImage(gymLocation: location)
+                            NearGYMClupMapImage(gymClub: location)
                         }
                     }
                 } .scaledToFill()
@@ -61,7 +39,7 @@ struct NearBySportsClubsView: View {
                         
                         HStack {
                             Image(systemName: "mappin")
-                            Text("NYC,USA")
+                            Text("\(locationManager.city) / \(locationManager.state)")
                         } .padding()
                             .background(.white)
                             .foregroundColor(.black)
@@ -85,11 +63,11 @@ struct NearBySportsClubsView: View {
                         }.padding(.trailing)
                         ScrollView(.horizontal) {
                             HStack(spacing:10) {
-                                ForEach(0..<5) { _ in
+                                ForEach(nearByGymClubs) { nearByGymClub in
                                     NavigationLink {
                                         ClubDetailsView()
                                     } label: {
-                                        NearBySportsClubPartOnToMap()
+                                        NearBySportsClubPartOnToMap(nearByGymClub: nearByGymClub)
                                             .foregroundColor(.black)
                                     }
 
@@ -102,10 +80,11 @@ struct NearBySportsClubsView: View {
             }.navigationTitle("Look Map")
             .navigationBarTitleDisplayMode(.inline)
             .task {
-                var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!,longitude: (locationManager.lastLocation?.coordinate.longitude)!), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+                var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!,longitude: (locationManager.lastLocation?.coordinate.longitude)!), span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
                 print(region.center.longitude)
                 print(region.center.latitude)
                 self.mapRegion = region
+                print("Şehir \(locationManager.city)")
                 
             }
         

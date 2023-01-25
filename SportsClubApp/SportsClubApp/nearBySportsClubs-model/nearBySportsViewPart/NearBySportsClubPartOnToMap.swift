@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct NearBySportsClubPartOnToMap: View {
+    @State var nearByGymClub : HomePageVM
     var body: some View {
         
         HStack {
             Spacer()
             ZStack(alignment:.topLeading) {
-                Image("gymClubsOne")
+                KFImage(URL(string: nearByGymClub.imageUrl))
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200,height: 150)
@@ -31,7 +32,7 @@ struct NearBySportsClubPartOnToMap: View {
             }
             
             VStack(alignment : .leading,spacing: 10) {
-                Text("LifeTime GYM")
+                Text(nearByGymClub.name)
                     .font(.system(size: 18,weight: .semibold))
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
@@ -41,7 +42,7 @@ struct NearBySportsClubPartOnToMap: View {
                     HStack {
                         Image(systemName: "star.fill")
                             .foregroundColor(.orange)
-                        Text("3.5/5")
+                        Text("\(String(format: "%.1f", nearByGymClub.rating))/5")
                             .font(.system(size: 15))
                     }  .multilineTextAlignment(.center)
                 
@@ -57,8 +58,8 @@ struct NearBySportsClubPartOnToMap: View {
     }
 }
 
-struct NearBySportsClubPartOnToMap_Previews: PreviewProvider {
+/*struct NearBySportsClubPartOnToMap_Previews: PreviewProvider {
     static var previews: some View {
-        NearBySportsClubPartOnToMap()
+        NearBySportsClubPartOnToMap(nearByGymClubs: .init(gymClub: .encode(self)))
     }
-}
+}*/

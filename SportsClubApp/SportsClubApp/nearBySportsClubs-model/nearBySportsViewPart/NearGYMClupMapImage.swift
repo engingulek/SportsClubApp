@@ -6,16 +6,16 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 
 
 struct NearGYMClupMapImage: View {
     
-    let gymLocation : GymLocaiton
+    let gymClub : HomePageVM
     
     var body: some View {
         VStack {
-            Image("gymClubsOne")
+            KFImage(URL(string: gymClub.imageUrl))
                 .resizable()
                 .frame(width: 60, height: 40)
                 .cornerRadius(4)
@@ -23,7 +23,7 @@ struct NearGYMClupMapImage: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color(.init(white: 0, alpha: 0.5)))
                 )
-            Text(gymLocation.name)
+            Text(gymClub.name)
                 .font(.system(size: 12, weight: .semibold))
                 .padding(.horizontal, 6)
                 .padding(.vertical, 4)
