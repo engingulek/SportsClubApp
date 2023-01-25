@@ -11,7 +11,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     @Published var lastLocation: CLLocation?
    
-    
+    static let a = LocationManager()
    override init(){
        super.init()
         locationManager.delegate = self

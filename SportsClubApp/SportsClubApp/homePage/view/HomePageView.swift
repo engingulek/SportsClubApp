@@ -13,7 +13,7 @@ struct HomePageView: View {
  
     @State private var searchText = ""
     @StateObject var locationManager = LocationManager()
-   
+
     var body: some View {
         
         NavigationView {

@@ -10,7 +10,7 @@ import MapKit
 
 
 struct NearBySportsClubsView: View {
- 
+  
     @StateObject var locationManager = LocationManager()
     let locations = [
         GymLocaiton(name: "LifeTime GYM", rank: 3.5, latitude: 40.722849, longitude: -73.893456),
@@ -23,19 +23,28 @@ struct NearBySportsClubsView: View {
     
    
     
-    @State private var region : MKCoordinateRegion
+   // @State var mapRegion: MKCoordinateRegion
+   /* init() {
+        
+     
+      
+        /*self._mapRegion = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!,
+           longitude: (locationManager.lastLocation?.coordinate.latitude)!) , span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)))*/
     
-    /*@State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:121.000, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))*/
+    }*/
     
-  
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!, longitude: locallongitude), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    /*@State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!, longitude: locallongitude), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))*/
     
     @State private var searchText = ""
+   @State private var mapRegion : MKCoordinateRegion = MKCoordinateRegion()
     var body: some View {
-      
+    
             ZStack {
-            Map(coordinateRegion: $region, annotationItems: locations )
+                
+              
+                
+                Map(coordinateRegion: $mapRegion, annotationItems: locations )
                 { location in
                     MapAnnotation(coordinate: .init(latitude: location.latitude, longitude: location.longitude)) {
                         NavigationLink {
@@ -92,6 +101,13 @@ struct NearBySportsClubsView: View {
                 }
             }.navigationTitle("Look Map")
             .navigationBarTitleDisplayMode(.inline)
+            .task {
+                var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: (locationManager.lastLocation?.coordinate.latitude)!,longitude: (locationManager.lastLocation?.coordinate.longitude)!), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+                print(region.center.longitude)
+                print(region.center.latitude)
+                self.mapRegion = region
+                
+            }
         
     }
 }
