@@ -53,7 +53,7 @@ struct NearBySportsClubsView: View {
                     Spacer()
                     VStack(alignment:.trailing) {
                         NavigationLink {
-                            NearByGymClubsListView()
+                            GymClubAllListView()
                         } label: {
                             Text("All Gym List")
                                 .padding()

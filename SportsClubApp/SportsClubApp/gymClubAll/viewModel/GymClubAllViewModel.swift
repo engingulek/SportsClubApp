@@ -9,8 +9,9 @@ import Foundation
 
 class GymClubAllViewModel : ObservableObject {
     @Published  var gymClubs = [GymClubAllVM]()
+    @Published  var gymClubsSearch = [GymClubAllVM]()
     
-    func getGymClubAll() async {
+    func gymClubService() async {
         do {
      await GymClubAllService.gymClubAllService.getGymAllService(completion : {(response:Result<[GymClub],Error>) in
                  switch response {
@@ -28,9 +29,20 @@ class GymClubAllViewModel : ObservableObject {
                  
              })
          }
-     }
- }
+    }
     
+    
+    func getGymClubAll() async {
+        await gymClubService()
+     }
+    
+    func searchGymClubAll(searchText:String) async {
+        await gymClubService()
+        self.gymClubsSearch = gymClubs.filter{ $0.name.uppercased().contains(searchText)}
+    }
+    
+ }
+
 struct GymClubAllVM : Identifiable {
     let gymClub : GymClub
     

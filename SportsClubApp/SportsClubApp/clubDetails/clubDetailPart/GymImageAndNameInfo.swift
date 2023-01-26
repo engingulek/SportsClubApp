@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 struct GymImageAndNameInfo: View {
     var gymClub : GymClubAllVM
+    var locatinLength : String
     var body: some View {
         VStack(spacing:45) {
             ZStack(alignment : .topTrailing) {
@@ -56,12 +57,16 @@ struct GymImageAndNameInfo: View {
                         
                 }
                 Spacer()
-                Text("1.5 Metre")
-                    .font(.system(size: 15))
+                VStack {
+                    locatinLength == "0.00" ? Text("Here") : Text("\(locatinLength) Km")
+                } .font(.system(size: 15))
                     .padding()
                     .background(.black)
                     .foregroundColor(.white)
                     .cornerRadius(20)
+                
+            
+                
             }
         }
     }

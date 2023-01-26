@@ -11,7 +11,7 @@ extension ClubDetailsView {
    var viewDetails : some View {
        
        VStack {
-           GymImageAndNameInfo(gymClub: gymClub)
+           GymImageAndNameInfo(gymClub: gymClub, locatinLength: locationLenght)
       
            Divider().frame(minHeight: 1)
                .background(.black)

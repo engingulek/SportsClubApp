@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import CoreLocation
 
 struct ClubDetailsView: View {
     var gymClub : GymClubAllVM
@@ -18,13 +18,12 @@ struct ClubDetailsView: View {
      @State var textFieldCommentDecrase = 0
      
      @State var commentStatusCount = 0
-  
+    @StateObject var locationManager = LocationManager()
+    @State var locationLenght = ""
     var body: some View {
         
         ZStack {
-            
             ScrollView {
-                
                 viewDetails
                     .padding(.horizontal)
                     .padding(.top,25)
@@ -38,6 +37,13 @@ struct ClubDetailsView: View {
             .edgesIgnoringSafeArea(.all)
             : nil
             commentViewState ? commentViewDesign : nil
+        }.task {
+            let gymCordinate = CLLocation(latitude: gymClub.location.latitude!, longitude: gymClub.location.longitude!)
+            let localLocation = CLLocation(latitude: (locationManager.lastLocation?.coordinate.latitude)!, longitude: (locationManager.lastLocation?.coordinate.longitude)!)
+            
+            
+            locationLenght = "\(String(format: "%.2f", localLocation.distance(from: gymCordinate) / 1000))"
+            print("Details \(locationManager.lastLocation?.coordinate.longitude)")
         }
     }
 }

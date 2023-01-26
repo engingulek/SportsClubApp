@@ -29,8 +29,12 @@ struct NearByGymClubListDesign: View {
                     .font(.system(size: 15,weight: .bold))
                     .multilineTextAlignment(.center)
                     .lineLimit(5)
-                VStack(alignment: .leading) {
-                    Text("\(gymClub.location.state!)-\(gymClub.location.city!)")
+                VStack(alignment: .center) {
+                    VStack {
+                        Text("\(gymClub.location.state!)")
+                        Text("\(gymClub.location.city!)")
+                    }
+                    
                     Text("\(gymClub.startClock) - \(gymClub.finishClock)  ")
                 }
                 .font(.system(size: 14))
