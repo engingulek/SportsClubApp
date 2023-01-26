@@ -7,9 +7,11 @@
 
 import Foundation
 
+// MARK: -GymClubAll Service
 class GymClubAllViewModel : ObservableObject {
     @Published  var gymClubs = [GymClubAllVM]()
     @Published  var gymClubsSearch = [GymClubAllVM]()
+   
     
     func gymClubService() async {
         do {
@@ -40,7 +42,6 @@ class GymClubAllViewModel : ObservableObject {
         await gymClubService()
         self.gymClubsSearch = gymClubs.filter{ $0.name.uppercased().contains(searchText)}
     }
-    
  }
 
 struct GymClubAllVM : Identifiable {

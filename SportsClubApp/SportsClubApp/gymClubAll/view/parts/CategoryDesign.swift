@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CategoryDesign: View {
-    @State var categoryName : String
+    @State var name : String
     @State var backgroundColor : Color
     @State var forgroundColor : Color
     var body: some View {
-        Text(categoryName)
+        Text(name)
             .padding()
             .background(backgroundColor)
             .foregroundColor(forgroundColor)
@@ -24,6 +24,6 @@ struct CategoryDesign: View {
 
 struct CategoryDesign_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDesign(categoryName: "Category Name",backgroundColor: .white,forgroundColor: .black)
+        CategoryDesign(name: "name",backgroundColor: .white,forgroundColor: .black)
     }
 }

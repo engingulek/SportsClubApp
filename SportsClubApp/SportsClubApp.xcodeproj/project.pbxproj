@@ -46,6 +46,8 @@
 		7D51513C2966EB8200B9EFD7 /* Coach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51513B2966EB8200B9EFD7 /* Coach.swift */; };
 		7D5930252981D6500079CF46 /* GymClubAllService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5930242981D6500079CF46 /* GymClubAllService.swift */; };
 		7D5930282981D6ED0079CF46 /* GymClubAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5930272981D6ED0079CF46 /* GymClubAllViewModel.swift */; };
+		7D60B5BE2982EE9F00CC2EB8 /* GymClubInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60B5BD2982EE9F00CC2EB8 /* GymClubInfoViewModel.swift */; };
+		7D60B5C02982F09300CC2EB8 /* GymClubInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D60B5BF2982F09300CC2EB8 /* GymClubInfoService.swift */; };
 		7D6EE37729609C9900C24D84 /* SportsClubAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */; };
 		7D6EE37B29609C9B00C24D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37A29609C9B00C24D84 /* Assets.xcassets */; };
 		7D6EE37E29609C9B00C24D84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6EE37D29609C9B00C24D84 /* Preview Assets.xcassets */; };
@@ -139,6 +141,8 @@
 		7D51513B2966EB8200B9EFD7 /* Coach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coach.swift; sourceTree = "<group>"; };
 		7D5930242981D6500079CF46 /* GymClubAllService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubAllService.swift; sourceTree = "<group>"; };
 		7D5930272981D6ED0079CF46 /* GymClubAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubAllViewModel.swift; sourceTree = "<group>"; };
+		7D60B5BD2982EE9F00CC2EB8 /* GymClubInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubInfoViewModel.swift; sourceTree = "<group>"; };
+		7D60B5BF2982F09300CC2EB8 /* GymClubInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymClubInfoService.swift; sourceTree = "<group>"; };
 		7D6EE37329609C9900C24D84 /* SportsClubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsClubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6EE37629609C9900C24D84 /* SportsClubAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsClubAppApp.swift; sourceTree = "<group>"; };
 		7D6EE37A29609C9B00C24D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				7D5930242981D6500079CF46 /* GymClubAllService.swift */,
+				7D60B5BF2982F09300CC2EB8 /* GymClubInfoService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				7D5930272981D6ED0079CF46 /* GymClubAllViewModel.swift */,
+				7D60B5BD2982EE9F00CC2EB8 /* GymClubInfoViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -989,6 +995,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D60B5BE2982EE9F00CC2EB8 /* GymClubInfoViewModel.swift in Sources */,
 				7DCE17D12979724E00E72294 /* ExtensionUpdateCoach.swift in Sources */,
 				7D483BC0297B247D0003ECF8 /* ExtensionMessageHomePage.swift in Sources */,
 				7DD7A50229645EEE00854466 /* CoachDetailView.swift in Sources */,
@@ -1017,6 +1024,7 @@
 				7D22C89929808EB500A4F44C /* User.swift in Sources */,
 				7DA786442965864A00F1F1E8 /* ProfilView.swift in Sources */,
 				7D1DC4682961C5C6000CCF1F /* nearBySportsClupPart.swift in Sources */,
+				7D60B5C02982F09300CC2EB8 /* GymClubInfoService.swift in Sources */,
 				7D1E71F6297F09B60073F6D2 /* LoginPageViewModel.swift in Sources */,
 				7D30B4CA2974787400AF244D /* ExtensionUpdateViewGymClub.swift in Sources */,
 				7D1E71F3297F019C0073F6D2 /* LoginPageService.swift in Sources */,

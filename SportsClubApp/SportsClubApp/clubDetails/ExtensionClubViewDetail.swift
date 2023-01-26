@@ -16,14 +16,14 @@ extension ClubDetailsView {
            Divider().frame(minHeight: 1)
                .background(.black)
            HStack(spacing:30) {
-               ForEach(gymClub.gymSportInfo) { info in
+              /* ForEach(gymClub.gymSportInfo, id: gymClub._id) { info in
                    VStack(spacing:5) {
                        Image(systemName: info.imageName!)
                            .font(.system(size: 25))
                        Text(info.name!)
                            .font(.system(size: 15))
                    }
-               }
+               }*/
            }.padding(.vertical,5)
            Divider().frame(minHeight: 1)
                .background(.black)

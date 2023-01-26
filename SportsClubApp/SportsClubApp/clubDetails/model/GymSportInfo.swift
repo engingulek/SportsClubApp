@@ -6,18 +6,18 @@
 //
 
 import Foundation
-struct GYMSportInfo : Identifiable,Hashable,Equatable,Codable{
-    let id : String?
+struct GYMSportInfo : Codable{
+    let _id : String?
     let imageName : String?
     let name : String?
     
-    init(id:String,imageName: String, name: String) {
-        self.id = id
+    init(_id:String,imageName: String, name: String) {
+        self._id = _id
         self.imageName = imageName
         self.name = name
     }
     
     static func == (lhs:GYMSportInfo,rhs:GYMSportInfo) -> Bool {
-        return lhs.id == rhs.id
+        return lhs._id == rhs._id
     }
 }

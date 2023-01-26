@@ -32,7 +32,7 @@ struct CoachAllView: View {
                
             
             ScrollView(.horizontal,showsIndicators: false) {
-                LazyHStack(spacing:20) {
+                /*LazyHStack(spacing:20) {
                     ForEach(categoryNameList) { category in
                         if category.id == selectedCategoryIndex {
                             
@@ -51,7 +51,7 @@ struct CoachAllView: View {
                         
                     }
                 }.padding(.horizontal)
-                    .padding(.top)
+                    .padding(.top)*/
                  
             
             }.frame(maxHeight : UIScreen.screenHeight/9)

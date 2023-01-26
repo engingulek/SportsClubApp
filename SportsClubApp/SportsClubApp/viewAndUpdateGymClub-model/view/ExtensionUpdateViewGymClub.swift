@@ -116,7 +116,7 @@ extension UpdateViewGymClub {
         VStack {
             Text("Selectable")
                 .font(.system(size: 18,weight: .semibold))
-            ForEach(addTypeGymClubList) { data in
+            /*ForEach(addTypeGymClubList) { data in
                 HStack {
                    // Text(data.name)
                        Spacer()
@@ -128,7 +128,7 @@ extension UpdateViewGymClub {
                 .background(Color.black.opacity(0.1))
                 .cornerRadius(15)
                 .padding(.horizontal)
-            }
+            }*/
         }.padding(.vertical)
     }
     
@@ -164,7 +164,7 @@ extension UpdateViewGymClub {
         VStack {
             Text("Your Selected")
                 .font(.system(size: 18,weight: .semibold))
-            ForEach(getTypeGymClubList) { data in
+            /*ForEach(getTypeGymClubList) { data in
                 HStack {
                    // Text(data.name)
                        Spacer()
@@ -177,7 +177,7 @@ extension UpdateViewGymClub {
                 .background(Color.black.opacity(0.1))
                 .cornerRadius(15)
                 .padding(.horizontal)
-            }
+            }*/
         }.padding(.vertical)
     }
     

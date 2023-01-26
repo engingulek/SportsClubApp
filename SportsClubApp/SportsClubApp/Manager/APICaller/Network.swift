@@ -10,6 +10,7 @@ import Alamofire
 
 enum Network : String {
 case gymClubs = "gymClubs"
+case gymClubInfos = "gymClubInfos"
 }
 
 extension Network: TargetType {
@@ -24,11 +25,15 @@ extension Network: TargetType {
         switch self {
         case .gymClubs:
             return "gymClubs"
+        case .gymClubInfos:
+            return "gymClubInfos"
         }
     }
     var method: AlamofireMethod  {
         switch self {
         case .gymClubs:
+            return .get
+        case .gymClubInfos:
             return .get
         }
     }
@@ -36,6 +41,8 @@ extension Network: TargetType {
     var requestType: RequestType {
         switch self {
         case .gymClubs:
+            return .requestPlain
+        case .gymClubInfos:
             return .requestPlain
         }
     }

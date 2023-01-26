@@ -9,19 +9,13 @@ import SwiftUI
 
 struct GymClubAllListView: View {
     @State private var searchText = ""
-    @State private var selectedCategoryIndex = 0
+    @State private var selectedgymClubInfo = "all"
     @ObservedObject var gymClubAllViewModel = GymClubAllViewModel()
+    @ObservedObject var gymClubInfoViewModel = GymClubInfoViewModel()
     @State private var searchState = false
     @State private var searchValue = ""
 
-    private let categoryNameList = [
-        Category(id: 0, categoryName: "All"),
-        Category(id: 1, categoryName: "Yoga"),
-        Category(id: 2, categoryName: "Swim"),
-        Category(id: 3, categoryName: "Fitness"),
-        Category(id: 4, categoryName: "Fitness"),
-        Category(id: 5, categoryName: "Fitness")
-    ]
+   
     var body: some View {
   
         ScrollView {
@@ -54,23 +48,27 @@ struct GymClubAllListView: View {
             
             ScrollView(.horizontal,showsIndicators: false) {
                 LazyHStack(spacing:20) {
-                    ForEach(categoryNameList) { category in
-                        if category.id == selectedCategoryIndex {
+                    ForEach(gymClubInfoViewModel.gymClubInfos) { gymClubInfo in
+                        
+                        if gymClubInfo.imageName == selectedgymClubInfo {
                             
-                            CategoryDesign(categoryName: category.categoryName, backgroundColor: .black, forgroundColor: .white)
-                                .onTapGesture {
-                                    self.selectedCategoryIndex = category.id
-                                }
+                           CategoryDesign(name: gymClubInfo.name, backgroundColor: .black, forgroundColor: .white)
+                               .onTapGesture {
+                                   self.selectedgymClubInfo = gymClubInfo.imageName
+                               }
 
                         }else{
-                            CategoryDesign(categoryName: category.categoryName, backgroundColor: .white, forgroundColor: .black)
+                            CategoryDesign(name: gymClubInfo.name, backgroundColor: .white, forgroundColor: .black)
                                 .onTapGesture {
-                                    self.selectedCategoryIndex = category.id
+                                    self.selectedgymClubInfo = gymClubInfo.imageName
                                 }
                         }
                     }
                 }.padding(.horizontal)
                     .padding(.top)
+                    .task {
+                        await gymClubInfoViewModel.gymClubInfosService()
+                    }
             }
             
             searchState ?   nil :
