@@ -28,9 +28,14 @@ class GymClubInfoViewModel : ObservableObject {
                 }
         }
     }
+    
 }
 
-struct GymClubInfoVM : Identifiable {
+struct GymClubInfoVM : Identifiable,Equatable {
+    static func == (lhs: GymClubInfoVM, rhs: GymClubInfoVM) -> Bool {
+        return true
+    }
+    
     let gymClubInfo : GYMSportInfo
     
     var id : String {

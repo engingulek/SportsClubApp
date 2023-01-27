@@ -11,6 +11,7 @@ import Foundation
 class GymClubAllViewModel : ObservableObject {
     @Published  var gymClubs = [GymClubAllVM]()
     @Published  var gymClubsSearch = [GymClubAllVM]()
+    @Published var  gymClubsFilter = [GymClubAllVM]()
    
     
     func gymClubService() async {
@@ -42,9 +43,42 @@ class GymClubAllViewModel : ObservableObject {
         await gymClubService()
         self.gymClubsSearch = gymClubs.filter{ $0.name.uppercased().contains(searchText)}
     }
+    
+    func filterGymClubAll(filterGymClubInfo :GymClubInfoVM) async {
+        await gymClubService()
+
+        // Didn't work
+    
+       /*self.gymClubsFilter =   gymClubs.filter{
+           $0.gymSportInfo.map( GymClubInfoVM.init).contains( filterGymClubInfo)
+        }*/
+        
+        self.gymClubsFilter = []
+        if filterGymClubInfo.imageName == "all" {
+            self.gymClubsFilter = self.gymClubs
+        }else{
+            for gymClub in gymClubs {
+                for a in gymClub.gymSportInfo {
+                    if a._id == filterGymClubInfo.id {
+                        self.gymClubsFilter.append(gymClub)
+                    }
+                }
+            }
+        }
+       
+        
+        print("Engin \(self.gymClubsFilter.count)")
+        
+    
+
+        
+        
+    }
  }
 
 struct GymClubAllVM : Identifiable {
+    
+    
     let gymClub : GymClub
     
     var id : String {
