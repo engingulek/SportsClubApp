@@ -10,64 +10,105 @@ import Alamofire
 
 class BaseApi {
     static let baseApi = BaseApi()
-   func fetchData<M : Codable>(target:Network,responseClass:M.Type,completion:@escaping(Result<[M]?,Error>)->Void){
-       let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
-       let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
-       let parameters = buildParams(requestType: target.requestType)
-       AF.request(target.baseURL + target.path,method: method,parameters: parameters.0,encoding: parameters.1,headers: headers).response{
-           (response) in
+    func fetchData<M : Codable>(target:Network,responseClass:M.Type,completion:@escaping(Result<[M]?,Error>)->Void){
+        let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
+        let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
+        let parameters = buildParams(requestType: target.requestType)
+        AF.request(target.baseURL + target.path,method: method,parameters: parameters.0,encoding: parameters.1,headers: headers).response{
+            (response) in
            
-           
-           if let data = response.data{
-               do{
-                   let result = try JSONDecoder().decode(DataResult<M>.self, from: data)
-                   completion(.success(result.list))
-               }catch{
-                   completion(.failure(error))
-               }
-           }
-           
-          /*guard let statusCode = response.response?.statusCode else {
-               completion(.failure(NSError()))
-               return
-           }
-           if statusCode == 200 {
-               guard let jsonResponse = try? response.result.get() else {
-                   print("jsonResponse error")
-                   completion(.failure(NSError()))
-                   return
-               }
-               guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonResponse, options: []) else {
-                   print("theJSONData error")
-                   completion(.failure(NSError()))
-                   return
-               }
-               guard let responseObj = try? JSONDecoder().decode(DataResult<M>.self, from: theJSONData) else {
-                   print("responseObj error")
-                   completion(.failure(NSError()))
-                   return
-               }
-               completion(.success(responseObj.list))
-               print("Base Ap veri \(responseObj.list)")
-           }else{
-               print("error statusCode is \(statusCode)")
-               completion(.failure(NSError()))
-           }*/
-           
-       }
-       
+            
+            if let data = response.data{
+                do{
+                    let result = try JSONDecoder().decode(DataResult<M>.self, from: data)
+                    completion(.success(result.list))
+                }catch{
+                    completion(.failure(error))
+                }
+            }
+        }
     }
-}
-
-
-
-private func buildParams(requestType: RequestType) -> ([String: Any], ParameterEncoding) {
     
-    switch requestType {
+    /*func sendData(target:Network,completion:@escaping(Result<String,Error>)->Void){
+        let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
+        let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
+        let parameters = buildParams(requestType: target.requestType)
+        AF.request(target.baseURL + target.path,method: method,parameters: parameters.0,encoding: parameters.1,headers: headers){
+            (response) in
+            
+            
+            if let data = response.data{
+                do{
+                    let result = try JSONDecoder().decode(DataResult<M>.self, from: data)
+                    completion(.success(result.list))
+                }catch{
+                    completion(.failure(error))
+                }
+            }
+        }
+    }*/
+    
+    func sendData(target:Network,completion:@escaping(Result<String,Error>)->()) {
+        print("Base Api send data")
+        let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
+        let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
+        print("request \(target.requestType)")
+        let parameters = buildParams(requestType: target.requestType)
         
-    case .requestPlain:
-        return ([:], URLEncoding.default)
-    case .requestParameters(parameters: let parameters, encoding: let encoding):
-        return (parameters, encoding)
+        print("parameters 0 \(parameters.0)")
+        print("parameters 1 \(parameters.1)")
+        print("request \(target.requestType)")
+      
+        AF.request(target.baseURL + target.path,method: method,parameters: parameters.0,encoding: parameters.1).response{ response in
+           
+                    if let data = response.data {
+                        do {
+                            let result = try JSONDecoder().decode(SendResultData.self, from: data)
+                           // let result = try JSONSerialization.jsonObject(with: data)
+                            completion(.success(result.message!))
+                            print(result)
+                        }catch{
+                            print("Send Data Error \(error.localizedDescription)")
+                            completion(.failure(error))
+                        }
+                    }
+                }
+        /**
+         
+         
+         AF.request(url,method: .post,parameters: params,encoding: JSONEncoding.init()).response{ response in
+                     if let data = response.data {
+                         do {
+                             let result = try JSONDecoder().decode(SendDataResult.self, from: data)
+                            // let result = try JSONSerialization.jsonObject(with: data)
+                             completion(.success(result.success))
+                             print(result)
+                         }catch{
+                             print("Send Data Error \(error.localizedDescription)")
+                             completion(.failure(error))
+                         }
+                     }
+                 }
+         */
+        
+    }
+
+    
+    
+   
+    
+    
+    
+    private func buildParams(requestType: RequestType) -> ([String: Any], ParameterEncoding) {
+        
+        switch requestType {
+            
+        case .requestPlain:
+            print("Test 1")
+            return ([:], URLEncoding.default)
+        case .requestParameters(parameters: let parameters, encoding: let encoding):
+            print("Test")
+            return (parameters, encoding)
+        }
     }
 }

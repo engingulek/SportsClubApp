@@ -8,9 +8,13 @@
 import Foundation
 import Alamofire
 
-enum Network : String {
-case gymClubs = "gymClubs"
-case gymClubInfos = "gymClubInfos"
+enum Network {
+    
+    
+case gymClubs
+case gymClubInfos
+case createGymClub(Parameters)
+//case createGymClub(Dictionary<String, Any>) = "createGymClub"
 }
 
 extension Network: TargetType {
@@ -27,6 +31,10 @@ extension Network: TargetType {
             return "gymClubs"
         case .gymClubInfos:
             return "gymClubInfos"
+        case .createGymClub(_):
+            return "createGymClub"
+        
+            
         }
     }
     var method: AlamofireMethod  {
@@ -35,6 +43,8 @@ extension Network: TargetType {
             return .get
         case .gymClubInfos:
             return .get
+        case .createGymClub:
+            return .post
         }
     }
     
@@ -44,6 +54,8 @@ extension Network: TargetType {
             return .requestPlain
         case .gymClubInfos:
             return .requestPlain
+        case .createGymClub(let parameters):
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.init())
         }
     }
     

@@ -8,6 +8,7 @@
 import SwiftUI
 import MapKit
 import Combine
+import Alamofire
 enum Pay: String, CaseIterable, Identifiable {
     case year = "Year", month = "Month"  ,day = "Day"
 
@@ -41,6 +42,8 @@ struct CreateGymClubsView: View {
     @State var pay : String = ""
     @State var selectedPayPerion : String = "Year"
     var payPeriod = ["Day,Month,Year"]
+    
+    @ObservedObject var createGymViewModel = GymCreateViewModel()
     
     
     init() {
@@ -173,7 +176,12 @@ struct CreateGymClubsView: View {
                 
             
                 Button("Save") {
-                    
+                    var params : Parameters = [:]
+                    params  = ["testName" :"testNameA"]
+                                           
+                    Task {
+                        await createGymViewModel.gymCreateService(parameters: params)
+                    }
                 }
                 .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
                 .padding(.vertical)
