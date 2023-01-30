@@ -11,17 +11,24 @@ import MapKit
 
 extension  CreateGymClubsView  {
     // MARK: -CreateGymClubsView view part extension
+    
+    
+    /*var createMapView : some View {
+        Map(coordinateRegion: $mapRegion, annotationItems: locations)
+        { location in
+            MapAnnotation(coordinate: .init(latitude: location.latitude, longitude: location.longitude)) {
+              
+            }
+        }
+    }*/
+    
     var createMapView : some View {
         GeometryReader { proxy in
-            Map(coordinateRegion: $mapRegion, annotationItems: locations )
+            Map(coordinateRegion: $mapRegion, showsUserLocation: true,
+                userTrackingMode: .constant(.follow),annotationItems: locations )
             { location in
-                
                 MapAnnotation(coordinate: .init(latitude: location.latitude, longitude: location.longitude)) {
-                        if location.markerType == "userLocation" {
-                            ChooseMapPinDesign(imageName: "circle.fill", text: "Your Location", imageColor: .blue)
-                        }else {
-                            ChooseMapPinDesign(imageName: "checkmark.circle.fill", text: "Select Location", imageColor: .red)
-                        }
+                    ChooseMapPinDesign(imageName: "circle.fill", imageColor: .red)
                 }
             }.edgesIgnoringSafeArea(.bottom)
                 .gesture(TapGesture()
@@ -33,14 +40,14 @@ extension  CreateGymClubsView  {
                         case .second((), let drag):
                             pressLocation = drag?.location ?? .zero
                             selectLocation = pressTapLocation(at: pressLocation, for:proxy.size)
-                            if locations.count == 1 {
+                            if locations.count == 0 {
                                 self.locations.append(selectLocation)
                                 print(selectLocation.longitude)
                                 self.cityAndCountryVisible = true
                                 getCityAnbCountry(latitude: selectLocation.latitude, longitude: selectLocation.longitude)
                                 
                             }else {
-                                self.locations.remove(at: 1)
+                                self.locations.remove(at: 0)
                                 self.cityAndCountryVisible = false
                                 
                             }
@@ -48,7 +55,6 @@ extension  CreateGymClubsView  {
                             return
                         }
                     })
-                
                 )
         }
      }
@@ -64,22 +70,48 @@ extension  CreateGymClubsView  {
     
     //MARK: -Type Gym Club List
     var typeGymClubListView : some View {
-        NavigationView {
-                  VStack {
-                      Text("\(multiTypeGymClubSelection.count) selections")
-                     /*List(typeGymClubList, selection: $multiTypeGymClubSelection) { type in
-                          Text(type.name)
-                      }*/
-                      .environment(\.editMode, $editMode)
-                      
-                  }
-                  .navigationTitle("Select gym club types")
-                  .navigationBarTitleDisplayMode(.inline)
-                 
-              }
-    }
+
+      
+        
+        
+        VStack {
+            
+            ForEach(gymClubInfoViewModel.gymClubInfos) { gymClubInfo in
+                HStack(spacing:25) {
+                    if gymClubInfo.name !=  "All" {
+                        selectedGymClubInfos.contains(gymClubInfo.id) ? Image(systemName: "checkmark.circle").foregroundColor(.blue) :
+                        Image(systemName: "circle").foregroundColor(.blue)
+                        Text(gymClubInfo.name)
+                            .font(.system(size: 20))
+                        Spacer()
+                    }
+                }.onTapGesture {
+                    let info = GYMSportInfo(_id: gymClubInfo.id, imageName: gymClubInfo.imageName, name: gymClubInfo.name)
+                    if selectedGymClubInfos.contains(gymClubInfo.id) {
+                        
+                        selectedGymClubInfoss.remove(at: selectedGymClubInfoss.firstIndex(of: info)!)
+                        selectedGymClubInfos.remove(at: selectedGymClubInfos.firstIndex(of: gymClubInfo.id)!)
+                    }else {
+                        selectedGymClubInfoss.append(info)
+                        selectedGymClubInfos.append(gymClubInfo.id)
+                    }
+                   
+                   
+                }
+        }
+
+        }
+                                    
+            .padding(.horizontal)
+                .padding(.top)
+                .task {
+                    await gymClubInfoViewModel.gymClubInfosService()
+                }
+        }
     
-    // MARK: - Pay Period
+
+    
+
    
     private    func pressTapLocation(at point: CGPoint, for mapSize: CGSize) -> ChoseGymMapLocation {
           let lat = mapRegion.center.latitude

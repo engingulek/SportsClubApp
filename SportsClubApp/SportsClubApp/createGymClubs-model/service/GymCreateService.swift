@@ -20,7 +20,7 @@ class GymCreateService {
                 case .success(let a):
                     print("Success")
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print("Error hatası \(error.localizedDescription)")
                 }
                 
             }

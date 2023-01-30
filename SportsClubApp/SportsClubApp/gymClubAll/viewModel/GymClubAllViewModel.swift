@@ -20,7 +20,9 @@ class GymClubAllViewModel : ObservableObject {
                  switch response {
                  case .success(let list):
                      DispatchQueue.main.async {
-                         self.gymClubs = list.map(GymClubAllVM.init)
+                         let userId = UserDefaults.standard.string(forKey: "uid")
+                         self.gymClubs = list.map(GymClubAllVM.init).filter{$0.createUserId != userId }
+                         
                          print("Vm veri geldi \(list)")
                      }
                  case .failure(let error):

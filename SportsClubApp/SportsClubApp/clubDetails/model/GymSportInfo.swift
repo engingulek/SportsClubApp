@@ -6,10 +6,10 @@
 //
 
 import Foundation
-struct GYMSportInfo : Codable{
-    let _id : String?
-    let imageName : String?
-    let name : String?
+struct GYMSportInfo : Codable ,Hashable{
+    let _id : String!
+    let imageName : String!
+    let name : String!
   
     
     

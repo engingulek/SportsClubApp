@@ -31,7 +31,7 @@ class GymClubInfoViewModel : ObservableObject {
     
 }
 
-struct GymClubInfoVM : Identifiable,Equatable {
+struct GymClubInfoVM : Identifiable,Equatable,Hashable {
     static func == (lhs: GymClubInfoVM, rhs: GymClubInfoVM) -> Bool {
         return true
     }
