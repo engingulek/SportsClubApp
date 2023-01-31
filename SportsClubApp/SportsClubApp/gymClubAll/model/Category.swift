@@ -6,13 +6,9 @@
 //
 
 import Foundation
-struct Category : Identifiable,Hashable,Codable {
-    let id : Int
-    let categoryName : String
-    
-    
-    init(id: Int, categoryName: String) {
-        self.id = id
-        self.categoryName = categoryName
-    }
+struct Category :  Codable ,Hashable{
+    let _id : String!
+    let imageName : String!
+    let name : String!
+
 }

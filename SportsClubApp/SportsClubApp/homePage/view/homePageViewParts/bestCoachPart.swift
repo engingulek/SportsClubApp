@@ -6,20 +6,21 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 struct bestCoachPart: View {
+    var coach : CoachAllViewModel
     var body: some View {
         VStack(spacing:15) {
             ZStack(alignment : .topTrailing) {
-                Image("coach")
+                KFImage(URL(string: coach.imageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 170,height: 170)
                     .cornerRadius(15)
                 HStack {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "star.fill")        
                         .foregroundColor(.orange)
-                    Text("3.5/5")
+                    Text("\(String(format: "%.1f", coach.reting))/5")
                         .font(.system(size: 14))
                 }.frame(width: 80,height: 30)
                 .background()
@@ -28,9 +29,9 @@ struct bestCoachPart: View {
                     
             }
             VStack {
-                Text("Amy Kate")
+                Text("\(coach.name)")
                     .font(.system(size: 17,weight: .semibold))
-                Text("Yoga")
+                Text("\(coach.category.name)")
                     .font(.system(size: 16,weight: .light))
             }
            
@@ -38,8 +39,4 @@ struct bestCoachPart: View {
     }
 }
 
-struct bestCoachPart_Previews: PreviewProvider {
-    static var previews: some View {
-        bestCoachPart()
-    }
-}
+

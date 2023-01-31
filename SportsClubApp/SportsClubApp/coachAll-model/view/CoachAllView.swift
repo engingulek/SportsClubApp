@@ -10,14 +10,8 @@ import SwiftUI
 struct CoachAllView: View {
     @State private var searchText = ""
     @State private var selectedCategoryIndex = 0
-    private let categoryNameList = [
-        Category(id: 0, categoryName: "All"),
-        Category(id: 1, categoryName: "Yoga"),
-        Category(id: 2, categoryName: "Swim"),
-        Category(id: 3, categoryName: "Fitness"),
-        Category(id: 4, categoryName: "Fitness"),
-        Category(id: 5, categoryName: "Fitness")
-    ]
+    @ObservedObject var coachAllViewModel = CoachAllListViewModel()
+  
     var body: some View {
         VStack {
             HStack {
@@ -59,11 +53,11 @@ struct CoachAllView: View {
             ScrollView {
        
                 VStack {
-                    ForEach(0..<5) { _ in
+                    ForEach(coachAllViewModel.coachs) { coach in
                         NavigationLink {
-                            CoachDetailView()
+                          CoachDetailView(coach: coach)
                         } label: {
-                            CoachListDesign()
+                            CoachListDesign(coach: coach)
                                 .foregroundColor(.black)
                         }
 
@@ -71,6 +65,9 @@ struct CoachAllView: View {
                 }.padding(.top)
             }
         }.navigationTitle("All Coach")
+            .task {
+                await coachAllViewModel.coachAllService()
+            }
         
         
        

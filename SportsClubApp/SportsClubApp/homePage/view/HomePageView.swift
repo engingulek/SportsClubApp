@@ -10,6 +10,7 @@ import CoreLocation
 
 struct HomePageView: View {
     @ObservedObject var homePageViewModel = HomePageViewModel()
+    @ObservedObject var coachAllViewModel = CoachAllListViewModel()
  
     @State private var searchText = ""
     @StateObject var locationManager = LocationManager()
@@ -89,11 +90,11 @@ struct HomePageView: View {
                         
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing:20) {
-                                ForEach(0..<5) { _ in
+                                ForEach(coachAllViewModel.coachsBest) { coach in
                                     NavigationLink {
-                                        CoachDetailView()
+                                        CoachDetailView(coach: coach)
                                     }label: {
-                                        bestCoachPart()
+                                        bestCoachPart(coach: coach)
                                     }
                                     
                                 }
@@ -139,6 +140,7 @@ struct HomePageView: View {
                 }
         }.task {
             await homePageViewModel.getNearByGymClub(localLocation : locationManager.lastLocation!)
+            await coachAllViewModel.coachAllService()
             
         }
     }

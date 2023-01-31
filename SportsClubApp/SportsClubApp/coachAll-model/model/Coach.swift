@@ -7,14 +7,26 @@
 
 import Foundation
 
-struct Coach : Identifiable,Hashable,Codable {
-    let id : String
-    let imageURL : String
-    let name : String
-    let category : [Category]
-    let rating:Double
+struct Coach : Codable {
+    let _id : String?
+    let createUserId: String?
+    let imageURL : String?
+    let name : String?
+    let category : Category?
+    let location : CoachLocation?
+    let destination : String?
+    let rating:Double?
+    let payPeriod : ClubPayPeriod?
+    let comment : [Comment]?
+    let registeredUsers : [User]?
     
    
+}
+
+
+struct CoachLocation : Codable , Hashable {
+    let city : String?
+    let state : String?
 }
 
 

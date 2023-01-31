@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CoachDetailView: View {
+    var coach : CoachAllViewModel
     @State  var commentViewState  = false
     @State var commentTextField = ""
     
@@ -42,8 +43,4 @@ struct CoachDetailView: View {
     }
 }
 
-struct CoachDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        CoachDetailView()
-    }
-}
+

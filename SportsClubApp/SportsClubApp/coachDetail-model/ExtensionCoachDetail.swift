@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-
+import Kingfisher
 extension CoachDetailView {
     var viewDetail : some View {
         VStack(spacing:5) {
             ZStack(alignment : .bottomTrailing) {
                 
-                Image("coach")
+               KFImage(URL(string: coach.imageUrl))
                     .resizable()
                     .scaledToFit()
                     .frame(height: UIScreen.screenHeight / 4)
@@ -21,11 +21,15 @@ extension CoachDetailView {
               
             }
             
-            Text("Amy Amanda")
-            Text("Yoga")
+            Text("\(coach.name)")
+            Text("\(coach.category.name)")
             HStack {
                 Image(systemName: "mappin")
-                Text("NYC,USA")
+        
+                    Text("\(String(coach.location.city!)), \(String(coach.location.state!))")
+                    
+                
+                
             }.font(.system(size: 18,weight: .semibold))
             
             Divider()
@@ -37,14 +41,14 @@ extension CoachDetailView {
                 HStack {
                     Image(systemName: "star.fill")
                         .foregroundColor(.orange)
-                    Text("3.5/5")
+                    Text("\(String(format: "%.1f", coach.reting))/5")
                 }.frame(width: 80,height: 30)
                     .font(.system(size: 14))
                
                 HStack {
                     Image(systemName: "dollarsign.circle.fill")
                         .foregroundColor(.orange)
-                    Text("$50 per hours")
+                    Text("$\(String(format: "%.1f",coach.payPeriod.pay!)) per \(String(format :coach.payPeriod.period!))")
                 }.frame(height: 30)
                     .font(.system(size: 14))
             }
@@ -55,7 +59,7 @@ extension CoachDetailView {
                 .padding(.vertical)
          
             
-                  Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five .")
+            Text("\(coach.destination)")
                       .font(.system(size: 15,weight: .light))
                       .padding(.horizontal)
       
@@ -76,7 +80,7 @@ extension CoachDetailView {
                     commentViewState = true
                 }
                 .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-                ForEach(0..<4) { _ in
+                ForEach(coach.comment) { commnet in
                     CommentDesign()
                 }
                 
