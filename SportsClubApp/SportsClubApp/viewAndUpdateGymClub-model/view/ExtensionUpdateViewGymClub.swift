@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
+import Kingfisher
 
-//MARK : -When updateState is false
 extension UpdateViewGymClub {
     var gymClubImage : some View {
-        Image("gymClubsOne")
+        KFImage(URL(string: profilViewModel.userGymClub[0].imageUrl))
             .resizable()
             .scaledToFill()
             .cornerRadius(15)
@@ -19,13 +19,13 @@ extension UpdateViewGymClub {
     }
     
     var gymNameText : some View {
-        Text("LifeTime Gym")
+        Text(profilViewModel.userGymClub[0].name)
             .font(.system(size: 20,weight: .bold))
     }
     var cityAndCountryText : some View {
         
         HStack(alignment:.center) {
-            Text("New York")
+            Text(profilViewModel.userGymClub[0].location.city!)
                 .padding()
                 .background(Color.black)
                 .cornerRadius(20)
@@ -33,7 +33,7 @@ extension UpdateViewGymClub {
                 .multilineTextAlignment(.center)
             
             
-            Text("United States")
+            Text(profilViewModel.userGymClub[0].location.state!)
                 .padding()
                 .background(Color.black)
                 .cornerRadius(20)
@@ -42,149 +42,52 @@ extension UpdateViewGymClub {
         .foregroundColor(.white)
     }
     
+    var gymClubInfosView: some View {
+        
+  
+            ForEach (profilViewModel.userGymClub[0].gymSportInfo , id:  \.self) { sportInfo in
+                    HStack{
+                        Image(systemName: sportInfo.imageName)
+                            .font(.system(size: 25))
+                        Text(sportInfo.name)
+                            .font(.system(size: 25))
+                    }
+            }.padding(.vertical)
+    }
+    
     var openAndCloseTime : some View {
         VStack {
             HStack {
                 Text("Open Time")
                     .fontWeight(.semibold)
-                Text("\(getOpenTime)")
+                Text(profilViewModel.userGymClub[0].startClock)
             }
             HStack {
                 Text("Close Time")
                     .fontWeight(.semibold)
-                Text("\(getCloseTime)")
+                Text(profilViewModel.userGymClub[0].startClock)
             }
         }.font(.system(size: 18))
     }
     
     var payAndPeriodView : some View {
         HStack {
-            Text(pay)
+            Text(String(profilViewModel.userGymClub[0].payPeriod.pay!))
             Spacer()
-            Text(selectedPayPerion)
+            Text(profilViewModel.userGymClub[0].payPeriod.period!)
         } .padding()
             .background(Color.black.opacity(0.1))
             .cornerRadius(15)
             .padding(.horizontal)
     }
     
-}
-
-
-//MARK : -When updateState is true
-
-extension UpdateViewGymClub {
-    
-    var changeImageButton : some View {
-        Button("Change Image") {
-            print("Change Image Action")
-        }.buttonStyle(StartPageButtonStyle(foregroundColor: .black, backgroundColor: .white))
-            .padding(.bottom)
-    }
-    
-    var changeGymNameTextField  : some View {
-        VStack {
-            TextField("Gym Name", text: $changeGymName)
-                .asTextField(textContentType: .name)
-                .onChange(of: changeGymName) { newValue in
-                    limitGymNameTextField(textFieldGymClubNameLimit, newValue)
-                }
-            HStack {
-                textFieldGymClubNameLimitDecrase < textFieldGymClubNameLimit ? nil : Text("Character Limit")
-                    .foregroundColor(.red)
-                Spacer()
-                Text("\(textFieldGymClubNameLimitDecrase)/\(textFieldGymClubNameLimit)")
-                     .foregroundColor(
-                         textFieldGymClubNameLimitDecrase < textFieldGymClubNameLimit ? .black : .red
-                     )
-            }.padding(.horizontal)
-        }
-        
-    }
-    
-    var changeOpenCloseTimeDatePicker : some View {
-        VStack {
-            DatePicker("Open Time",selection: $selectOpenTime,displayedComponents: .hourAndMinute)
-            DatePicker("Close Time",selection: $selectCloseTime,displayedComponents: .hourAndMinute)
-        }.padding([.vertical,.horizontal])
-    }
     
     
-    
-    
-    var addTypeGymClubListView : some View {
-        VStack {
-            Text("Selectable")
-                .font(.system(size: 18,weight: .semibold))
-            /*ForEach(addTypeGymClubList) { data in
-                HStack {
-                   // Text(data.name)
-                       Spacer()
-                    Button("Add") {
-                        
-                    }.foregroundColor(.blue)
-                }
-                .padding()
-                .background(Color.black.opacity(0.1))
-                .cornerRadius(15)
-                .padding(.horizontal)
-            }*/
-        }.padding(.vertical)
-    }
-    
-    
-    var updatePayView : some View {
-        VStack {
-            Text("Update the price and period type")
-            .padding(.top)
-            .font(.system(size: 20,weight: .bold))
-            HStack{
-                TextField("Pay", text: $pay)
-                    .padding([.vertical,.horizontal],10)
-                    .keyboardType(.numberPad)
-                    .border(Color.black.opacity(0.2))
-                
-                    Picker("Pay Period", selection: $selectedPayPerion) {
-                        Text("Year").tag(Pay.year)
-                        Text("Month").tag(Pay.month)
-                        Text("Day").tag(Pay.day)
-                    }
-            }
-        }.padding(.horizontal)
-    }
-    
-    
-  
-    
-}
-
-// MARK: -Partner
-extension UpdateViewGymClub {
-    var getTypeGymClubListView : some View {
-        VStack {
-            Text("Your Selected")
-                .font(.system(size: 18,weight: .semibold))
-            /*ForEach(getTypeGymClubList) { data in
-                HStack {
-                   // Text(data.name)
-                       Spacer()
-                    updateState ?
-                    Button("Remove") {
-                        
-                    }.foregroundColor(.red) : nil
-                }
-                .padding()
-                .background(Color.black.opacity(0.1))
-                .cornerRadius(15)
-                .padding(.horizontal)
-            }*/
-        }.padding(.vertical)
-    }
     
     
     var gymClubDescriptionTextField : some View {
         VStack {
-            Text("\(updateState ? "Update" : "Give") information about the gym club")
+            Text(" Information about the gym club")
                 .padding(.top)
                 .font(.system(size: 20,weight: .bold))
             TextField("Gym Description", text: $gymClubDescription ,axis: .vertical)
@@ -194,24 +97,13 @@ extension UpdateViewGymClub {
                 .textFieldStyle(.plain)
                 .border(.black)
                 .padding()
-                .disabled(updateState ? false : true)
-             .onChange(of: gymClubDescription) { newValue in
-                limitGymDescriptionTextField(limit: textFieldGymDescriptionLimit, value: newValue)
-                
-            }
-            updateState ?    HStack {
-                textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? nil : Text("Character Limit")
-                    .foregroundColor(.red)
-                Spacer()
-                Text("\(textFieldDescriptionDecrase)/275")
-                    .foregroundColor(
-                        textFieldDescriptionDecrase < textFieldGymDescriptionLimit ? .black
-                        : .red
-                    )
-            }.padding(.horizontal) : nil
+                .disabled(true)
+            
         }
     }
+    
 }
+
 // MARK: -Functions
 extension UpdateViewGymClub {
     func limitGymNameTextField(_ limit : Int, _ value : String) {

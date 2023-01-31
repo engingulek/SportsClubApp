@@ -18,12 +18,7 @@ extension CoachDetailView {
                     .frame(height: UIScreen.screenHeight / 4)
                     .clipShape(Circle())
                 
-                Image(systemName: "heart")
-                    .foregroundColor(.red)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        print("Remove Like Lisr")
-                    }
+              
             }
             
             Text("Amy Amanda")

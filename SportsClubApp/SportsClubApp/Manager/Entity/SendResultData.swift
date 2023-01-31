@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SendResultData : Decodable {
+class SendResultData : Codable {
     var success:Int?
     var message:String?
 }

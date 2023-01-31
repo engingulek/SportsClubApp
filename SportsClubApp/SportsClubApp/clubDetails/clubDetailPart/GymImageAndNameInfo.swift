@@ -25,17 +25,8 @@ struct GymImageAndNameInfo: View {
                     Text("\(String(format: "%.1f", gymClub.rating))/5")
                         .font(.system(size: 14))
            
-                    Divider().frame(minWidth: 1)
-                        .fontWeight(.bold)
-                        .background(.black)
-                        .padding(.vertical,4)
-                    Image(systemName: "heart")
-                        .foregroundColor(.red)
-                        .background(Color.white.opacity(0.9))
-                        .clipShape(Circle())
-                        .onTapGesture {
-                            print("Remove Like Lisr")
-                        }
+                  
+                   
                       
                 }.frame(width: 100,height: 30)
                 .background()

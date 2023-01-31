@@ -29,26 +29,8 @@ class BaseApi {
         }
     }
     
-    /*func sendData(target:Network,completion:@escaping(Result<String,Error>)->Void){
-        let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
-        let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
-        let parameters = buildParams(requestType: target.requestType)
-        AF.request(target.baseURL + target.path,method: method,parameters: parameters.0,encoding: parameters.1,headers: headers){
-            (response) in
-            
-            
-            if let data = response.data{
-                do{
-                    let result = try JSONDecoder().decode(DataResult<M>.self, from: data)
-                    completion(.success(result.list))
-                }catch{
-                    completion(.failure(error))
-                }
-            }
-        }
-    }*/
     
-    func sendData(target:Network,completion:@escaping(Result<String,Error>)->()) {
+    func sendData<M:Codable>(target:Network,responseClass : M.Type,completion:@escaping(Result<[M]?,Error>)->()) {
         print("Base Api send data")
         let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
         let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
@@ -63,9 +45,9 @@ class BaseApi {
            
                     if let data = response.data {
                         do {
-                            let result = try JSONDecoder().decode(SendResultData.self, from: data)
+                            let result = try JSONDecoder().decode(DataResult<M>.self, from: data)
                            // let result = try JSONSerialization.jsonObject(with: data)
-                            completion(.success(result.message!))
+                           // completion(.success(result))
                             print(result)
                         }catch{
                             print("Send Data Error \(error.localizedDescription)")

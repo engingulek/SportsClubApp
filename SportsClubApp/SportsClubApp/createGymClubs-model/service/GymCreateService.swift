@@ -15,7 +15,7 @@ class GymCreateService {
         do {
           
             print("Service para \(parameters)")
-            BaseApi.baseApi.sendData(target: .createGymClub(parameters)) { (response:Result<String,Error>) in
+            BaseApi.baseApi.sendData(target: .createGymClub(parameters), responseClass: GymClub.self) { (response:Result<[GymClub]?,Error>) in
                 switch response {
                 case .success(let a):
                     print("Success")

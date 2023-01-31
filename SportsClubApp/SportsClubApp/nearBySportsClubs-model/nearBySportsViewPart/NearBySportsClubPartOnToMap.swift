@@ -19,16 +19,6 @@ struct NearBySportsClubPartOnToMap: View {
                     .scaledToFit()
                     .frame(width: 200,height: 150)
                     .cornerRadius(25)
-                   
-                 
-                
-                Image(systemName: "heart")
-                    .frame(width: 35,height: 35)
-                    .foregroundColor(.red)
-                    .background(Color.white.opacity(0.9))
-                    .clipShape(Circle())
-                    .padding(.vertical)
-                    .padding(.horizontal)
             }
             
             VStack(alignment : .leading,spacing: 10) {

@@ -44,6 +44,7 @@ struct CreateGymClubsView: View {
     var payPeriod = ["Day,Month,Year"]
     
     @ObservedObject var createGymViewModel = GymCreateViewModel()
+    @ObservedObject var profilViewModel = ProfilViewModel()
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
     
@@ -64,6 +65,11 @@ struct CreateGymClubsView: View {
     var body: some View {
         
         ScrollView {
+            profilViewModel.userGymClub.count != 0 ?
+            VStack(alignment : .center){
+                Text("There is already an ad")
+            } : nil
+            profilViewModel.userGymClub.count == 0 ?
             VStack {
                 
                 VStack{
@@ -217,8 +223,12 @@ struct CreateGymClubsView: View {
                 .padding(.vertical)
               
                 
-            }.padding(.vertical)
+            }.padding(.vertical) : nil
+       
         }.navigationTitle("Create Gym Club")
+            .task {
+               await profilViewModel.userGymClub()
+            }
            
         
     }

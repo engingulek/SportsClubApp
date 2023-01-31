@@ -11,7 +11,7 @@ import MapKit
 struct UpdateViewGymClub: View {
     @State var updateState = false
     @State var changeGymName : String = ""
-    @State var mapRegion: MKCoordinateRegion
+    
     @State var pressLocation = CGPoint.zero
     @State var selectLocation = ChoseGymMapLocation(markerType: "selectLocation", latitude: 40.722849, longitude: -73.893456)
     @State var selectOpenTime = Date()
@@ -31,59 +31,30 @@ struct UpdateViewGymClub: View {
      @State var textFieldDescriptionDecrase = 275
      @State var gymNameStatusCount = 0
      @State var gymDescriptionStatusCount = 275
-    
-    init() {
-        self._mapRegion = State(initialValue: MKCoordinateRegion(center: .init(latitude: 40.722849, longitude: -73.893456), span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)))
-    }
+    @ObservedObject var profilViewModel = ProfilViewModel()
+  
     var body: some View {
         ScrollView {
-            VStack {
-                HStack {
-                    Button(updateState ? "View" : "Update") {
-                        updateState.toggle()
+            profilViewModel.userGymClub.count != 0  ? VStack(alignment : .center){
+                VStack {
+                    ZStack(alignment:.bottom) {
+                        gymClubImage
                     }
-                    Button("Delete") {
-                        print("Help tapped!")
-                    }.foregroundColor(.red)
-                }.padding(.horizontal)
-                
-                ZStack(alignment:.bottom) {
-                    gymClubImage
-                    updateState ? changeImageButton : nil
-                }
-                
-                updateState ? VStack {
-                    
-                    changeGymNameTextField
-                    changeOpenCloseTimeDatePicker
-                    addTypeGymClubListView
-                    updatePayView
-                    
-                    
-                }   : nil
-                updateState == false ?  VStack {
                     gymNameText
                     // create struct view for map view. this struct will to use for create amd udpate
                     cityAndCountryText
+                    gymClubInfosView
                     openAndCloseTime
                     payAndPeriodView
-                }: nil
-                getTypeGymClubListView
-                gymClubDescriptionTextField
-                
-                updateState ?
-                Button("Save") {
-                    
+                    gymClubDescriptionTextField
                 }
-                .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-                .padding(.vertical) : nil
-                
-           
-
-            }
+            } : nil
+            
+            profilViewModel.userGymClub.count == 0 ? Text("There are no advertisements. Create an ad") : nil
         }
         .task {
             setDateTest()
+            await profilViewModel.userGymClub()
         }
         .navigationTitle("View Gym Club Advert")
     }
