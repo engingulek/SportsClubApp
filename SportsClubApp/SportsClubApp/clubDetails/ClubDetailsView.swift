@@ -36,7 +36,7 @@ struct ClubDetailsView: View {
                                          Color.black.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
             : nil
-            commentViewState ? commentViewDesign : nil
+           
         }.task {
             let gymCordinate = CLLocation(latitude: gymClub.location.latitude!, longitude: gymClub.location.longitude!)
             let localLocation = CLLocation(latitude: (locationManager.lastLocation?.coordinate.latitude)!, longitude: (locationManager.lastLocation?.coordinate.longitude)!)

@@ -116,27 +116,7 @@ struct HomePageView: View {
                                 }
                     }
                     
-                    ToolbarItemGroup(placement:
-                            .primaryAction) {
-                                NavigationLink {
-                                    MessageHomePageView()
-                                } label: {
-                                    ZStack(alignment: .topTrailing) {
-                                        Image(systemName: "location")
-                                             .font(.system(size: 25))
-                                             .foregroundColor(.black)
-                                        Text("1")
-                                            
-                                            .frame(width: 20,height: 20)
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 15))
-                                            .background(.black)
-                                            .clipShape(Circle())
-
-                                    }
-                                   
-                                }
-                    }
+                  
                 }
         }.task {
             await homePageViewModel.getNearByGymClub(localLocation : locationManager.lastLocation!)

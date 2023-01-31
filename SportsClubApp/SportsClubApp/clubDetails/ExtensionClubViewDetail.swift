@@ -32,53 +32,14 @@ extension ClubDetailsView {
          
            Text(gymClub.destination)
                    .font(.system(size: 15,weight: .light))
-   
-               NavigationLink {
-                   Text("Message Page")
-               } label: {
-                   VStack{
-                       Text("$\(String(format: "%.0f", gymClub.payPeriod.pay!))/ \(gymClub.payPeriod.period!)")
-                       Text("Click for send message")
-                   }
-               }
+           Text("$\(String(format: "%.0f", gymClub.payPeriod.pay!))/ \(gymClub.payPeriod.period!)")
                .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
                .padding()
-           
-          
-           
-           
        }
            
    }
     
-    var commentViewDesign : some View {
-        VStack {
-            HStack {
-                Spacer()
-                Image(systemName: "multiply.circle.fill")
-                    .font(.system(size: 25))
-                    .foregroundColor(.red)
-                    
-                    .onTapGesture {
-                        commentViewState = false
-                    }
-            }.padding(.horizontal)
-                .padding(.top)
-            Text("Comment")
-                .font(.system(size: 20,weight: .semibold))
-            commentTextFieldView
-            Button("Send") {
-                print("Send comment")
-                commentViewState = false
-            }.buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-                .padding(.bottom)
-            
-        }
-        .frame(width: UIScreen.screenWidth / 1.2 , height: UIScreen.screenHeight / 2.5)
-        .background(Color.white)
-        .cornerRadius(15)
-        
-    }
+
     
     var commentTextFieldView : some View {
         

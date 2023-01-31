@@ -30,51 +30,7 @@ class BaseApi {
     }
     
     
-    func sendData<M:Codable>(target:Network,responseClass : M.Type,completion:@escaping(Result<[M]?,Error>)->()) {
-        print("Base Api send data")
-        let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
-        let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
-        print("request \(target.requestType)")
-        let parameters = buildParams(requestType: target.requestType)
-        
-        print("parameters 0 \(parameters.0)")
-        print("parameters 1 \(parameters.1)")
-        print("request \(target.requestType)")
-      
-        AF.request(target.baseURL + target.path,method: method,parameters: parameters.0,encoding: parameters.1).response{ response in
-           
-                    if let data = response.data {
-                        do {
-                            let result = try JSONDecoder().decode(DataResult<M>.self, from: data)
-                           // let result = try JSONSerialization.jsonObject(with: data)
-                           // completion(.success(result))
-                            print(result)
-                        }catch{
-                            print("Send Data Error \(error.localizedDescription)")
-                            completion(.failure(error))
-                        }
-                    }
-                }
-        /**
-         
-         
-         AF.request(url,method: .post,parameters: params,encoding: JSONEncoding.init()).response{ response in
-                     if let data = response.data {
-                         do {
-                             let result = try JSONDecoder().decode(SendDataResult.self, from: data)
-                            // let result = try JSONSerialization.jsonObject(with: data)
-                             completion(.success(result.success))
-                             print(result)
-                         }catch{
-                             print("Send Data Error \(error.localizedDescription)")
-                             completion(.failure(error))
-                         }
-                     }
-                 }
-         */
-        
-    }
-
+    
     
     
    

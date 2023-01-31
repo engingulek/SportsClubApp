@@ -62,14 +62,6 @@ extension CoachDetailView {
             Text("\(coach.destination)")
                       .font(.system(size: 15,weight: .light))
                       .padding(.horizontal)
-      
-                  NavigationLink {
-                      Text("Message Page")
-                  } label: {
-                      VStack{
-                          Text("Click for send message")
-                      }
-                  }
                   .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
                   .padding()
             
