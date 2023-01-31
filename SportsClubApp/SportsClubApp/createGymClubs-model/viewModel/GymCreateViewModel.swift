@@ -60,8 +60,7 @@ class GymCreateViewModel : ObservableObject  {
                     "pay" : newGymClub.payPeriod!.pay!,
                     "period" : newGymClub.payPeriod!.period!
                    ],
-                   "comment" : newGymClub.comment!,
-                   "registeredUsers" : newGymClub.registeredUsers!
+                 
         ]
        
         do{

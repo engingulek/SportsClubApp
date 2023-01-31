@@ -44,18 +44,7 @@ extension ClubDetailsView {
                .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
                .padding()
            
-           VStack(spacing:15) {
-               Text("Reviews")
-                   .font(.system(size: 20,weight: .semibold))
-               Button("Comment") {
-                   commentViewState = true
-               }
-               .buttonStyle(StartPageButtonStyle(foregroundColor: .white, backgroundColor: .black))
-               ForEach(gymClub.comment) { comment in
-                   CommentDesign()
-               }
-               
-           }
+          
            
            
        }

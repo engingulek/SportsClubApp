@@ -264,7 +264,7 @@ struct CreateGymClubsView: View {
                         print("New Gym Club \(openTimeString)  \(closeTimeString)")
                         
                         
-                        let newGymClub = GymClub(_id: "", createUserId: userId, imageUrl: imageurl, name: gymName, rating: 0, location: Location(latitude: selectedLatitude, longitude: selectedLongitude, city: city, state: country), gymSportInfo:selectedGymClubInfoss , destination: gymClubDescription, startClock: openTimeString, finishClock: closeTimeString, payPeriod: ClubPayPeriod(pay: Double(pay), period: selectedPayPerion), comment: [Comment](), registeredUsers: [User]())
+                        let newGymClub = GymClub(_id: "", createUserId: userId, imageUrl: imageurl, name: gymName, rating: 0, location: Location(latitude: selectedLatitude, longitude: selectedLongitude, city: city, state: country), gymSportInfo:selectedGymClubInfoss , destination: gymClubDescription, startClock: openTimeString, finishClock: closeTimeString, payPeriod: ClubPayPeriod(pay: Double(pay), period: selectedPayPerion))
                         
                         Task {
                             if  newGymClub == newGymClub{

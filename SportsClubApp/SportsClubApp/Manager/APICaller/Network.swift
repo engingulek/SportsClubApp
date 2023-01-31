@@ -16,6 +16,7 @@ case gymClubInfos
 case createGymClub(Parameters)
 case userGymClubAdver(Parameters)
 case coachs
+case coachsCategory
 //case createGymClub(Dictionary<String, Any>) = "createGymClub"
 }
 
@@ -39,6 +40,9 @@ extension Network: TargetType {
             return "userGymAdvert"
         case .coachs:
             return "coachs"
+        
+        case .coachsCategory:
+            return "coachCategories"
         }
     }
     var method: AlamofireMethod  {
@@ -52,6 +56,8 @@ extension Network: TargetType {
         case .userGymClubAdver(_):
             return .post
         case .coachs:
+            return .get
+        case .coachsCategory:
             return .get
         }
     }
@@ -67,6 +73,8 @@ extension Network: TargetType {
         case .userGymClubAdver(let parameters):
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.init())
         case .coachs:
+            return .requestPlain
+        case .coachsCategory:
             return .requestPlain
         }
     }

@@ -26,12 +26,7 @@ struct ProfilView: View {
     @ObservedObject var profilViewModel = ProfilViewModel()
     var profilePageList : [ProfilePageList] = [
         .init(id: 2, title: "Create Gym Club advert", subtitle: "Create an ad for your gym",view: AnyView(CreateGymClubsView())),
-        .init(id: 3, title: "Create Coach advert", subtitle: "Create an ad for your education",
-             view: AnyView(CreateCoachView())),
-        .init(id: 4, title: "View Gym Club Ad", subtitle: "Update view gym club posting", view: AnyView(UpdateViewGymClub())),
-        .init(id: 5, title: "View Coach Ad", subtitle: "Update view coach posting", view: AnyView(UpdateViewCoachAd()))
-    
-        
+        .init(id: 4, title: "View Gym Club Ad", subtitle: "View gym club posting", view: AnyView(UpdateViewGymClub())),
     ]
     
   

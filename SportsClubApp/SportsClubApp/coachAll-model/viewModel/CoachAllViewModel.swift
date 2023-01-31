@@ -9,6 +9,8 @@ import Foundation
 class CoachAllListViewModel : ObservableObject {
     @Published var coachs  = [CoachAllViewModel]()
     @Published var coachsBest  = [CoachAllViewModel]()
+    @Published var coachsSearch  = [CoachAllViewModel]()
+    
     
     func coachAllService() async {
         do{
@@ -34,6 +36,11 @@ class CoachAllListViewModel : ObservableObject {
                 
             }
         }
+    }
+    
+    func searchCoachAll(searchText:String) async {
+        await coachAllService()
+        self.coachsSearch = coachs.filter{ $0.name.uppercased().contains(searchText)}
     }
 }
 
@@ -79,12 +86,7 @@ struct CoachAllViewModel: Identifiable {
         coach.payPeriod!
     }
     
-    var comment : [Comment]{
-        coach.comment!
-    }
-    var registeredUsers : [User] {
-        coach.registeredUsers!
-    }
+  
     
 
 }

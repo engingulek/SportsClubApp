@@ -25,9 +25,7 @@ struct GymClub :Codable {
     let startClock : String?
     let finishClock: String?
     let payPeriod : ClubPayPeriod?
-    let comment : [Comment]?
-    let registeredUsers : [User]?
-    
+  
 }
 
 

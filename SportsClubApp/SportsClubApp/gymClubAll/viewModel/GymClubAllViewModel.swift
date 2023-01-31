@@ -67,14 +67,7 @@ class GymClubAllViewModel : ObservableObject {
                 }
             }
         }
-       
-        
-        print("Engin \(self.gymClubsFilter.count)")
-        
-    
 
-        
-        
     }
  }
 
@@ -118,12 +111,7 @@ struct GymClubAllVM : Identifiable {
     var payPeriod : ClubPayPeriod{
         gymClub.payPeriod!
     }
-    var comment : [Comment]{
-        gymClub.comment!
-    }
-    var registeredUsers : [User] {
-        gymClub.registeredUsers!
-    }
+ 
     
     
     

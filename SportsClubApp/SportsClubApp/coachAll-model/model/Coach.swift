@@ -17,8 +17,7 @@ struct Coach : Codable {
     let destination : String?
     let rating:Double?
     let payPeriod : ClubPayPeriod?
-    let comment : [Comment]?
-    let registeredUsers : [User]?
+ 
     
    
 }
